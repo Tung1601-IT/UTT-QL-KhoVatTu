@@ -341,6 +341,7 @@
             this.btnXuat.TabIndex = 19;
             this.btnXuat.Text = "Xuất Excel";
             this.btnXuat.UseVisualStyleBackColor = true;
+            this.btnXuat.Click += new System.EventHandler(this.btnXuat_Click);
             // 
             // btnXoa
             // 
