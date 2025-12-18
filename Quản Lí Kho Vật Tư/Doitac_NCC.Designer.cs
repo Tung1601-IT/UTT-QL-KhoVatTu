@@ -1,4 +1,4 @@
-﻿namespace Quanli_vattu
+﻿namespace Quản_Lí_Kho_Vật_Tư
 {
     partial class Doitac_NCC
     {
@@ -68,11 +68,15 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtTendoitac_tk = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.btnTimkiem = new System.Windows.Forms.Button();
+            this.txtSDT_tk = new System.Windows.Forms.TextBox();
+            this.txtMadoitac_tk = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.cboNhomdoitac_tk = new System.Windows.Forms.ComboBox();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNCC)).BeginInit();
@@ -170,7 +174,7 @@
             this.groupBox1.Controls.Add(this.groupBox2);
             this.groupBox1.Location = new System.Drawing.Point(29, 57);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(910, 616);
+            this.groupBox1.Size = new System.Drawing.Size(910, 752);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             // 
@@ -185,12 +189,13 @@
             this.Email,
             this.Diachi,
             this.Ghichu});
-            this.dgvNCC.Location = new System.Drawing.Point(21, 331);
+            this.dgvNCC.Location = new System.Drawing.Point(21, 387);
             this.dgvNCC.Name = "dgvNCC";
             this.dgvNCC.RowHeadersWidth = 51;
             this.dgvNCC.RowTemplate.Height = 24;
-            this.dgvNCC.Size = new System.Drawing.Size(889, 279);
+            this.dgvNCC.Size = new System.Drawing.Size(889, 359);
             this.dgvNCC.TabIndex = 6;
+            this.dgvNCC.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNCC_CellClick);
             // 
             // Madoitac
             // 
@@ -210,6 +215,7 @@
             // 
             // Nhomdoitac
             // 
+            this.Nhomdoitac.DataPropertyName = "Nhomdoitac";
             this.Nhomdoitac.HeaderText = "Nhóm đối tác";
             this.Nhomdoitac.MinimumWidth = 6;
             this.Nhomdoitac.Name = "Nhomdoitac";
@@ -267,7 +273,7 @@
             this.groupBox3.Controls.Add(this.txtMadoitac);
             this.groupBox3.Controls.Add(this.label3);
             this.groupBox3.Controls.Add(this.label4);
-            this.groupBox3.Location = new System.Drawing.Point(21, 103);
+            this.groupBox3.Location = new System.Drawing.Point(21, 148);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(851, 222);
             this.groupBox3.TabIndex = 5;
@@ -344,6 +350,7 @@
             this.btnXoa.TabIndex = 18;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnSua
             // 
@@ -353,6 +360,7 @@
             this.btnSua.TabIndex = 17;
             this.btnSua.Text = "Sửa";
             this.btnSua.UseVisualStyleBackColor = true;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // txtEmail
             // 
@@ -430,40 +438,61 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.button1);
-            this.groupBox2.Controls.Add(this.textBox2);
-            this.groupBox2.Controls.Add(this.textBox1);
+            this.groupBox2.Controls.Add(this.cboNhomdoitac_tk);
+            this.groupBox2.Controls.Add(this.label11);
+            this.groupBox2.Controls.Add(this.txtTendoitac_tk);
+            this.groupBox2.Controls.Add(this.label10);
+            this.groupBox2.Controls.Add(this.btnTimkiem);
+            this.groupBox2.Controls.Add(this.txtSDT_tk);
+            this.groupBox2.Controls.Add(this.txtMadoitac_tk);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Location = new System.Drawing.Point(21, 21);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(851, 76);
+            this.groupBox2.Size = new System.Drawing.Size(851, 121);
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Tìm kiếm đối tác";
             // 
-            // button1
+            // txtTendoitac_tk
             // 
-            this.button1.Location = new System.Drawing.Point(734, 26);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(89, 26);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Tìm kiếm";
-            this.button1.UseVisualStyleBackColor = true;
+            this.txtTendoitac_tk.Location = new System.Drawing.Point(147, 77);
+            this.txtTendoitac_tk.Name = "txtTendoitac_tk";
+            this.txtTendoitac_tk.Size = new System.Drawing.Size(180, 22);
+            this.txtTendoitac_tk.TabIndex = 27;
             // 
-            // textBox2
+            // label10
             // 
-            this.textBox2.Location = new System.Drawing.Point(473, 30);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(194, 22);
-            this.textBox2.TabIndex = 3;
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(29, 36);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(69, 16);
+            this.label10.TabIndex = 26;
+            this.label10.Text = "Mã đối tác";
             // 
-            // textBox1
+            // btnTimkiem
             // 
-            this.textBox1.Location = new System.Drawing.Point(147, 30);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(180, 22);
-            this.textBox1.TabIndex = 2;
+            this.btnTimkiem.Location = new System.Drawing.Point(734, 47);
+            this.btnTimkiem.Name = "btnTimkiem";
+            this.btnTimkiem.Size = new System.Drawing.Size(89, 40);
+            this.btnTimkiem.TabIndex = 4;
+            this.btnTimkiem.Text = "Tìm kiếm";
+            this.btnTimkiem.UseVisualStyleBackColor = true;
+            this.btnTimkiem.Click += new System.EventHandler(this.btnTimkiem_Click);
+            // 
+            // txtSDT_tk
+            // 
+            this.txtSDT_tk.Location = new System.Drawing.Point(473, 30);
+            this.txtSDT_tk.Name = "txtSDT_tk";
+            this.txtSDT_tk.Size = new System.Drawing.Size(194, 22);
+            this.txtSDT_tk.TabIndex = 3;
+            // 
+            // txtMadoitac_tk
+            // 
+            this.txtMadoitac_tk.Location = new System.Drawing.Point(147, 30);
+            this.txtMadoitac_tk.Name = "txtMadoitac_tk";
+            this.txtMadoitac_tk.Size = new System.Drawing.Size(180, 22);
+            this.txtMadoitac_tk.TabIndex = 2;
             // 
             // label2
             // 
@@ -477,17 +506,37 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(29, 36);
+            this.label1.Location = new System.Drawing.Point(24, 80);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(74, 16);
             this.label1.TabIndex = 0;
             this.label1.Text = "Tên đối tác";
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(354, 83);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(86, 16);
+            this.label11.TabIndex = 26;
+            this.label11.Text = "Nhóm đối tác";
+            // 
+            // cboNhomdoitac_tk
+            // 
+            this.cboNhomdoitac_tk.FormattingEnabled = true;
+            this.cboNhomdoitac_tk.Items.AddRange(new object[] {
+            "Nhà cung cấp",
+            "Giao hàng"});
+            this.cboNhomdoitac_tk.Location = new System.Drawing.Point(473, 77);
+            this.cboNhomdoitac_tk.Name = "cboNhomdoitac_tk";
+            this.cboNhomdoitac_tk.Size = new System.Drawing.Size(194, 24);
+            this.cboNhomdoitac_tk.TabIndex = 26;
+            // 
             // Doitac_NCC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(976, 677);
+            this.ClientSize = new System.Drawing.Size(976, 800);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.menuStrip1);
             this.Name = "Doitac_NCC";
@@ -535,9 +584,9 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button btnTimkiem;
+        private System.Windows.Forms.TextBox txtSDT_tk;
+        private System.Windows.Forms.TextBox txtMadoitac_tk;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label9;
@@ -553,5 +602,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Email;
         private System.Windows.Forms.DataGridViewTextBoxColumn Diachi;
         private System.Windows.Forms.DataGridViewTextBoxColumn Ghichu;
+        private System.Windows.Forms.TextBox txtTendoitac_tk;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.ComboBox cboNhomdoitac_tk;
+        private System.Windows.Forms.Label label11;
     }
 }

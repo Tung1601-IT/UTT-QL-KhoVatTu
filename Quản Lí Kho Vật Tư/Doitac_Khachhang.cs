@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Quanli_vattu
+namespace Quản_Lí_Kho_Vật_Tư
 {
     public partial class Doitac_Khachhang : Form
     {

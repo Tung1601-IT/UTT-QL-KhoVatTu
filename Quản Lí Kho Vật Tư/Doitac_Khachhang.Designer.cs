@@ -1,4 +1,4 @@
-﻿namespace Quanli_vattu
+﻿namespace Quản_Lí_Kho_Vật_Tư
 {
     partial class Doitac_Khachhang
     {
