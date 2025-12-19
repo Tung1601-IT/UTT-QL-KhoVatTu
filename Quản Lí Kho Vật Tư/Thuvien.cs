@@ -45,7 +45,7 @@ namespace Quản_Lí_Kho_Vật_Tư
             cmd.Dispose();
             con.Close();
         }
-        void ThemmoiDoitac(string ma, string ten, string nhom,
+        public static void ThemmoiDoitac(string ma, string ten, string nhom,
                    string sdt, string email, string diachi, string ghichu)
         {
             string sql = @"INSERT INTO Doitac_NCC

@@ -146,7 +146,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\FileNhap.xlsx" />
+    <None Include="Resources\FileNhap.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Resources\logo-removebg-preview.png" />
   </ItemGroup>
   <ItemGroup>
