@@ -12,7 +12,7 @@ namespace Quản_Lí_Kho_Vật_Tư
 {
     internal class Thuvien
     {
-        public static SqlConnection con = new SqlConnection("Data Source = MSI\\xuan;Initial Catalog = QL_KhoVatTu; Integrated Security = True");
+        public static SqlConnection con = new SqlConnection("Data Source=ComputerTungha;Initial Catalog=QL_KhoVatTu;Integrated Security=True");
         public static void load_KH(DataGridView dgv,string sql)
         {
             //B1:Kết nối DB

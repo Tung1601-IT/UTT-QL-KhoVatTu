@@ -28,13 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.iMSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bÁNHÀNGToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.đỐITÁCToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.kháchHàngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.nhàCungToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sẢNPHẢMDỊCHVỤToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.qUẢNLÍKHOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.qUẢNLÍTHUCHIToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -62,8 +64,10 @@
             this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.kháchHàngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.nhàCungToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.danhSáchNhânViênToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lịchLàmViệcToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bảngChấmCôngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bảngLươngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -113,6 +117,20 @@
             this.đỐITÁCToolStripMenuItem.Size = new System.Drawing.Size(79, 50);
             this.đỐITÁCToolStripMenuItem.Text = "ĐỐI TÁC";
             // 
+            // kháchHàngToolStripMenuItem
+            // 
+            this.kháchHàngToolStripMenuItem.Name = "kháchHàngToolStripMenuItem";
+            this.kháchHàngToolStripMenuItem.Size = new System.Drawing.Size(227, 26);
+            this.kháchHàngToolStripMenuItem.Text = "Khách hàng";
+            this.kháchHàngToolStripMenuItem.Click += new System.EventHandler(this.kháchHàngToolStripMenuItem_Click);
+            // 
+            // nhàCungToolStripMenuItem
+            // 
+            this.nhàCungToolStripMenuItem.Name = "nhàCungToolStripMenuItem";
+            this.nhàCungToolStripMenuItem.Size = new System.Drawing.Size(227, 26);
+            this.nhàCungToolStripMenuItem.Text = "Nhà cung cấp-Đại lý";
+            this.nhàCungToolStripMenuItem.Click += new System.EventHandler(this.nhàCungToolStripMenuItem_Click);
+            // 
             // sẢNPHẢMDỊCHVỤToolStripMenuItem
             // 
             this.sẢNPHẢMDỊCHVỤToolStripMenuItem.Name = "sẢNPHẢMDỊCHVỤToolStripMenuItem";
@@ -139,6 +157,11 @@
             // 
             // nHÂNVIÊNToolStripMenuItem
             // 
+            this.nHÂNVIÊNToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.danhSáchNhânViênToolStripMenuItem,
+            this.lịchLàmViệcToolStripMenuItem,
+            this.bảngChấmCôngToolStripMenuItem,
+            this.bảngLươngToolStripMenuItem});
             this.nHÂNVIÊNToolStripMenuItem.Name = "nHÂNVIÊNToolStripMenuItem";
             this.nHÂNVIÊNToolStripMenuItem.Size = new System.Drawing.Size(102, 50);
             this.nHÂNVIÊNToolStripMenuItem.Text = "NHÂN VIÊN";
@@ -309,20 +332,20 @@
             // 
             // chart1
             // 
-            chartArea6.AxisX.Title = "Ngày";
-            chartArea6.AxisX2.Maximum = 20D;
-            chartArea6.AxisX2.Minimum = 0D;
-            chartArea6.AxisY.Title = "Doanh thu";
-            chartArea6.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea6);
-            legend6.Name = "Legend1";
-            this.chart1.Legends.Add(legend6);
+            chartArea2.AxisX.Title = "Ngày";
+            chartArea2.AxisX2.Maximum = 20D;
+            chartArea2.AxisX2.Minimum = 0D;
+            chartArea2.AxisY.Title = "Doanh thu";
+            chartArea2.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chart1.Legends.Add(legend2);
             this.chart1.Location = new System.Drawing.Point(115, 533);
             this.chart1.Name = "chart1";
-            series6.ChartArea = "ChartArea1";
-            series6.Legend = "Legend1";
-            series6.Name = "Series1";
-            this.chart1.Series.Add(series6);
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.chart1.Series.Add(series2);
             this.chart1.Size = new System.Drawing.Size(695, 311);
             this.chart1.TabIndex = 16;
             this.chart1.Text = "chart1";
@@ -336,19 +359,29 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Doanh thu theo ngày";
             // 
-            // kháchHàngToolStripMenuItem
+            // danhSáchNhânViênToolStripMenuItem
             // 
-            this.kháchHàngToolStripMenuItem.Name = "kháchHàngToolStripMenuItem";
-            this.kháchHàngToolStripMenuItem.Size = new System.Drawing.Size(227, 26);
-            this.kháchHàngToolStripMenuItem.Text = "Khách hàng";
-            this.kháchHàngToolStripMenuItem.Click += new System.EventHandler(this.kháchHàngToolStripMenuItem_Click);
+            this.danhSáchNhânViênToolStripMenuItem.Name = "danhSáchNhânViênToolStripMenuItem";
+            this.danhSáchNhânViênToolStripMenuItem.Size = new System.Drawing.Size(227, 26);
+            this.danhSáchNhânViênToolStripMenuItem.Text = "Danh sách nhân viên";
             // 
-            // nhàCungToolStripMenuItem
+            // lịchLàmViệcToolStripMenuItem
             // 
-            this.nhàCungToolStripMenuItem.Name = "nhàCungToolStripMenuItem";
-            this.nhàCungToolStripMenuItem.Size = new System.Drawing.Size(227, 26);
-            this.nhàCungToolStripMenuItem.Text = "Nhà cung cấp-Đại lý";
-            this.nhàCungToolStripMenuItem.Click += new System.EventHandler(this.nhàCungToolStripMenuItem_Click);
+            this.lịchLàmViệcToolStripMenuItem.Name = "lịchLàmViệcToolStripMenuItem";
+            this.lịchLàmViệcToolStripMenuItem.Size = new System.Drawing.Size(227, 26);
+            this.lịchLàmViệcToolStripMenuItem.Text = "Lịch làm việc";
+            // 
+            // bảngChấmCôngToolStripMenuItem
+            // 
+            this.bảngChấmCôngToolStripMenuItem.Name = "bảngChấmCôngToolStripMenuItem";
+            this.bảngChấmCôngToolStripMenuItem.Size = new System.Drawing.Size(227, 26);
+            this.bảngChấmCôngToolStripMenuItem.Text = "Bảng chấm công";
+            // 
+            // bảngLươngToolStripMenuItem
+            // 
+            this.bảngLươngToolStripMenuItem.Name = "bảngLươngToolStripMenuItem";
+            this.bảngLươngToolStripMenuItem.Size = new System.Drawing.Size(227, 26);
+            this.bảngLươngToolStripMenuItem.Text = "Bảng lương";
             // 
             // Tongquan
             // 
@@ -409,6 +442,10 @@
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.ToolStripMenuItem kháchHàngToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem nhàCungToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem danhSáchNhânViênToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem lịchLàmViệcToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem bảngChấmCôngToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem bảngLươngToolStripMenuItem;
     }
 }
 
