@@ -21,6 +21,7 @@ namespace Quản_Lí_Kho_Vật_Tư
         public Doitac_NCC()
         {
             InitializeComponent();
+            this.WindowState = FormWindowState.Maximized;
         }
         
         private void btnThem_Click(object sender, EventArgs e)
@@ -351,6 +352,7 @@ int rowEnd = rowStart + tb.Rows.Count - 1;
                 lbEmail.Text = "";
             }
         }
+
 
     }
     }
