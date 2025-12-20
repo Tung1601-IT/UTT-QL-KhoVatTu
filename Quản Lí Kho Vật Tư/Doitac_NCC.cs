@@ -106,5 +106,7 @@ namespace Quản_Lí_Kho_Vật_Tư
                 "SDT like N'%" + sdt + "%' and " +
                 "Nhomdoitac like N'%" + nhom + "%'");
         }
+
+       
     }
 }

@@ -68,6 +68,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.cboNhomdoitac_tk = new System.Windows.Forms.ComboBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.txtTendoitac_tk = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.btnTimkiem = new System.Windows.Forms.Button();
@@ -75,8 +77,6 @@
             this.txtMadoitac_tk = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.cboNhomdoitac_tk = new System.Windows.Forms.ComboBox();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNCC)).BeginInit();
@@ -341,6 +341,7 @@
             this.btnXuat.TabIndex = 19;
             this.btnXuat.Text = "Xuất Excel";
             this.btnXuat.UseVisualStyleBackColor = true;
+ 
             // 
             // btnXoa
             // 
@@ -454,6 +455,26 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Tìm kiếm đối tác";
             // 
+            // cboNhomdoitac_tk
+            // 
+            this.cboNhomdoitac_tk.FormattingEnabled = true;
+            this.cboNhomdoitac_tk.Items.AddRange(new object[] {
+            "Nhà cung cấp",
+            "Giao hàng"});
+            this.cboNhomdoitac_tk.Location = new System.Drawing.Point(473, 77);
+            this.cboNhomdoitac_tk.Name = "cboNhomdoitac_tk";
+            this.cboNhomdoitac_tk.Size = new System.Drawing.Size(194, 24);
+            this.cboNhomdoitac_tk.TabIndex = 26;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(354, 83);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(86, 16);
+            this.label11.TabIndex = 26;
+            this.label11.Text = "Nhóm đối tác";
+            // 
             // txtTendoitac_tk
             // 
             this.txtTendoitac_tk.Location = new System.Drawing.Point(147, 77);
@@ -511,26 +532,6 @@
             this.label1.Size = new System.Drawing.Size(74, 16);
             this.label1.TabIndex = 0;
             this.label1.Text = "Tên đối tác";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(354, 83);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(86, 16);
-            this.label11.TabIndex = 26;
-            this.label11.Text = "Nhóm đối tác";
-            // 
-            // cboNhomdoitac_tk
-            // 
-            this.cboNhomdoitac_tk.FormattingEnabled = true;
-            this.cboNhomdoitac_tk.Items.AddRange(new object[] {
-            "Nhà cung cấp",
-            "Giao hàng"});
-            this.cboNhomdoitac_tk.Location = new System.Drawing.Point(473, 77);
-            this.cboNhomdoitac_tk.Name = "cboNhomdoitac_tk";
-            this.cboNhomdoitac_tk.Size = new System.Drawing.Size(194, 24);
-            this.cboNhomdoitac_tk.TabIndex = 26;
             // 
             // Doitac_NCC
             // 

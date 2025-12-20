@@ -316,6 +316,7 @@
             this.button5.TabIndex = 19;
             this.button5.Text = "Xuất Excel";
             this.button5.UseVisualStyleBackColor = true;
+          
             // 
             // btnXoa
             // 

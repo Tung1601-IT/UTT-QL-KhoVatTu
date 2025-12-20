@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Danhsachnhanvien));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.iMSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bÁNHÀNGToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -58,11 +58,11 @@
             this.dgemail = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgdiachi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbtimkiemnhanvien = new System.Windows.Forms.GroupBox();
+            this.ibtntimkiemnhanvien = new FontAwesome.Sharp.IconButton();
             this.txtsdt = new System.Windows.Forms.TextBox();
             this.txtmanv = new System.Windows.Forms.TextBox();
             this.lbsdt = new System.Windows.Forms.Label();
             this.lbmanv = new System.Windows.Forms.Label();
-            this.ibtntimkiemnhanvien = new FontAwesome.Sharp.IconButton();
             this.ibtnxuatfile = new FontAwesome.Sharp.IconButton();
             this.icnhapfile = new FontAwesome.Sharp.IconButton();
             this.ibtnnhanvien = new FontAwesome.Sharp.IconButton();
@@ -211,9 +211,9 @@
             // dgngaysinh
             // 
             this.dgngaysinh.DataPropertyName = "Ngaysinh";
-            dataGridViewCellStyle2.Format = "d";
-            dataGridViewCellStyle2.NullValue = null;
-            this.dgngaysinh.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle3.Format = "d";
+            dataGridViewCellStyle3.NullValue = null;
+            this.dgngaysinh.DefaultCellStyle = dataGridViewCellStyle3;
             resources.ApplyResources(this.dgngaysinh, "dgngaysinh");
             this.dgngaysinh.Name = "dgngaysinh";
             // 
@@ -246,6 +246,19 @@
             this.gbtimkiemnhanvien.Name = "gbtimkiemnhanvien";
             this.gbtimkiemnhanvien.TabStop = false;
             // 
+            // ibtntimkiemnhanvien
+            // 
+            this.ibtntimkiemnhanvien.BackColor = System.Drawing.Color.RoyalBlue;
+            this.ibtntimkiemnhanvien.ForeColor = System.Drawing.SystemColors.Control;
+            this.ibtntimkiemnhanvien.IconChar = FontAwesome.Sharp.IconChar.SearchMinus;
+            this.ibtntimkiemnhanvien.IconColor = System.Drawing.Color.White;
+            this.ibtntimkiemnhanvien.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ibtntimkiemnhanvien.IconSize = 37;
+            resources.ApplyResources(this.ibtntimkiemnhanvien, "ibtntimkiemnhanvien");
+            this.ibtntimkiemnhanvien.Name = "ibtntimkiemnhanvien";
+            this.ibtntimkiemnhanvien.UseVisualStyleBackColor = false;
+            this.ibtntimkiemnhanvien.Click += new System.EventHandler(this.ibtntimkiemnhanvien_Click);
+            // 
             // txtsdt
             // 
             resources.ApplyResources(this.txtsdt, "txtsdt");
@@ -266,19 +279,6 @@
             resources.ApplyResources(this.lbmanv, "lbmanv");
             this.lbmanv.Name = "lbmanv";
             // 
-            // ibtntimkiemnhanvien
-            // 
-            this.ibtntimkiemnhanvien.BackColor = System.Drawing.Color.RoyalBlue;
-            this.ibtntimkiemnhanvien.ForeColor = System.Drawing.SystemColors.Control;
-            this.ibtntimkiemnhanvien.IconChar = FontAwesome.Sharp.IconChar.SearchMinus;
-            this.ibtntimkiemnhanvien.IconColor = System.Drawing.Color.White;
-            this.ibtntimkiemnhanvien.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.ibtntimkiemnhanvien.IconSize = 37;
-            resources.ApplyResources(this.ibtntimkiemnhanvien, "ibtntimkiemnhanvien");
-            this.ibtntimkiemnhanvien.Name = "ibtntimkiemnhanvien";
-            this.ibtntimkiemnhanvien.UseVisualStyleBackColor = false;
-            this.ibtntimkiemnhanvien.Click += new System.EventHandler(this.ibtntimkiemnhanvien_Click);
-            // 
             // ibtnxuatfile
             // 
             this.ibtnxuatfile.BackColor = System.Drawing.Color.LimeGreen;
@@ -290,6 +290,7 @@
             resources.ApplyResources(this.ibtnxuatfile, "ibtnxuatfile");
             this.ibtnxuatfile.Name = "ibtnxuatfile";
             this.ibtnxuatfile.UseVisualStyleBackColor = false;
+            this.ibtnxuatfile.Click += new System.EventHandler(this.ibtnxuatfile_Click);
             // 
             // icnhapfile
             // 
@@ -302,6 +303,7 @@
             resources.ApplyResources(this.icnhapfile, "icnhapfile");
             this.icnhapfile.Name = "icnhapfile";
             this.icnhapfile.UseVisualStyleBackColor = false;
+            this.icnhapfile.Click += new System.EventHandler(this.icnhapfile_Click);
             // 
             // ibtnnhanvien
             // 
