@@ -49,13 +49,13 @@
             this.Diachi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Ghichu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.btnNhapExcel = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.txtGhichu = new System.Windows.Forms.TextBox();
             this.txtDiachi = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.cboNhomdoitac = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.btnXuat = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
             this.txtEmail = new System.Windows.Forms.TextBox();
@@ -74,10 +74,16 @@
             this.label10 = new System.Windows.Forms.Label();
             this.btnTimkiem = new System.Windows.Forms.Button();
             this.txtSDT_tk = new System.Windows.Forms.TextBox();
+            this.btnXuat = new System.Windows.Forms.Button();
             this.txtMadoitac_tk = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnNhapExcel = new System.Windows.Forms.Button();
+            this.lbMadoitac = new System.Windows.Forms.Label();
+            this.lbSDT = new System.Windows.Forms.Label();
+            this.lbEmail = new System.Windows.Forms.Label();
+            this.lbTendoitac = new System.Windows.Forms.Label();
+            this.lbDiachi = new System.Windows.Forms.Label();
+            this.lbNhomdoitac = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNCC)).BeginInit();
@@ -256,6 +262,12 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.lbNhomdoitac);
+            this.groupBox3.Controls.Add(this.lbDiachi);
+            this.groupBox3.Controls.Add(this.lbTendoitac);
+            this.groupBox3.Controls.Add(this.lbEmail);
+            this.groupBox3.Controls.Add(this.lbSDT);
+            this.groupBox3.Controls.Add(this.lbMadoitac);
             this.groupBox3.Controls.Add(this.btnNhapExcel);
             this.groupBox3.Controls.Add(this.label9);
             this.groupBox3.Controls.Add(this.txtGhichu);
@@ -281,6 +293,16 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Thêm mới đối tác";
             // 
+            // btnNhapExcel
+            // 
+            this.btnNhapExcel.Location = new System.Drawing.Point(734, 168);
+            this.btnNhapExcel.Name = "btnNhapExcel";
+            this.btnNhapExcel.Size = new System.Drawing.Size(89, 30);
+            this.btnNhapExcel.TabIndex = 26;
+            this.btnNhapExcel.Text = "Nhập Excel";
+            this.btnNhapExcel.UseVisualStyleBackColor = true;
+            this.btnNhapExcel.Click += new System.EventHandler(this.btnNhapExcel_Click);
+            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -292,7 +314,7 @@
             // 
             // txtGhichu
             // 
-            this.txtGhichu.Location = new System.Drawing.Point(147, 165);
+            this.txtGhichu.Location = new System.Drawing.Point(147, 178);
             this.txtGhichu.Multiline = true;
             this.txtGhichu.Name = "txtGhichu";
             this.txtGhichu.Size = new System.Drawing.Size(520, 38);
@@ -300,7 +322,7 @@
             // 
             // txtDiachi
             // 
-            this.txtDiachi.Location = new System.Drawing.Point(473, 116);
+            this.txtDiachi.Location = new System.Drawing.Point(473, 130);
             this.txtDiachi.Name = "txtDiachi";
             this.txtDiachi.Size = new System.Drawing.Size(194, 22);
             this.txtDiachi.TabIndex = 23;
@@ -308,7 +330,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(355, 122);
+            this.label7.Location = new System.Drawing.Point(373, 127);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(47, 16);
             this.label7.TabIndex = 22;
@@ -320,29 +342,19 @@
             this.cboNhomdoitac.Items.AddRange(new object[] {
             "Nhà cung cấp",
             "Giao hàng"});
-            this.cboNhomdoitac.Location = new System.Drawing.Point(147, 114);
+            this.cboNhomdoitac.Location = new System.Drawing.Point(147, 130);
             this.cboNhomdoitac.Name = "cboNhomdoitac";
-            this.cboNhomdoitac.Size = new System.Drawing.Size(180, 24);
+            this.cboNhomdoitac.Size = new System.Drawing.Size(202, 24);
             this.cboNhomdoitac.TabIndex = 21;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(29, 122);
+            this.label6.Location = new System.Drawing.Point(29, 130);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(86, 16);
             this.label6.TabIndex = 20;
             this.label6.Text = "Nhóm đối tác";
-            // 
-            // btnXuat
-            // 
-            this.btnXuat.Location = new System.Drawing.Point(734, 83);
-            this.btnXuat.Name = "btnXuat";
-            this.btnXuat.Size = new System.Drawing.Size(89, 26);
-            this.btnXuat.TabIndex = 19;
-            this.btnXuat.Text = "Xuất Excel";
-            this.btnXuat.UseVisualStyleBackColor = true;
-            this.btnXuat.Click += new System.EventHandler(this.btnXuat_Click);
             // 
             // btnXoa
             // 
@@ -370,11 +382,12 @@
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(194, 22);
             this.txtEmail.TabIndex = 13;
+            this.txtEmail.TextChanged += new System.EventHandler(this.txtEmail_TextChanged);
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(355, 82);
+            this.label8.Location = new System.Drawing.Point(373, 82);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(41, 16);
             this.label8.TabIndex = 11;
@@ -382,9 +395,9 @@
             // 
             // txtTendoitac
             // 
-            this.txtTendoitac.Location = new System.Drawing.Point(147, 74);
+            this.txtTendoitac.Location = new System.Drawing.Point(147, 81);
             this.txtTendoitac.Name = "txtTendoitac";
-            this.txtTendoitac.Size = new System.Drawing.Size(180, 22);
+            this.txtTendoitac.Size = new System.Drawing.Size(202, 22);
             this.txtTendoitac.TabIndex = 6;
             // 
             // label5
@@ -412,13 +425,15 @@
             this.txtSDT.Name = "txtSDT";
             this.txtSDT.Size = new System.Drawing.Size(194, 22);
             this.txtSDT.TabIndex = 3;
+            this.txtSDT.TextChanged += new System.EventHandler(this.txtSDT_TextChanged);
             // 
             // txtMadoitac
             // 
             this.txtMadoitac.Location = new System.Drawing.Point(147, 32);
             this.txtMadoitac.Name = "txtMadoitac";
-            this.txtMadoitac.Size = new System.Drawing.Size(180, 22);
+            this.txtMadoitac.Size = new System.Drawing.Size(202, 22);
             this.txtMadoitac.TabIndex = 2;
+            this.txtMadoitac.TextChanged += new System.EventHandler(this.txtMadoitac_TextChanged);
             // 
             // label3
             // 
@@ -510,6 +525,16 @@
             this.txtSDT_tk.Size = new System.Drawing.Size(194, 22);
             this.txtSDT_tk.TabIndex = 3;
             // 
+            // btnXuat
+            // 
+            this.btnXuat.Location = new System.Drawing.Point(734, 83);
+            this.btnXuat.Name = "btnXuat";
+            this.btnXuat.Size = new System.Drawing.Size(89, 26);
+            this.btnXuat.TabIndex = 19;
+            this.btnXuat.Text = "Xuất Excel";
+            this.btnXuat.UseVisualStyleBackColor = true;
+            this.btnXuat.Click += new System.EventHandler(this.btnXuat_Click);
+            // 
             // txtMadoitac_tk
             // 
             this.txtMadoitac_tk.Location = new System.Drawing.Point(147, 30);
@@ -535,15 +560,48 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Tên đối tác";
             // 
-            // btnNhapExcel
+            // lbMadoitac
             // 
-            this.btnNhapExcel.Location = new System.Drawing.Point(734, 168);
-            this.btnNhapExcel.Name = "btnNhapExcel";
-            this.btnNhapExcel.Size = new System.Drawing.Size(89, 30);
-            this.btnNhapExcel.TabIndex = 26;
-            this.btnNhapExcel.Text = "Nhập Excel";
-            this.btnNhapExcel.UseVisualStyleBackColor = true;
-            this.btnNhapExcel.Click += new System.EventHandler(this.btnNhapExcel_Click);
+            this.lbMadoitac.Location = new System.Drawing.Point(144, 55);
+            this.lbMadoitac.Name = "lbMadoitac";
+            this.lbMadoitac.Size = new System.Drawing.Size(216, 23);
+            this.lbMadoitac.TabIndex = 27;
+            // 
+            // lbSDT
+            // 
+            this.lbSDT.Location = new System.Drawing.Point(470, 50);
+            this.lbSDT.Name = "lbSDT";
+            this.lbSDT.Size = new System.Drawing.Size(212, 23);
+            this.lbSDT.TabIndex = 28;
+            // 
+            // lbEmail
+            // 
+            this.lbEmail.Location = new System.Drawing.Point(470, 101);
+            this.lbEmail.Name = "lbEmail";
+            this.lbEmail.Size = new System.Drawing.Size(212, 23);
+            this.lbEmail.TabIndex = 29;
+            // 
+            // lbTendoitac
+            // 
+            this.lbTendoitac.Location = new System.Drawing.Point(144, 106);
+            this.lbTendoitac.Name = "lbTendoitac";
+            this.lbTendoitac.Size = new System.Drawing.Size(212, 23);
+            this.lbTendoitac.TabIndex = 31;
+            // 
+            // lbDiachi
+            // 
+            this.lbDiachi.Location = new System.Drawing.Point(470, 152);
+            this.lbDiachi.Name = "lbDiachi";
+            this.lbDiachi.Size = new System.Drawing.Size(212, 23);
+            this.lbDiachi.TabIndex = 32;
+
+            // 
+            // lbNhomdoitac
+            // 
+            this.lbNhomdoitac.Location = new System.Drawing.Point(144, 157);
+            this.lbNhomdoitac.Name = "lbNhomdoitac";
+            this.lbNhomdoitac.Size = new System.Drawing.Size(212, 23);
+            this.lbNhomdoitac.TabIndex = 33;
             // 
             // Doitac_NCC
             // 
@@ -620,5 +678,11 @@
         private System.Windows.Forms.ComboBox cboNhomdoitac_tk;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button btnNhapExcel;
+        private System.Windows.Forms.Label lbMadoitac;
+        private System.Windows.Forms.Label lbSDT;
+        private System.Windows.Forms.Label lbEmail;
+        private System.Windows.Forms.Label lbNhomdoitac;
+        private System.Windows.Forms.Label lbDiachi;
+        private System.Windows.Forms.Label lbTendoitac;
     }
 }

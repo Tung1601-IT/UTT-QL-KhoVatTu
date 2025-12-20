@@ -62,7 +62,6 @@ namespace Quản_Lí_Kho_Vật_Tư
                 // 3. Cập nhật tên file lên Label lbFileName
                 lbTenFile.Text = tenfile;
 
-                // (Tùy chọn) Đổi màu chữ sang xám để giống mẫu
                 lbTenFile.ForeColor = System.Drawing.Color.Gray;
             }
         }
