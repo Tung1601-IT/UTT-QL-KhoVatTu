@@ -11,6 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Interop;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using ex_cel = Microsoft.Office.Interop.Excel;
 namespace Quản_Lí_Kho_Vật_Tư
     
@@ -35,6 +36,61 @@ namespace Quản_Lí_Kho_Vật_Tư
             string mail = txtEmail.Text.Trim();
             string dc = txtDiachi.Text.Trim();
             string ghichu=txtGhichu.Text.Trim();
+            if (Thuvien.checkTrung("Doitac_NCC", "Madoitac", mdt))
+            {
+                txtMadoitac.Focus();
+                MessageBox.Show("Mã đối tác không được trùng.");
+                return;
+            }
+            if (Thuvien.checkTrung("Doitac_NCC", "SDT", dt))
+            {
+                txtSDT.Focus();
+                MessageBox.Show("Số điện thoại không được trùng.");
+                return;
+            }
+            if (Thuvien.checkTrung("Doitac_NCC", "Email",mail))
+            {
+                txtEmail.Focus();
+                MessageBox.Show("Email không được trùng.");
+                return;
+            }
+            if (Thuvien.checkTrong(mdt))
+            {
+                txtMadoitac.Focus();
+                MessageBox.Show("Mã đối tác không được để trống");
+                return;
+            }
+            if (Thuvien.checkTrong(ht))
+            {
+                txtTendoitac.Focus();
+                MessageBox.Show("Tên đối tác không được để trống");
+                return;
+            }
+            if (Thuvien.checkTrong(nhom))
+            {
+                cboNhomdoitac.Focus();
+                MessageBox.Show("Nhóm đối tác không được để trống");
+                return;
+            }
+            if (Thuvien.checkTrong(dt))
+            {
+                txtSDT.Focus();
+                MessageBox.Show("Số điện thoại không được để trống");
+                return;
+            }
+            if (Thuvien.checkTrong(mail))
+            {
+                txtEmail.Focus();
+                MessageBox.Show("Email không được để trống");
+                return;
+            }
+            if (Thuvien.checkTrong(dc))
+            {
+                txtDiachi.Focus();
+                MessageBox.Show("Địa chỉ không được để trống");
+                return;
+            }
+
             //Kiem tra trung ma
             //B2:Kết nối DB
 
@@ -231,6 +287,7 @@ int rowEnd = rowStart + tb.Rows.Count - 1;
             string nhom = cboNhomdoitac.Text.Trim();
             if (Thuvien.con.State == ConnectionState.Closed)
                 Thuvien.con.Open();
+
             string sql = " Select ROW_NUMBER() over(order by Madoitac) STT, * from Doitac_NCC where Madoitac like '%" + mdt + "%' and " +
                 "Tendoitac like N'%" + ht + "%' and " +
                 "SDT like N'%" + sdt + "%' and " +

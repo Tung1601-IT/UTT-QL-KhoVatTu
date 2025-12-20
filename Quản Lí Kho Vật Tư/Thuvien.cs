@@ -69,7 +69,29 @@ namespace Quản_Lí_Kho_Vật_Tư
                 con.Close();
             }
         }
+            public  static bool checkTrung(string table, string column, string value)
+        {
+            string sql = $"SELECT COUNT(*) FROM {table} WHERE {column} = @value";
+            
+            if (con.State == ConnectionState.Closed)
+                con.Open();
 
+            SqlCommand cmd = new SqlCommand(sql, con);
+            cmd.Parameters.AddWithValue("@value", value);
+
+            int kq = (int)cmd.ExecuteScalar();
+
+            return kq > 0; // true = trùng
+        }
+            public static bool checkTrong(string value)
+        {
+            if (string.IsNullOrWhiteSpace(value))
+                return true;   // trống
+            return false;      // không trống
+        }
 
     }
+
+
 }
+
