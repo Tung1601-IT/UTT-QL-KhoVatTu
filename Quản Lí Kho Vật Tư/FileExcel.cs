@@ -68,36 +68,55 @@ namespace Quản_Lí_Kho_Vật_Tư
 
         private void btnNhap_Click(object sender, EventArgs e)
         {
-            //kiểm tra xem filename đã có dữ liệu chưa
-            if (duongdan == null)
+            if (duongdan == "")
             {
-                MessageBox.Show("Chưa chọn file");
+                MessageBox.Show("Vui lòng chọn file! ");
+                return;
             }
-            else
+
+            xls.Application Excel = new xls.Application();
+            Excel.Workbooks.Open(duongdan);
+
+            foreach (xls.Worksheet wsheet in Excel.Worksheets)
             {
-                xls.Application Excel = new xls.Application();// tạp một app làm việc mới
-                                                              // mở dữ liệu từ file
-                Excel.Workbooks.Open(duongdan);
-                //đọc dữ liệu từng sheet của excel
-                foreach (xls.Worksheet wsheet in Excel.Worksheets)
+                int i = 2;
+                while (true)
                 {
-                    int i = 2;  //để đọc từng dòng của sheet bắt đầu từ dòng số 2
-                    do
+                    if (wsheet.Cells[i, 1].Value == null || wsheet.Cells[i, 2].Value == null ||
+                        wsheet.Cells[i, 3].Value == null || wsheet.Cells[i, 4].Value == null ||
+                        wsheet.Cells[i, 5].Value == null || wsheet.Cells[i, 6].Value == null)
                     {
-                        if (wsheet.Cells[i, 1].Value == null && wsheet.Cells[i, 2].Value == null && wsheet.Cells[i, 3].Value == null)
-                        {
-                            break;
-                        }
-                        else
-                        {
-                            //Đổ dòng dữ liệu vào DB
-                            Thuvien.ThemmoiDoitac(wsheet.Cells[i, 1].Value, wsheet.Cells[i, 2].Value, wsheet.Cells[i, 3].Value, wsheet.Cells[i, 4].Value, wsheet.Cells[i, 5].Value, wsheet.Cells[i, 6].Value, wsheet.Cells[i, 7].Value);
-                            i++;
-                        }
+                        break;
                     }
-                    while (true);
+
+                    string ma = wsheet.Cells[i, 1].Value.ToString();
+                    string ten = wsheet.Cells[i, 2].Value.ToString();
+                    string nhom = wsheet.Cells[i, 3].Value.ToString();
+                    string sdt = wsheet.Cells[i, 4].Value.ToString();
+                    string email = wsheet.Cells[i, 5].Value.ToString();
+                    string diachi = wsheet.Cells[i, 6].Value.ToString();
+                    string ghichu = wsheet.Cells[i, 7].Value?.ToString();
+
+                    if (Thuvien.checkTrung("Doitac_NCC", "Madoitac", ma) ||
+                        Thuvien.checkTrung("Doitac_NCC", "SDT", sdt) ||
+                        Thuvien.checkTrung("Doitac_NCC", "Email", email))
+                    {
+                        MessageBox.Show($"Dòng {i} bị trùng dữ liệu hoặc dữ liệu đã tồn tại.\n Vui lòng kiểm tra lại thông tin.");
+                        return; 
+                    }
+
+                    Thuvien.ThemmoiDoitac(ma, ten, nhom, sdt, email, diachi, ghichu);
+                    i++;
                 }
             }
+
+            this.DialogResult = DialogResult.OK;
+            this.Close();
+        }
+
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 

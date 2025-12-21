@@ -112,7 +112,7 @@
             this.nHÂNVIÊNToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1284, 54);
+            this.menuStrip1.Size = new System.Drawing.Size(1902, 54);
             this.menuStrip1.TabIndex = 3;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -190,7 +190,7 @@
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Location = new System.Drawing.Point(0, 54);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1284, 872);
+            this.panel1.Size = new System.Drawing.Size(1902, 979);
             this.panel1.TabIndex = 28;
             // 
             // panel4
@@ -277,7 +277,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 127);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1284, 227);
+            this.panel3.Size = new System.Drawing.Size(1902, 227);
             this.panel3.TabIndex = 7;
             // 
             // groupBox3
@@ -521,7 +521,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1284, 127);
+            this.panel2.Size = new System.Drawing.Size(1902, 127);
             this.panel2.TabIndex = 5;
             // 
             // groupBox2
@@ -539,9 +539,9 @@
             this.groupBox2.Controls.Add(this.txtMadoitac_tk);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Location = new System.Drawing.Point(12, 0);
+            this.groupBox2.Location = new System.Drawing.Point(12, 3);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1210, 102);
+            this.groupBox2.Size = new System.Drawing.Size(1887, 102);
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Tìm kiếm đối tác";
@@ -589,7 +589,7 @@
             // btnTimkiem
             // 
             this.btnTimkiem.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnTimkiem.Location = new System.Drawing.Point(1029, 18);
+            this.btnTimkiem.Location = new System.Drawing.Point(1706, 18);
             this.btnTimkiem.Name = "btnTimkiem";
             this.btnTimkiem.Size = new System.Drawing.Size(89, 81);
             this.btnTimkiem.TabIndex = 4;
@@ -608,7 +608,7 @@
             // btnXuat
             // 
             this.btnXuat.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnXuat.Location = new System.Drawing.Point(1118, 18);
+            this.btnXuat.Location = new System.Drawing.Point(1795, 18);
             this.btnXuat.Name = "btnXuat";
             this.btnXuat.Size = new System.Drawing.Size(89, 81);
             this.btnXuat.TabIndex = 19;
@@ -618,12 +618,10 @@
             // 
             // txtMadoitac_tk
             // 
-            this.txtMadoitac_tk.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtMadoitac_tk.Location = new System.Drawing.Point(103, 18);
             this.txtMadoitac_tk.Multiline = true;
             this.txtMadoitac_tk.Name = "txtMadoitac_tk";
-            this.txtMadoitac_tk.Size = new System.Drawing.Size(261, 31);
+            this.txtMadoitac_tk.Size = new System.Drawing.Size(320, 31);
             this.txtMadoitac_tk.TabIndex = 2;
             // 
             // label2
@@ -646,15 +644,15 @@
             // 
             // Doitac_NCC
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1284, 926);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.ClientSize = new System.Drawing.Size(1902, 1033);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
             this.Name = "Doitac_NCC";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Doitac_NCC";
             this.Load += new System.EventHandler(this.Doitac_NCC_Load);
+            this.Shown += new System.EventHandler(this.Doitac_NCC_Shown);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -686,7 +684,6 @@
         private System.Windows.Forms.ToolStripMenuItem nHÂNVIÊNToolStripMenuItem;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.DataGridView dgvNCC;
         private System.Windows.Forms.DataGridViewTextBoxColumn Madoitac;
         private System.Windows.Forms.DataGridViewTextBoxColumn Tendoitac;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nhomdoitac;
@@ -732,5 +729,6 @@
         private System.Windows.Forms.TextBox txtMadoitac_tk;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        public System.Windows.Forms.DataGridView dgvNCC;
     }
 }

@@ -21,7 +21,7 @@ namespace Quản_Lí_Kho_Vật_Tư
         public Doitac_NCC()
         {
             InitializeComponent();
-            this.WindowState = FormWindowState.Maximized;
+            
         }
         
         private void btnThem_Click(object sender, EventArgs e)
@@ -307,8 +307,13 @@ int rowEnd = rowStart + tb.Rows.Count - 1;
 
         private void btnNhapExcel_Click(object sender, EventArgs e)
         {
-            FileExcel file=new FileExcel();
-            file.ShowDialog();
+            using (FileExcel f = new FileExcel())
+            {
+                if (f.ShowDialog(this) == DialogResult.OK)
+                {
+                    Thuvien.load_KH(dgvNCC,"Select * from DOitac_NCC"); 
+                }
+            }
         }
 
         private void txtMadoitac_TextChanged(object sender, EventArgs e)
@@ -353,7 +358,10 @@ int rowEnd = rowStart + tb.Rows.Count - 1;
             }
         }
 
-
+        private void Doitac_NCC_Shown(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Maximized;
+        }
     }
     }
 

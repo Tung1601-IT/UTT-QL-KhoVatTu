@@ -34,13 +34,13 @@
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.btnDowload = new FontAwesome.Sharp.IconButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.btnChonTep = new FontAwesome.Sharp.IconButton();
-            this.lbTenFile = new System.Windows.Forms.Label();
-            this.btnThoat = new System.Windows.Forms.Button();
             this.btnNhap = new System.Windows.Forms.Button();
+            this.btnThoat = new System.Windows.Forms.Button();
+            this.lbTenFile = new System.Windows.Forms.Label();
+            this.btnChonTep = new FontAwesome.Sharp.IconButton();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -98,37 +98,42 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.btnDowload);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Location = new System.Drawing.Point(35, 12);
+            this.groupBox1.Location = new System.Drawing.Point(12, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(718, 410);
+            this.groupBox1.Size = new System.Drawing.Size(684, 350);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             // 
-            // label3
+            // btnNhap
             // 
-            this.label3.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.label3.Location = new System.Drawing.Point(170, 153);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(30, 30);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "2";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnNhap.Location = new System.Drawing.Point(491, 284);
+            this.btnNhap.Name = "btnNhap";
+            this.btnNhap.Size = new System.Drawing.Size(132, 48);
+            this.btnNhap.TabIndex = 11;
+            this.btnNhap.Text = "Nhập dữ liệu";
+            this.btnNhap.UseVisualStyleBackColor = true;
+            this.btnNhap.Click += new System.EventHandler(this.btnNhap_Click);
             // 
-            // label4
+            // btnThoat
             // 
-            this.label4.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.label4.Cursor = System.Windows.Forms.Cursors.No;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label4.Location = new System.Drawing.Point(231, 153);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(283, 30);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "Tải file lên";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnThoat.Location = new System.Drawing.Point(366, 284);
+            this.btnThoat.Name = "btnThoat";
+            this.btnThoat.Size = new System.Drawing.Size(104, 48);
+            this.btnThoat.TabIndex = 10;
+            this.btnThoat.Text = "Thoát";
+            this.btnThoat.UseVisualStyleBackColor = true;
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
-            // openFileDialog1
+            // lbTenFile
             // 
-            this.openFileDialog1.FileName = "openFileDialog1";
+            this.lbTenFile.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.lbTenFile.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.2F);
+            this.lbTenFile.Location = new System.Drawing.Point(320, 210);
+            this.lbTenFile.Name = "lbTenFile";
+            this.lbTenFile.Size = new System.Drawing.Size(202, 37);
+            this.lbTenFile.TabIndex = 9;
+            this.lbTenFile.Text = "Không có file nào được chọn";
+            this.lbTenFile.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // btnChonTep
             // 
@@ -144,43 +149,43 @@
             this.btnChonTep.UseVisualStyleBackColor = true;
             this.btnChonTep.Click += new System.EventHandler(this.btnChonTep_Click);
             // 
-            // lbTenFile
+            // label4
             // 
-            this.lbTenFile.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.lbTenFile.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.2F);
-            this.lbTenFile.Location = new System.Drawing.Point(320, 210);
-            this.lbTenFile.Name = "lbTenFile";
-            this.lbTenFile.Size = new System.Drawing.Size(202, 37);
-            this.lbTenFile.TabIndex = 9;
-            this.lbTenFile.Text = "Không có file nào được chọn";
-            this.lbTenFile.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label4.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.label4.Cursor = System.Windows.Forms.Cursors.No;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label4.Location = new System.Drawing.Point(231, 153);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(283, 30);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "Tải file lên";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // btnThoat
+            // label3
             // 
-            this.btnThoat.Location = new System.Drawing.Point(366, 284);
-            this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(104, 48);
-            this.btnThoat.TabIndex = 10;
-            this.btnThoat.Text = "Thoát";
-            this.btnThoat.UseVisualStyleBackColor = true;
+            this.label3.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.label3.Location = new System.Drawing.Point(170, 153);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(30, 30);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "2";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // btnNhap
+            // openFileDialog1
             // 
-            this.btnNhap.Location = new System.Drawing.Point(491, 284);
-            this.btnNhap.Name = "btnNhap";
-            this.btnNhap.Size = new System.Drawing.Size(132, 48);
-            this.btnNhap.TabIndex = 11;
-            this.btnNhap.Text = "Nhập dữ liệu";
-            this.btnNhap.UseVisualStyleBackColor = true;
-            this.btnNhap.Click += new System.EventHandler(this.btnNhap_Click);
+            this.openFileDialog1.FileName = "openFileDialog1";
             // 
             // FileExcel
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(810, 499);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.ClientSize = new System.Drawing.Size(732, 353);
             this.Controls.Add(this.groupBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FileExcel";
+            this.ShowInTaskbar = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "FileExcel";
             this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
