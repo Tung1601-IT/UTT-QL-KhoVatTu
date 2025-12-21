@@ -418,19 +418,6 @@
             this.label6.TabIndex = 20;
             this.label6.Text = "Nhóm đối tác";
             // 
-<<<<<<< HEAD
-            // btnXuat
-            // 
-            this.btnXuat.Location = new System.Drawing.Point(734, 165);
-            this.btnXuat.Name = "btnXuat";
-            this.btnXuat.Size = new System.Drawing.Size(89, 26);
-            this.btnXuat.TabIndex = 19;
-            this.btnXuat.Text = "Xuất Excel";
-            this.btnXuat.UseVisualStyleBackColor = true;
- 
-            // 
-=======
->>>>>>> 3370d386ffa0e87dd8e0eabe8c71fb947b21d1ca
             // btnXoa
             // 
             this.btnXoa.Location = new System.Drawing.Point(734, 122);
@@ -563,31 +550,18 @@
             // 
             this.cboNhomdoitac_tk.FormattingEnabled = true;
             this.cboNhomdoitac_tk.Items.AddRange(new object[] {
-<<<<<<< HEAD
             "Nhà cung cấp",
             "Giao hàng"});
-            this.cboNhomdoitac_tk.Location = new System.Drawing.Point(473, 77);
-            this.cboNhomdoitac_tk.Name = "cboNhomdoitac_tk";
-            this.cboNhomdoitac_tk.Size = new System.Drawing.Size(194, 24);
-=======
-            "Giao hàng",
-            "Nhà cung cấp"});
             this.cboNhomdoitac_tk.Location = new System.Drawing.Point(103, 63);
             this.cboNhomdoitac_tk.Name = "cboNhomdoitac_tk";
             this.cboNhomdoitac_tk.Size = new System.Drawing.Size(261, 24);
->>>>>>> 3370d386ffa0e87dd8e0eabe8c71fb947b21d1ca
             this.cboNhomdoitac_tk.TabIndex = 26;
             // 
             // label11
             // 
-<<<<<<< HEAD
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(354, 83);
-=======
             this.label11.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label11.AutoSize = true;
             this.label11.Location = new System.Drawing.Point(6, 66);
->>>>>>> 3370d386ffa0e87dd8e0eabe8c71fb947b21d1ca
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(86, 16);
             this.label11.TabIndex = 26;
