@@ -17,7 +17,7 @@ namespace Quản_Lí_Kho_Vật_Tư
 {
     public partial class Danhsachnhanvien : Form
     {
-        SqlConnection con = new SqlConnection("Data Source=ComputerTungha;Initial Catalog=QL_KhoVatTu;Integrated Security=True");
+        //SqlConnection con = new SqlConnection("Data Source=ComputerTungha;Initial Catalog=QL_KhoVatTu;Integrated Security=True");
         public void LoadData()
         {
             string sql = "select * from Danhsachnhanvien";
@@ -273,10 +273,10 @@ ex_cel.Range cl9 = oSheet.get_Range("I3", "I3");
                     string sql = "INSERT INTO  Danhsachnhanvien (Manv, Hoten, Gioitinh, Ngaysinh, Sdt, Email, Diachi) " +
                                  "VALUES ('" + Manv + "', N'" + Hoten + "', N'" + Gioitnh + "', '" + NgaysinhSQL + "', '" + Sdt + "', '" + Email + "', N'" + Diachi + "')";
 
-                    if (con.State == ConnectionState.Closed) con.Open();
-                    SqlCommand cmd = new SqlCommand(sql, con);
+                    if (Thuvien.con.State == ConnectionState.Closed) Thuvien.con.Open();
+                    SqlCommand cmd = new SqlCommand(sql, Thuvien.con);
                     cmd.ExecuteNonQuery();
-                    con.Close();
+                    Thuvien.con.Close();
                 }
             }
 
