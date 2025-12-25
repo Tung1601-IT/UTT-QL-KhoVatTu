@@ -18,6 +18,30 @@ namespace Quản_Lí_Kho_Vật_Tư
         {
             InitializeComponent();
         }
+        private void ClearForm()
+        {
+            txtMaKH.Clear();
+            txtTenKH.Clear();
+            txtSDT.Clear();
+            txtEmail.Clear();
+            txtDiachi.Clear();
+            txtCCCD.Clear();
+
+            if (cboGioitinh.Items.Count > 0)
+                cboGioitinh.SelectedIndex = 0;
+            if (cboTrangthai.Items.Count > 0)
+                cboTrangthai.SelectedIndex = 0;
+            lbMaKH.Text = "";
+            lbTenKH.Text = "";
+            lbSDT.Text = "";
+            lbEmail.Text = "";
+            lbDiachi.Text = "";
+            lbGioitinh.Text = "";
+            lbCCCD.Text = "";
+            lbTrangthai.Text = "";
+
+            txtMaKH.Focus();
+        }
         private void btnThem_Click(object sender, EventArgs e)
         {
             
@@ -30,6 +54,72 @@ namespace Quản_Lí_Kho_Vật_Tư
             string tt=cboTrangthai.SelectedItem.ToString().Trim();
             string dc = txtDiachi.Text.Trim();
             string cccd = txtCCCD.Text.Trim();
+            if (cboGioitinh.SelectedItem == null)
+                gt = "";
+            else
+                gt= cboGioitinh.SelectedItem.ToString();
+
+            if (cboTrangthai.SelectedItem == null)
+                tt = "";
+            else
+                tt = cboTrangthai.SelectedItem.ToString();
+
+            if (Thuvien.checkTrong(mkh))
+            {
+                txtMaKH.Focus();
+                lbMaKH.Text = "Mã khách hàng không được để trống";
+                lbMaKH.ForeColor = Color.Red;
+                return;
+            }
+            if (Thuvien.checkTrong(ht))
+            {
+                txtTenKH.Focus();
+                lbTenKH.Text = "Tên khách hàng không được để trống";
+                lbTenKH.ForeColor = Color.Red;
+                return;
+            }
+            if (Thuvien.checkTrong(gt))
+            {
+                cboGioitinh.Focus();
+                lbGioitinh.Text = "Giới tính không được để trống";
+                lbGioitinh.ForeColor = Color.Red;
+                return;
+            }
+            if (Thuvien.checkTrong(dt))
+            {
+                txtSDT.Focus();
+                lbSDT.Text = "Số điện thoại không được để trống";
+                lbSDT.ForeColor = Color.Red;
+                return;
+            }
+            if (Thuvien.checkTrong(mail))
+            {
+                txtEmail.Focus();
+                lbEmail.Text = "Email không được để trống";
+                lbEmail.ForeColor = Color.Red;
+                return;
+            }
+            if (Thuvien.checkTrong(tt))
+            {
+                cboTrangthai.Focus();
+                lbTrangthai.Text = "Trạng thái không được để trống";
+                lbTrangthai.ForeColor = Color.Red;
+                return;
+            }
+            if (Thuvien.checkTrong(dc))
+            {
+                txtDiachi.Focus();
+                lbDiachi.Text = "Địa chỉ không được để trống";
+                lbDiachi.ForeColor = Color.Red;
+                return;
+            }
+            if (Thuvien.checkTrong(cccd))
+            {
+                txtCCCD.Focus();
+                lbCCCD.Text = "CCCD không được để trống";
+                lbCCCD.ForeColor = Color.Red;
+                return;
+            }
 
             //Kiem tra trung ma
             //B2:Kết nối DB
@@ -52,7 +142,7 @@ namespace Quản_Lí_Kho_Vật_Tư
             Thuvien.con.Close();
             MessageBox.Show("Thêm mới thành công");
             Thuvien.load_KH(dgvKH, "Select* from Khachhang");
-
+            ClearForm();
         }
 
         private void Doitac_Khachhang_Load(object sender, EventArgs e)
@@ -114,7 +204,7 @@ namespace Quản_Lí_Kho_Vật_Tư
         private void txtMaKH_TextChanged(object sender, EventArgs e)
         {
             string makh=txtMaKH.Text.Trim();
-            if (!Thuvien.checkTrung("Khachhang", "Makhachhang", makh))
+            if (Thuvien.checkTrung("Khachhang", "Makhachhang", makh))
             {
                 lbMaKH.Text = "Mã khách hàng đã tồn tại";
                 lbMaKH.ForeColor=Color.Red;
@@ -128,7 +218,7 @@ namespace Quản_Lí_Kho_Vật_Tư
         private void txtSDT_TextChanged(object sender, EventArgs e)
         {
             string sdt = txtSDT.Text.Trim();
-            if (!Thuvien.checkTrung("Khachhang", "SDT", sdt))
+            if (Thuvien.checkTrung("Khachhang", "SDT", sdt))
             {
                 lbSDT.Text = "Số điện thoại đã tồn tại";
                 lbSDT.ForeColor = Color.Red;
@@ -142,7 +232,7 @@ namespace Quản_Lí_Kho_Vật_Tư
         private void txtEmail_TextChanged(object sender, EventArgs e)
         {
             string mail = txtEmail.Text.Trim();
-            if (!Thuvien.checkTrung("Khachhang", "Email", mail))
+            if (Thuvien.checkTrung("Khachhang", "Email", mail))
             {
                 lbEmail.Text = "Email đã tồn tại";
                 lbEmail.ForeColor = Color.Red;
@@ -152,6 +242,22 @@ namespace Quản_Lí_Kho_Vật_Tư
                 lbEmail.Text = "";
             }
         }
+
+        private void txtCCCD_TextChanged(object sender, EventArgs e)
+        {
+            string cccd = txtCCCD.Text.Trim();
+            if (Thuvien.checkTrung("Khachhang", "CCCD", cccd))
+            {
+                lbCCCD.Text = "CCCD đã tồn tại";
+                lbCCCD.ForeColor = Color.Red;
+            }
+            else
+            {
+                lbCCCD.Text = "";
+            }
+        }
+
     }
     }
+    
 

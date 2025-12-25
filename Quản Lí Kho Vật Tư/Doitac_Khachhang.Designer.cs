@@ -52,6 +52,14 @@
             this.Diachinhanhang = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CCCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.lbTrangthai = new System.Windows.Forms.Label();
+            this.lbCCCD = new System.Windows.Forms.Label();
+            this.lbDiachi = new System.Windows.Forms.Label();
+            this.lbGioitinh = new System.Windows.Forms.Label();
+            this.lbTenKH = new System.Windows.Forms.Label();
+            this.lbEmail = new System.Windows.Forms.Label();
+            this.lbSDT = new System.Windows.Forms.Label();
+            this.lbMaKH = new System.Windows.Forms.Label();
             this.button5 = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
@@ -82,14 +90,6 @@
             this.txtMaKH_tk = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.lbMaKH = new System.Windows.Forms.Label();
-            this.lbSDT = new System.Windows.Forms.Label();
-            this.lbEmail = new System.Windows.Forms.Label();
-            this.lbTenKH = new System.Windows.Forms.Label();
-            this.lbGioitinh = new System.Windows.Forms.Label();
-            this.lbDiachi = new System.Windows.Forms.Label();
-            this.lbCCCD = new System.Windows.Forms.Label();
-            this.lbTrangthai = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKH)).BeginInit();
@@ -328,6 +328,62 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Thêm mới khách hàng";
             // 
+            // lbTrangthai
+            // 
+            this.lbTrangthai.Location = new System.Drawing.Point(473, 209);
+            this.lbTrangthai.Name = "lbTrangthai";
+            this.lbTrangthai.Size = new System.Drawing.Size(197, 23);
+            this.lbTrangthai.TabIndex = 29;
+            // 
+            // lbCCCD
+            // 
+            this.lbCCCD.Location = new System.Drawing.Point(144, 209);
+            this.lbCCCD.Name = "lbCCCD";
+            this.lbCCCD.Size = new System.Drawing.Size(197, 23);
+            this.lbCCCD.TabIndex = 28;
+            // 
+            // lbDiachi
+            // 
+            this.lbDiachi.Location = new System.Drawing.Point(470, 144);
+            this.lbDiachi.Name = "lbDiachi";
+            this.lbDiachi.Size = new System.Drawing.Size(197, 23);
+            this.lbDiachi.TabIndex = 27;
+            // 
+            // lbGioitinh
+            // 
+            this.lbGioitinh.Location = new System.Drawing.Point(144, 162);
+            this.lbGioitinh.Name = "lbGioitinh";
+            this.lbGioitinh.Size = new System.Drawing.Size(197, 23);
+            this.lbGioitinh.TabIndex = 26;
+            // 
+            // lbTenKH
+            // 
+            this.lbTenKH.Location = new System.Drawing.Point(144, 108);
+            this.lbTenKH.Name = "lbTenKH";
+            this.lbTenKH.Size = new System.Drawing.Size(197, 23);
+            this.lbTenKH.TabIndex = 25;
+            // 
+            // lbEmail
+            // 
+            this.lbEmail.Location = new System.Drawing.Point(473, 93);
+            this.lbEmail.Name = "lbEmail";
+            this.lbEmail.Size = new System.Drawing.Size(197, 23);
+            this.lbEmail.TabIndex = 24;
+            // 
+            // lbSDT
+            // 
+            this.lbSDT.Location = new System.Drawing.Point(470, 50);
+            this.lbSDT.Name = "lbSDT";
+            this.lbSDT.Size = new System.Drawing.Size(197, 23);
+            this.lbSDT.TabIndex = 23;
+            // 
+            // lbMaKH
+            // 
+            this.lbMaKH.Location = new System.Drawing.Point(144, 57);
+            this.lbMaKH.Name = "lbMaKH";
+            this.lbMaKH.Size = new System.Drawing.Size(183, 23);
+            this.lbMaKH.TabIndex = 22;
+            // 
             // button5
             // 
             this.button5.Location = new System.Drawing.Point(734, 165);
@@ -336,7 +392,6 @@
             this.button5.TabIndex = 19;
             this.button5.Text = "Xuất Excel";
             this.button5.UseVisualStyleBackColor = true;
-          
             // 
             // btnXoa
             // 
@@ -417,6 +472,7 @@
             this.txtCCCD.Name = "txtCCCD";
             this.txtCCCD.Size = new System.Drawing.Size(180, 22);
             this.txtCCCD.TabIndex = 10;
+            this.txtCCCD.TextChanged += new System.EventHandler(this.txtCCCD_TextChanged);
             // 
             // label7
             // 
@@ -603,62 +659,6 @@
             this.label1.Size = new System.Drawing.Size(103, 16);
             this.label1.TabIndex = 0;
             this.label1.Text = "Tên khách hàng";
-            // 
-            // lbMaKH
-            // 
-            this.lbMaKH.Location = new System.Drawing.Point(144, 57);
-            this.lbMaKH.Name = "lbMaKH";
-            this.lbMaKH.Size = new System.Drawing.Size(183, 23);
-            this.lbMaKH.TabIndex = 22;
-            // 
-            // lbSDT
-            // 
-            this.lbSDT.Location = new System.Drawing.Point(470, 50);
-            this.lbSDT.Name = "lbSDT";
-            this.lbSDT.Size = new System.Drawing.Size(197, 23);
-            this.lbSDT.TabIndex = 23;
-            // 
-            // lbEmail
-            // 
-            this.lbEmail.Location = new System.Drawing.Point(473, 93);
-            this.lbEmail.Name = "lbEmail";
-            this.lbEmail.Size = new System.Drawing.Size(197, 23);
-            this.lbEmail.TabIndex = 24;
-            // 
-            // lbTenKH
-            // 
-            this.lbTenKH.Location = new System.Drawing.Point(144, 108);
-            this.lbTenKH.Name = "lbTenKH";
-            this.lbTenKH.Size = new System.Drawing.Size(197, 23);
-            this.lbTenKH.TabIndex = 25;
-            // 
-            // lbGioitinh
-            // 
-            this.lbGioitinh.Location = new System.Drawing.Point(144, 162);
-            this.lbGioitinh.Name = "lbGioitinh";
-            this.lbGioitinh.Size = new System.Drawing.Size(197, 23);
-            this.lbGioitinh.TabIndex = 26;
-            // 
-            // lbDiachi
-            // 
-            this.lbDiachi.Location = new System.Drawing.Point(470, 144);
-            this.lbDiachi.Name = "lbDiachi";
-            this.lbDiachi.Size = new System.Drawing.Size(197, 23);
-            this.lbDiachi.TabIndex = 27;
-            // 
-            // lbCCCD
-            // 
-            this.lbCCCD.Location = new System.Drawing.Point(144, 209);
-            this.lbCCCD.Name = "lbCCCD";
-            this.lbCCCD.Size = new System.Drawing.Size(197, 23);
-            this.lbCCCD.TabIndex = 28;
-            // 
-            // lbTrangthai
-            // 
-            this.lbTrangthai.Location = new System.Drawing.Point(473, 209);
-            this.lbTrangthai.Name = "lbTrangthai";
-            this.lbTrangthai.Size = new System.Drawing.Size(197, 23);
-            this.lbTrangthai.TabIndex = 29;
             // 
             // Doitac_Khachhang
             // 

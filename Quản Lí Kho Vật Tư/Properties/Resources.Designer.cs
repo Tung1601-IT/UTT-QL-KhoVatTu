@@ -63,6 +63,16 @@ namespace Quản_Lí_Kho_Vật_Tư.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
+        internal static byte[] FileMauKH {
+            get {
+                object obj = ResourceManager.GetObject("FileMauKH", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
         internal static byte[] FileNhap {
             get {
                 object obj = ResourceManager.GetObject("FileNhap", resourceCulture);

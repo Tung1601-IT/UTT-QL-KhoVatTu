@@ -23,7 +23,27 @@ namespace Quản_Lí_Kho_Vật_Tư
             InitializeComponent();
             
         }
-        
+        private void ClearForm()
+        {
+            txtMadoitac.Clear();
+            txtTendoitac.Clear();
+            txtSDT.Clear();
+            txtEmail.Clear();
+            txtDiachi.Clear();
+            txtGhichu.Clear();
+
+            if (cboNhomdoitac.Items.Count > 0)
+                cboNhomdoitac.SelectedIndex = 0;
+
+            lbMadoitac.Text = "";
+            lbTendoitac.Text = "";
+            lbSDT.Text = "";
+            lbEmail.Text = "";
+            lbDiachi.Text = "";
+            lbNhomdoitac.Text = "";
+
+            txtMadoitac.Focus();
+        }
         private void btnThem_Click(object sender, EventArgs e)
         {
             // B1: Lấy dữ liệu trên các đk đưa vào biến
@@ -112,7 +132,7 @@ namespace Quản_Lí_Kho_Vật_Tư
             Thuvien.con.Close();
             MessageBox.Show("Thêm mới thành công");
             Thuvien.load_KH(dgvNCC, "Select* from Doitac_NCC");
-
+            ClearForm();
         }
 
         private void Doitac_NCC_Load(object sender, EventArgs e)

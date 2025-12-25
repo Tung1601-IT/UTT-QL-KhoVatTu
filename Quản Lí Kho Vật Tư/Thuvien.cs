@@ -20,7 +20,7 @@ namespace Quản_Lí_Kho_Vật_Tư
         public static SqlConnection con = new SqlConnection(@"Data Source=MSI\xuan;Initial Catalog = QL_KhoVatTu; Integrated Security = True; Encrypt=True;TrustServerCertificate=True");
         //public static SqlConnection con = new SqlConnection("Data Source=TRUONGDOAN\\TRUONGDOAN;Initial Catalog=QL_KhoVatTu;User ID=sa;Password=Truong2022005!;Encrypt=True;TrustServerCertificate=True");
 
-        public static void load_KH(DataGridView dgv,string sql)
+        public static void load_KH(DataGridView dgv, string sql)
         {
             //B1:Kết nối DB
             if (con.State == ConnectionState.Closed)
@@ -73,7 +73,7 @@ namespace Quản_Lí_Kho_Vật_Tư
                 }
                 else
                     cmd.Parameters.AddWithValue("@Ghichu", ghichu);
-                if (checkTrung("Doitac_NCC", "Madoitac", ma)|| checkTrung("Doitac_NCC", "SDT", sdt)|| checkTrung("Doitac_NCC", "Email", email))
+                if (checkTrung("Doitac_NCC", "Madoitac", ma) || checkTrung("Doitac_NCC", "SDT", sdt) || checkTrung("Doitac_NCC", "Email", email))
                 {
                     MessageBox.Show("Có dữ liệu bị trùng lặp hoặc thông tin đã tồn tại.\n Vui lòng kiểm tra lại thông tin.");
                     return;
@@ -87,10 +87,10 @@ namespace Quản_Lí_Kho_Vật_Tư
                 con.Close();
             }
         }
-            public  static bool checkTrung(string table, string column, string value)
+        public static bool checkTrung(string table, string column, string value)
         {
             string sql = $"SELECT COUNT(*) FROM {table} WHERE {column} = @value";
-            
+
             if (con.State == ConnectionState.Closed)
                 con.Open();
 
@@ -101,7 +101,7 @@ namespace Quản_Lí_Kho_Vật_Tư
 
             return kq > 0; // true = trùng
         }
-            public static bool checkTrong(string value)
+        public static bool checkTrong(string value)
         {
             if (string.IsNullOrWhiteSpace(value))
                 return true;   // trống
@@ -115,8 +115,41 @@ namespace Quản_Lí_Kho_Vật_Tư
         {
             return email.EndsWith("@gmail.com");
         }
+        public static bool checkCCCD(string cccd)
+        {
+            return cccd.Length == 12 && cccd.All(char.IsDigit);
+        }
+        public static void ThemmoiKhachhang(string ma, string ten, string gt,
+                   string sdt, string email, string tt, string diachi, string cccd)
+        {
+            string sql = @"INSERT INTO Khachhang
+                  (Makhachhang, Tenkhachhang, Gioitinh, SDT, Email, Trangthai, Diachi,CCCD)
+                  VALUES (@Ma, @Ten, @Gioitinh, @SDT, @Email, @Trangthai,@Diachi, @CCCD)";
+
+            SqlCommand cmd = new SqlCommand(sql, con);
+            {
+                cmd.Parameters.AddWithValue("@Ma", ma);
+                cmd.Parameters.AddWithValue("@Ten", ten);
+                cmd.Parameters.AddWithValue("@Gioitinh", gt);
+                cmd.Parameters.AddWithValue("@SDT", sdt);
+                cmd.Parameters.AddWithValue("@Email", email);
+                cmd.Parameters.AddWithValue("@Trangthai", tt);
+                cmd.Parameters.AddWithValue("@Diachi", diachi);
+                cmd.Parameters.AddWithValue("@CCCD", cccd);
+                if (checkTrung("Khachhang", "Makhachhang", ma) || checkTrung("Khachhang", "SDT", sdt) || checkTrung("Khachhang", "Email", email) || checkTrung("Khachhang", "CCCD", cccd))
+                {
+                    MessageBox.Show("Có dữ liệu bị trùng lặp hoặc thông tin đã tồn tại.\n Vui lòng kiểm tra lại thông tin.");
+                    return;
+                }
+
+            }
+        }
     }
-
-
 }
+
+
+
+
+
+
 
