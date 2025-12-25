@@ -123,7 +123,7 @@ namespace Quản_Lí_Kho_Vật_Tư
                    string sdt, string email, string tt, string diachi, string cccd)
         {
             string sql = @"INSERT INTO Khachhang
-                  (Makhachhang, Tenkhachhang, Gioitinh, SDT, Email, Trangthai, Diachi,CCCD)
+                  (Makhachhang, Tenkhachhang, Gioitinh, SDT, Email, Trangthai, Diachinhanhang,CCCD)
                   VALUES (@Ma, @Ten, @Gioitinh, @SDT, @Email, @Trangthai,@Diachi, @CCCD)";
 
             SqlCommand cmd = new SqlCommand(sql, con);
@@ -141,8 +141,13 @@ namespace Quản_Lí_Kho_Vật_Tư
                     MessageBox.Show("Có dữ liệu bị trùng lặp hoặc thông tin đã tồn tại.\n Vui lòng kiểm tra lại thông tin.");
                     return;
                 }
+                if (con.State == ConnectionState.Closed)
+                    con.Open();
 
-            }
+                cmd.ExecuteNonQuery();
+                con.Close();
+            
+        }
         }
     }
 }

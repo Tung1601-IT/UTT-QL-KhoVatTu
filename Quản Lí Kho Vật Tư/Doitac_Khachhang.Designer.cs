@@ -60,7 +60,7 @@
             this.lbEmail = new System.Windows.Forms.Label();
             this.lbSDT = new System.Windows.Forms.Label();
             this.lbMaKH = new System.Windows.Forms.Label();
-            this.button5 = new System.Windows.Forms.Button();
+            this.btnXuatExcel = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
             this.cboTrangthai = new System.Windows.Forms.ComboBox();
@@ -90,6 +90,7 @@
             this.txtMaKH_tk = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnXuat = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKH)).BeginInit();
@@ -112,7 +113,7 @@
             this.nHÂNVIÊNToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(956, 54);
+            this.menuStrip1.Size = new System.Drawing.Size(1337, 54);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -187,7 +188,7 @@
             this.groupBox1.Controls.Add(this.groupBox2);
             this.groupBox1.Location = new System.Drawing.Point(21, 57);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(910, 767);
+            this.groupBox1.Size = new System.Drawing.Size(1316, 767);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             // 
@@ -209,7 +210,7 @@
             this.dgvKH.Name = "dgvKH";
             this.dgvKH.RowHeadersWidth = 51;
             this.dgvKH.RowTemplate.Height = 24;
-            this.dgvKH.Size = new System.Drawing.Size(889, 315);
+            this.dgvKH.Size = new System.Drawing.Size(1301, 315);
             this.dgvKH.TabIndex = 6;
             this.dgvKH.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvKH_CellClick);
             // 
@@ -301,7 +302,7 @@
             this.groupBox3.Controls.Add(this.lbEmail);
             this.groupBox3.Controls.Add(this.lbSDT);
             this.groupBox3.Controls.Add(this.lbMaKH);
-            this.groupBox3.Controls.Add(this.button5);
+            this.groupBox3.Controls.Add(this.btnXuatExcel);
             this.groupBox3.Controls.Add(this.btnXoa);
             this.groupBox3.Controls.Add(this.btnSua);
             this.groupBox3.Controls.Add(this.cboTrangthai);
@@ -384,14 +385,15 @@
             this.lbMaKH.Size = new System.Drawing.Size(183, 23);
             this.lbMaKH.TabIndex = 22;
             // 
-            // button5
+            // btnXuatExcel
             // 
-            this.button5.Location = new System.Drawing.Point(734, 165);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(89, 26);
-            this.button5.TabIndex = 19;
-            this.button5.Text = "Xuất Excel";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnXuatExcel.Location = new System.Drawing.Point(734, 165);
+            this.btnXuatExcel.Name = "btnXuatExcel";
+            this.btnXuatExcel.Size = new System.Drawing.Size(89, 26);
+            this.btnXuatExcel.TabIndex = 19;
+            this.btnXuatExcel.Text = "Nhập Excel";
+            this.btnXuatExcel.UseVisualStyleBackColor = true;
+            this.btnXuatExcel.Click += new System.EventHandler(this.btnXuatExcel_Click_1);
             // 
             // btnXoa
             // 
@@ -566,6 +568,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.btnXuat);
             this.groupBox2.Controls.Add(this.cboTrangthai_tk);
             this.groupBox2.Controls.Add(this.label12);
             this.groupBox2.Controls.Add(this.txtTenKH_tk);
@@ -660,11 +663,21 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Tên khách hàng";
             // 
+            // btnXuat
+            // 
+            this.btnXuat.Location = new System.Drawing.Point(724, 86);
+            this.btnXuat.Name = "btnXuat";
+            this.btnXuat.Size = new System.Drawing.Size(99, 39);
+            this.btnXuat.TabIndex = 30;
+            this.btnXuat.Text = "Xuất Excel";
+            this.btnXuat.UseVisualStyleBackColor = true;
+            this.btnXuat.Click += new System.EventHandler(this.btnXuat_Click);
+            // 
             // Doitac_Khachhang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(956, 820);
+            this.ClientSize = new System.Drawing.Size(1337, 820);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.menuStrip1);
             this.Name = "Doitac_Khachhang";
@@ -722,7 +735,7 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtCCCD;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btnXuatExcel;
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Button btnSua;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaKH;
@@ -747,5 +760,6 @@
         private System.Windows.Forms.Label lbGioitinh;
         private System.Windows.Forms.Label lbTenKH;
         private System.Windows.Forms.Label lbEmail;
+        private System.Windows.Forms.Button btnXuat;
     }
 }
