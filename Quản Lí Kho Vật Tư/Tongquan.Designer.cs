@@ -117,17 +117,21 @@
             // 
             // kháchHàngToolStripMenuItem
             // 
+            
             this.kháchHàngToolStripMenuItem.Name = "kháchHàngToolStripMenuItem";
             this.kháchHàngToolStripMenuItem.Size = new System.Drawing.Size(227, 26);
             this.kháchHàngToolStripMenuItem.Text = "Khách hàng";
             this.kháchHàngToolStripMenuItem.Click += new System.EventHandler(this.kháchHàngToolStripMenuItem_Click);
+            
             // 
             // nhàCungToolStripMenuItem
             // 
+            
             this.nhàCungToolStripMenuItem.Name = "nhàCungToolStripMenuItem";
             this.nhàCungToolStripMenuItem.Size = new System.Drawing.Size(227, 26);
             this.nhàCungToolStripMenuItem.Text = "Nhà cung cấp-Đại lý";
             this.nhàCungToolStripMenuItem.Click += new System.EventHandler(this.nhàCungToolStripMenuItem_Click);
+            
             // 
             // sẢNPHẢMDỊCHVỤToolStripMenuItem
             // 
@@ -156,6 +160,7 @@
             // 
             // nHÂNVIÊNToolStripMenuItem
             // 
+            
             this.nHÂNVIÊNToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.danhSáchNhânViênToolStripMenuItem,
             this.lịchLàmViệcToolStripMenuItem,
@@ -164,6 +169,7 @@
             this.nHÂNVIÊNToolStripMenuItem.Name = "nHÂNVIÊNToolStripMenuItem";
             this.nHÂNVIÊNToolStripMenuItem.Size = new System.Drawing.Size(102, 50);
             this.nHÂNVIÊNToolStripMenuItem.Text = "NHÂN VIÊN";
+            
             // 
             // dateTimePicker1
             // 
@@ -331,20 +337,8 @@
             // 
             // chart1
             // 
-            chartArea6.AxisX.Title = "Ngày";
-            chartArea6.AxisX2.Maximum = 20D;
-            chartArea6.AxisX2.Minimum = 0D;
-            chartArea6.AxisY.Title = "Doanh thu";
-            chartArea6.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea6);
-            legend6.Name = "Legend1";
-            this.chart1.Legends.Add(legend6);
-            this.chart1.Location = new System.Drawing.Point(115, 533);
-            this.chart1.Name = "chart1";
-            series6.ChartArea = "ChartArea1";
-            series6.Legend = "Legend1";
-            series6.Name = "Series1";
-            this.chart1.Series.Add(series6);
+           
+           
             this.chart1.Size = new System.Drawing.Size(695, 311);
             this.chart1.TabIndex = 16;
             this.chart1.Text = "chart1";
