@@ -46,35 +46,35 @@
             this.lbhoten = new System.Windows.Forms.Label();
             this.lbmanv = new System.Windows.Forms.Label();
             this.btnboqua = new System.Windows.Forms.Button();
-            this.ibtnluu = new FontAwesome.Sharp.IconButton();
             this.panelbottom = new System.Windows.Forms.Panel();
             this.panelfill = new System.Windows.Forms.Panel();
+            this.gbcongviec = new System.Windows.Forms.GroupBox();
+            this.txtluong = new System.Windows.Forms.TextBox();
+            this.cbtrangthai = new System.Windows.Forms.ComboBox();
+            this.lbluong = new System.Windows.Forms.Label();
+            this.lbtrangthai = new System.Windows.Forms.Label();
+            this.lbghichu = new System.Windows.Forms.Label();
+            this.tboxghichu = new System.Windows.Forms.RichTextBox();
+            this.cbchinhanh = new System.Windows.Forms.ComboBox();
+            this.cbphongban = new System.Windows.Forms.ComboBox();
+            this.cbchucdanh = new System.Windows.Forms.ComboBox();
+            this.datebatdau = new System.Windows.Forms.DateTimePicker();
+            this.lbchucdanh = new System.Windows.Forms.Label();
+            this.lbchinhanh = new System.Windows.Forms.Label();
+            this.lbphongban = new System.Windows.Forms.Label();
+            this.lbngaybatdau = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label3 = new System.Windows.Forms.Label();
             this.paneltop = new System.Windows.Forms.FlowLayoutPanel();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.gbcongviec = new System.Windows.Forms.GroupBox();
-            this.lbngaybatdau = new System.Windows.Forms.Label();
-            this.lbphongban = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.lbchinhanh = new System.Windows.Forms.Label();
-            this.lbchucdanh = new System.Windows.Forms.Label();
-            this.datebatdau = new System.Windows.Forms.DateTimePicker();
-            this.cbchucdanh = new System.Windows.Forms.ComboBox();
-            this.cbphongban = new System.Windows.Forms.ComboBox();
-            this.cbchinhanh = new System.Windows.Forms.ComboBox();
-            this.iconSplitButton1 = new FontAwesome.Sharp.IconSplitButton();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.tboxghichu = new System.Windows.Forms.RichTextBox();
-            this.lbghichu = new System.Windows.Forms.Label();
-            this.lbtrangthai = new System.Windows.Forms.Label();
-            this.lbluong = new System.Windows.Forms.Label();
-            this.cbtrangthai = new System.Windows.Forms.ComboBox();
-            this.txtluong = new System.Windows.Forms.TextBox();
+            this.ibtnluu = new FontAwesome.Sharp.IconButton();
+            this.iconSplitButton1 = new FontAwesome.Sharp.IconSplitButton();
             this.gbthemnv.SuspendLayout();
             this.panelbottom.SuspendLayout();
             this.panelfill.SuspendLayout();
-            this.paneltop.SuspendLayout();
             this.gbcongviec.SuspendLayout();
+            this.paneltop.SuspendLayout();
             this.SuspendLayout();
             // 
             // lbthemnv
@@ -91,6 +91,8 @@
             // 
             // gbthemnv
             // 
+            this.gbthemnv.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.gbthemnv.Controls.Add(this.txtdiachi);
             this.gbthemnv.Controls.Add(this.txtemail);
             this.gbthemnv.Controls.Add(this.txtsdt);
@@ -241,24 +243,6 @@
             this.btnboqua.UseVisualStyleBackColor = true;
             this.btnboqua.Click += new System.EventHandler(this.btnboqua_Click);
             // 
-            // ibtnluu
-            // 
-            this.ibtnluu.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.ibtnluu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.ibtnluu.ForeColor = System.Drawing.SystemColors.Control;
-            this.ibtnluu.IconChar = FontAwesome.Sharp.IconChar.FloppyDisk;
-            this.ibtnluu.IconColor = System.Drawing.Color.White;
-            this.ibtnluu.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.ibtnluu.IconSize = 40;
-            this.ibtnluu.Location = new System.Drawing.Point(364, 21);
-            this.ibtnluu.Name = "ibtnluu";
-            this.ibtnluu.Size = new System.Drawing.Size(129, 52);
-            this.ibtnluu.TabIndex = 3;
-            this.ibtnluu.Text = "Lưu";
-            this.ibtnluu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.ibtnluu.UseVisualStyleBackColor = false;
-            this.ibtnluu.Click += new System.EventHandler(this.ibtnluu_Click);
-            // 
             // panelbottom
             // 
             this.panelbottom.Controls.Add(this.btnboqua);
@@ -282,24 +266,10 @@
             this.panelfill.TabIndex = 6;
             this.panelfill.Paint += new System.Windows.Forms.PaintEventHandler(this.panelfill_Paint);
             // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, -61);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(800, 55);
-            this.flowLayoutPanel1.TabIndex = 2;
-            // 
-            // paneltop
-            // 
-            this.paneltop.Controls.Add(this.lbthemnv);
-            this.paneltop.Dock = System.Windows.Forms.DockStyle.Top;
-            this.paneltop.Location = new System.Drawing.Point(0, 0);
-            this.paneltop.Name = "paneltop";
-            this.paneltop.Size = new System.Drawing.Size(800, 42);
-            this.paneltop.TabIndex = 7;
-            // 
             // gbcongviec
             // 
+            this.gbcongviec.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.gbcongviec.Controls.Add(this.txtluong);
             this.gbcongviec.Controls.Add(this.cbtrangthai);
             this.gbcongviec.Controls.Add(this.lbluong);
@@ -321,72 +291,74 @@
             this.gbcongviec.TabStop = false;
             this.gbcongviec.Text = "Thông tin công việc";
             // 
-            // lbngaybatdau
+            // txtluong
             // 
-            this.lbngaybatdau.AutoSize = true;
-            this.lbngaybatdau.Location = new System.Drawing.Point(19, 45);
-            this.lbngaybatdau.Name = "lbngaybatdau";
-            this.lbngaybatdau.Size = new System.Drawing.Size(141, 16);
-            this.lbngaybatdau.TabIndex = 0;
-            this.lbngaybatdau.Text = "Ngày bắt đầu làm việc";
-            this.lbngaybatdau.Click += new System.EventHandler(this.lbngaybatdau_Click);
+            this.txtluong.Location = new System.Drawing.Point(542, 139);
+            this.txtluong.Name = "txtluong";
+            this.txtluong.Size = new System.Drawing.Size(200, 22);
+            this.txtluong.TabIndex = 15;
             // 
-            // lbphongban
+            // cbtrangthai
             // 
-            this.lbphongban.AutoSize = true;
-            this.lbphongban.Location = new System.Drawing.Point(434, 45);
-            this.lbphongban.Name = "lbphongban";
-            this.lbphongban.Size = new System.Drawing.Size(72, 16);
-            this.lbphongban.TabIndex = 1;
-            this.lbphongban.Text = "Phòng ban";
+            this.cbtrangthai.FormattingEnabled = true;
+            this.cbtrangthai.Items.AddRange(new object[] {
+            "Đang làm việc",
+            "Tạm nghỉ/Nghỉ phép",
+            "Đã nghỉ việc"});
+            this.cbtrangthai.Location = new System.Drawing.Point(217, 139);
+            this.cbtrangthai.Name = "cbtrangthai";
+            this.cbtrangthai.Size = new System.Drawing.Size(200, 24);
+            this.cbtrangthai.TabIndex = 14;
             // 
-            // label3
+            // lbluong
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(533, 532);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(44, 16);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "label3";
+            this.lbluong.AutoSize = true;
+            this.lbluong.Location = new System.Drawing.Point(438, 142);
+            this.lbluong.Name = "lbluong";
+            this.lbluong.Size = new System.Drawing.Size(68, 16);
+            this.lbluong.TabIndex = 13;
+            this.lbluong.Text = "Mức lương";
             // 
-            // lbchinhanh
+            // lbtrangthai
             // 
-            this.lbchinhanh.AutoSize = true;
-            this.lbchinhanh.Location = new System.Drawing.Point(434, 93);
-            this.lbchinhanh.Name = "lbchinhanh";
-            this.lbchinhanh.Size = new System.Drawing.Size(65, 16);
-            this.lbchinhanh.TabIndex = 3;
-            this.lbchinhanh.Text = "Chi nhánh";
+            this.lbtrangthai.AutoSize = true;
+            this.lbtrangthai.Location = new System.Drawing.Point(19, 142);
+            this.lbtrangthai.Name = "lbtrangthai";
+            this.lbtrangthai.Size = new System.Drawing.Size(67, 16);
+            this.lbtrangthai.TabIndex = 12;
+            this.lbtrangthai.Text = "Trạng thái";
             // 
-            // lbchucdanh
+            // lbghichu
             // 
-            this.lbchucdanh.AutoSize = true;
-            this.lbchucdanh.Location = new System.Drawing.Point(19, 93);
-            this.lbchucdanh.Name = "lbchucdanh";
-            this.lbchucdanh.Size = new System.Drawing.Size(70, 16);
-            this.lbchucdanh.TabIndex = 4;
-            this.lbchucdanh.Text = "Chức danh";
+            this.lbghichu.AutoSize = true;
+            this.lbghichu.Location = new System.Drawing.Point(53, 202);
+            this.lbghichu.Name = "lbghichu";
+            this.lbghichu.Size = new System.Drawing.Size(51, 16);
+            this.lbghichu.TabIndex = 11;
+            this.lbghichu.Text = "Ghi chú";
             // 
-            // datebatdau
+            // tboxghichu
             // 
-            this.datebatdau.Location = new System.Drawing.Point(217, 42);
-            this.datebatdau.Name = "datebatdau";
-            this.datebatdau.Size = new System.Drawing.Size(200, 22);
-            this.datebatdau.TabIndex = 6;
+            this.tboxghichu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tboxghichu.Location = new System.Drawing.Point(142, 185);
+            this.tboxghichu.Name = "tboxghichu";
+            this.tboxghichu.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
+            this.tboxghichu.Size = new System.Drawing.Size(578, 48);
+            this.tboxghichu.TabIndex = 10;
+            this.tboxghichu.Text = "";
             // 
-            // cbchucdanh
+            // cbchinhanh
             // 
-            this.cbchucdanh.FormattingEnabled = true;
-            this.cbchucdanh.Items.AddRange(new object[] {
-            "Quản lý",
-            "Nhân viên nghiệp vụ",
-            "Thủ kho",
-            "Nhân viên kĩ thuật",
-            "Nhân viên hỗ trợ"});
-            this.cbchucdanh.Location = new System.Drawing.Point(217, 90);
-            this.cbchucdanh.Name = "cbchucdanh";
-            this.cbchucdanh.Size = new System.Drawing.Size(200, 24);
-            this.cbchucdanh.TabIndex = 7;
+            this.cbchinhanh.FormattingEnabled = true;
+            this.cbchinhanh.Items.AddRange(new object[] {
+            "Miền Bắc",
+            "Miền Trung",
+            "Miền Nam"});
+            this.cbchinhanh.Location = new System.Drawing.Point(542, 90);
+            this.cbchinhanh.Name = "cbchinhanh";
+            this.cbchinhanh.Size = new System.Drawing.Size(200, 24);
+            this.cbchinhanh.TabIndex = 9;
             // 
             // cbphongban
             // 
@@ -403,17 +375,112 @@
             this.cbphongban.Size = new System.Drawing.Size(200, 24);
             this.cbphongban.TabIndex = 8;
             // 
-            // cbchinhanh
+            // cbchucdanh
             // 
-            this.cbchinhanh.FormattingEnabled = true;
-            this.cbchinhanh.Items.AddRange(new object[] {
-            "Miền Bắc",
-            "Miền Trung",
-            "Miền Nam"});
-            this.cbchinhanh.Location = new System.Drawing.Point(542, 90);
-            this.cbchinhanh.Name = "cbchinhanh";
-            this.cbchinhanh.Size = new System.Drawing.Size(200, 24);
-            this.cbchinhanh.TabIndex = 9;
+            this.cbchucdanh.FormattingEnabled = true;
+            this.cbchucdanh.Items.AddRange(new object[] {
+            "Quản lý",
+            "Nhân viên nghiệp vụ",
+            "Thủ kho",
+            "Nhân viên kĩ thuật",
+            "Nhân viên hỗ trợ"});
+            this.cbchucdanh.Location = new System.Drawing.Point(217, 90);
+            this.cbchucdanh.Name = "cbchucdanh";
+            this.cbchucdanh.Size = new System.Drawing.Size(200, 24);
+            this.cbchucdanh.TabIndex = 7;
+            // 
+            // datebatdau
+            // 
+            this.datebatdau.Location = new System.Drawing.Point(217, 42);
+            this.datebatdau.Name = "datebatdau";
+            this.datebatdau.Size = new System.Drawing.Size(200, 22);
+            this.datebatdau.TabIndex = 6;
+            // 
+            // lbchucdanh
+            // 
+            this.lbchucdanh.AutoSize = true;
+            this.lbchucdanh.Location = new System.Drawing.Point(19, 93);
+            this.lbchucdanh.Name = "lbchucdanh";
+            this.lbchucdanh.Size = new System.Drawing.Size(70, 16);
+            this.lbchucdanh.TabIndex = 4;
+            this.lbchucdanh.Text = "Chức danh";
+            // 
+            // lbchinhanh
+            // 
+            this.lbchinhanh.AutoSize = true;
+            this.lbchinhanh.Location = new System.Drawing.Point(434, 93);
+            this.lbchinhanh.Name = "lbchinhanh";
+            this.lbchinhanh.Size = new System.Drawing.Size(65, 16);
+            this.lbchinhanh.TabIndex = 3;
+            this.lbchinhanh.Text = "Chi nhánh";
+            // 
+            // lbphongban
+            // 
+            this.lbphongban.AutoSize = true;
+            this.lbphongban.Location = new System.Drawing.Point(434, 45);
+            this.lbphongban.Name = "lbphongban";
+            this.lbphongban.Size = new System.Drawing.Size(72, 16);
+            this.lbphongban.TabIndex = 1;
+            this.lbphongban.Text = "Phòng ban";
+            // 
+            // lbngaybatdau
+            // 
+            this.lbngaybatdau.AutoSize = true;
+            this.lbngaybatdau.Location = new System.Drawing.Point(19, 45);
+            this.lbngaybatdau.Name = "lbngaybatdau";
+            this.lbngaybatdau.Size = new System.Drawing.Size(141, 16);
+            this.lbngaybatdau.TabIndex = 0;
+            this.lbngaybatdau.Text = "Ngày bắt đầu làm việc";
+            this.lbngaybatdau.Click += new System.EventHandler(this.lbngaybatdau_Click);
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, -61);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(800, 55);
+            this.flowLayoutPanel1.TabIndex = 2;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(533, 532);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(44, 16);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "label3";
+            // 
+            // paneltop
+            // 
+            this.paneltop.Controls.Add(this.lbthemnv);
+            this.paneltop.Dock = System.Windows.Forms.DockStyle.Top;
+            this.paneltop.Location = new System.Drawing.Point(0, 0);
+            this.paneltop.Name = "paneltop";
+            this.paneltop.Size = new System.Drawing.Size(800, 42);
+            this.paneltop.TabIndex = 7;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
+            // ibtnluu
+            // 
+            this.ibtnluu.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.ibtnluu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.ibtnluu.ForeColor = System.Drawing.SystemColors.Control;
+            this.ibtnluu.IconChar = FontAwesome.Sharp.IconChar.FloppyDisk;
+            this.ibtnluu.IconColor = System.Drawing.Color.White;
+            this.ibtnluu.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ibtnluu.IconSize = 40;
+            this.ibtnluu.Location = new System.Drawing.Point(364, 21);
+            this.ibtnluu.Name = "ibtnluu";
+            this.ibtnluu.Size = new System.Drawing.Size(129, 52);
+            this.ibtnluu.TabIndex = 3;
+            this.ibtnluu.Text = "Lưu";
+            this.ibtnluu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.ibtnluu.UseVisualStyleBackColor = false;
+            this.ibtnluu.Click += new System.EventHandler(this.ibtnluu_Click);
             // 
             // iconSplitButton1
             // 
@@ -426,69 +493,6 @@
             this.iconSplitButton1.Rotation = 0D;
             this.iconSplitButton1.Size = new System.Drawing.Size(23, 23);
             this.iconSplitButton1.Text = "iconSplitButton1";
-            // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
-            // 
-            // tboxghichu
-            // 
-            this.tboxghichu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tboxghichu.Location = new System.Drawing.Point(142, 185);
-            this.tboxghichu.Name = "tboxghichu";
-            this.tboxghichu.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-            this.tboxghichu.Size = new System.Drawing.Size(578, 48);
-            this.tboxghichu.TabIndex = 10;
-            this.tboxghichu.Text = "";
-            // 
-            // lbghichu
-            // 
-            this.lbghichu.AutoSize = true;
-            this.lbghichu.Location = new System.Drawing.Point(53, 202);
-            this.lbghichu.Name = "lbghichu";
-            this.lbghichu.Size = new System.Drawing.Size(51, 16);
-            this.lbghichu.TabIndex = 11;
-            this.lbghichu.Text = "Ghi chú";
-            // 
-            // lbtrangthai
-            // 
-            this.lbtrangthai.AutoSize = true;
-            this.lbtrangthai.Location = new System.Drawing.Point(19, 142);
-            this.lbtrangthai.Name = "lbtrangthai";
-            this.lbtrangthai.Size = new System.Drawing.Size(67, 16);
-            this.lbtrangthai.TabIndex = 12;
-            this.lbtrangthai.Text = "Trạng thái";
-            // 
-            // lbluong
-            // 
-            this.lbluong.AutoSize = true;
-            this.lbluong.Location = new System.Drawing.Point(438, 142);
-            this.lbluong.Name = "lbluong";
-            this.lbluong.Size = new System.Drawing.Size(68, 16);
-            this.lbluong.TabIndex = 13;
-            this.lbluong.Text = "Mức lương";
-            // 
-            // cbtrangthai
-            // 
-            this.cbtrangthai.FormattingEnabled = true;
-            this.cbtrangthai.Items.AddRange(new object[] {
-            "Đang làm việc",
-            "Tạm nghỉ/Nghỉ phép",
-            "Đã nghỉ việc"});
-            this.cbtrangthai.Location = new System.Drawing.Point(217, 139);
-            this.cbtrangthai.Name = "cbtrangthai";
-            this.cbtrangthai.Size = new System.Drawing.Size(200, 24);
-            this.cbtrangthai.TabIndex = 14;
-            // 
-            // txtluong
-            // 
-            this.txtluong.Location = new System.Drawing.Point(542, 139);
-            this.txtluong.Name = "txtluong";
-            this.txtluong.Size = new System.Drawing.Size(200, 22);
-            this.txtluong.TabIndex = 15;
             // 
             // Themnhanvien
             // 
@@ -508,10 +512,10 @@
             this.panelbottom.ResumeLayout(false);
             this.panelfill.ResumeLayout(false);
             this.panelfill.PerformLayout();
-            this.paneltop.ResumeLayout(false);
-            this.paneltop.PerformLayout();
             this.gbcongviec.ResumeLayout(false);
             this.gbcongviec.PerformLayout();
+            this.paneltop.ResumeLayout(false);
+            this.paneltop.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -519,9 +523,6 @@
         #endregion
 
         private System.Windows.Forms.Label lbthemnv;
-        private System.Windows.Forms.GroupBox gbthemnv;
-        private System.Windows.Forms.Button btnboqua;
-        private FontAwesome.Sharp.IconButton ibtnluu;
         private System.Windows.Forms.Label lbngaysinh;
         private System.Windows.Forms.Label lbgioitinh;
         private System.Windows.Forms.Label lbhoten;
@@ -529,35 +530,38 @@
         private System.Windows.Forms.Label lbdiachi;
         private System.Windows.Forms.Label lbemail;
         private System.Windows.Forms.Label lbsdt;
-        private System.Windows.Forms.TextBox txtdiachi;
-        private System.Windows.Forms.TextBox txtemail;
-        private System.Windows.Forms.TextBox txtsdt;
-        private System.Windows.Forms.DateTimePicker datengaysinh;
-        private System.Windows.Forms.ComboBox cbgioitinh;
-        private System.Windows.Forms.TextBox txthoten;
-        private System.Windows.Forms.TextBox txtmanv;
-        private System.Windows.Forms.Panel panelbottom;
         private System.Windows.Forms.Panel panelfill;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.FlowLayoutPanel paneltop;
-        private System.Windows.Forms.GroupBox gbcongviec;
-        private System.Windows.Forms.DateTimePicker datebatdau;
         private System.Windows.Forms.Label lbchucdanh;
         private System.Windows.Forms.Label lbchinhanh;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lbphongban;
         private System.Windows.Forms.Label lbngaybatdau;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
-        private System.Windows.Forms.ComboBox cbchucdanh;
-        private System.Windows.Forms.ComboBox cbchinhanh;
-        private System.Windows.Forms.ComboBox cbphongban;
-        private System.Windows.Forms.RichTextBox tboxghichu;
         private FontAwesome.Sharp.IconSplitButton iconSplitButton1;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.Label lbghichu;
-        private System.Windows.Forms.TextBox txtluong;
-        private System.Windows.Forms.ComboBox cbtrangthai;
         private System.Windows.Forms.Label lbluong;
         private System.Windows.Forms.Label lbtrangthai;
+        public System.Windows.Forms.TextBox txtemail;
+        public System.Windows.Forms.TextBox txtsdt;
+        public System.Windows.Forms.DateTimePicker datengaysinh;
+        public System.Windows.Forms.ComboBox cbgioitinh;
+        public System.Windows.Forms.TextBox txthoten;
+        public System.Windows.Forms.TextBox txtmanv;
+        public System.Windows.Forms.TextBox txtdiachi;
+        public System.Windows.Forms.DateTimePicker datebatdau;
+        public System.Windows.Forms.ComboBox cbchucdanh;
+        public System.Windows.Forms.ComboBox cbchinhanh;
+        public System.Windows.Forms.ComboBox cbphongban;
+        public System.Windows.Forms.RichTextBox tboxghichu;
+        public System.Windows.Forms.TextBox txtluong;
+        public System.Windows.Forms.ComboBox cbtrangthai;
+        public System.Windows.Forms.GroupBox gbthemnv;
+        public System.Windows.Forms.Button btnboqua;
+        public FontAwesome.Sharp.IconButton ibtnluu;
+        public System.Windows.Forms.Panel panelbottom;
+        public System.Windows.Forms.GroupBox gbcongviec;
     }
 }

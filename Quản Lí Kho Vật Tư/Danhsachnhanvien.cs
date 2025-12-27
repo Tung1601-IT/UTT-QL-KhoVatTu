@@ -36,7 +36,7 @@ namespace Quản_Lí_Kho_Vật_Tư
             string sql = "select * from Danhsachnhanvien";
             Thuvien.load_KH(dgnhanvien, sql);
         }
-      
+
         private void ibtnnhanvien_Click(object sender, EventArgs e)
         {
             Themnhanvien tnv = new Themnhanvien();
@@ -69,7 +69,7 @@ namespace Quản_Lí_Kho_Vật_Tư
                 MessageBox.Show("Loi:" + ex.Message);
             }
         }
-        public void ExportExcel(System.Data.DataTable tb,string sheetname)
+        public void ExportExcel(System.Data.DataTable tb, string sheetname)
         {
             //1.Tao cac doi tuong Excel 
             // 1. Tạo các đối tượng Excel
@@ -101,11 +101,11 @@ namespace Quản_Lí_Kho_Vật_Tư
             head.Font.Size = "16";
             head.HorizontalAlignment = ex_cel.XlHAlign.xlHAlignCenter;
             //3.Tao tieu de cho cot
-            ex_cel.Range cl1=oSheet.get_Range("A3", "A3");
+            ex_cel.Range cl1 = oSheet.get_Range("A3", "A3");
             cl1.Value2 = "STT";
             cl1.ColumnWidth = 7.5;
 
-            ex_cel.Range cl2=oSheet.get_Range("B3", "B3");
+            ex_cel.Range cl2 = oSheet.get_Range("B3", "B3");
             cl2.Value2 = "Ma Nhan Vien";
             cl2.ColumnWidth = 25.0;
 
@@ -113,7 +113,7 @@ namespace Quản_Lí_Kho_Vật_Tư
             cl3.Value2 = "Ho va ten";
             cl3.ColumnWidth = 40.0;
 
-            ex_cel.Range cl4 = oSheet.get_Range("D3","D3");
+            ex_cel.Range cl4 = oSheet.get_Range("D3", "D3");
             cl4.Value2 = "Gioi tinh";
             cl4.ColumnWidth = 10.0;
 
@@ -129,12 +129,12 @@ namespace Quản_Lí_Kho_Vật_Tư
             cl7.Value2 = "Email";
             cl7.ColumnWidth = 45.0;
 
-            ex_cel.Range cl8 = oSheet.get_Range("H3"," H3");
+            ex_cel.Range cl8 = oSheet.get_Range("H3", " H3");
             cl8.Value2 = "Dia chi";
             cl8.ColumnWidth = 55.0;
 
             // 9.Ngày bắt đầu làm việc
-ex_cel.Range cl9 = oSheet.get_Range("I3", "I3");
+            ex_cel.Range cl9 = oSheet.get_Range("I3", "I3");
             cl9.Value2 = "Ngày bắt đầu";
             cl9.ColumnWidth = 20.0;
 
@@ -179,7 +179,7 @@ ex_cel.Range cl9 = oSheet.get_Range("I3", "I3");
             rowHead.HorizontalAlignment = ex_cel.XlHAlign.xlHAlignCenter;
             // Tạo mảng đối tượng để lưu dữ toàn bồ dữ liệu trong DataTable,
             // vì dữ liệu được được gán vào các Cell trong Excel phải thông qua object thuần.
-            object[,] arr = new object[tb.Rows.Count,15];
+            object[,] arr = new object[tb.Rows.Count, 15];
             //Chuyển dữ liệu từ DataTable vào mảng đối tượng
             for (int r = 0; r < tb.Rows.Count; r++)
             {
@@ -189,9 +189,9 @@ ex_cel.Range cl9 = oSheet.get_Range("I3", "I3");
 
                 {
                     if (c == 4)
-                        arr[r, c+1] = "'" + dr[c];
+                        arr[r, c + 1] = "'" + dr[c];
                     else
-                        arr[r, c+1] = dr[c];
+                        arr[r, c + 1] = dr[c];
 
                 }
             }
@@ -199,7 +199,7 @@ ex_cel.Range cl9 = oSheet.get_Range("I3", "I3");
             int rowStart = 4;
             int columnStart = 1;
             int rowEnd = rowStart + tb.Rows.Count - 1;
-            int columnEnd = tb.Columns.Count+1;
+            int columnEnd = tb.Columns.Count + 1;
             // Ô bắt đầu điền dữ liệu
             ex_cel.Range c1 = (ex_cel.Range)oSheet.Cells[rowStart, columnStart];
             // Ô kết thúc điền dữ liệu
@@ -216,7 +216,7 @@ ex_cel.Range cl9 = oSheet.get_Range("I3", "I3");
             ex_cel.Range c4 = oSheet.get_Range(c1, c3);
             oSheet.get_Range(c3, c4).HorizontalAlignment = ex_cel.XlHAlign.xlHAlignCenter;
             //Định dạng ngày sinh
-            ex_cel.Range cl_ngs = oSheet.get_Range("E4","E" + (tb.Rows.Count + 3).ToString());
+            ex_cel.Range cl_ngs = oSheet.get_Range("E4", "E" + (tb.Rows.Count + 3).ToString());
             cl_ngs.Columns.NumberFormat = "dd/mm/yyyy";
             oExcel.Visible = true;
             //Định dạng ngày bắt đầu
@@ -230,82 +230,102 @@ ex_cel.Range cl9 = oSheet.get_Range("I3", "I3");
         private void ibtnxuatfile_Click(object sender, EventArgs e)
         {
             //Lay du lieu tren dgv dua vao datatable
-            System.Data.DataTable dt= (System.Data.DataTable)dgnhanvien.DataSource;
-            if(dt!=null && dt.Rows.Count>0)
+            System.Data.DataTable dt = (System.Data.DataTable)dgnhanvien.DataSource;
+            if (dt != null && dt.Rows.Count > 0)
             {
                 ExportExcel(dt, "Danh sach nhan vien");
             }
             else
             {
-                MessageBox.Show("Khong co du lieu de xuat ra file Excel","Thong bao",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                MessageBox.Show("Khong co du lieu de xuat ra file Excel", "Thong bao", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-        }
-        public void ImportExcel(string filePath)
-        {
-            // 1. Khởi tạo đối tượng Excel để đọc
-            ex_cel.Application oExcel = new ex_cel.Application();
-            ex_cel.Workbooks oBooks = oExcel.Workbooks;
-            ex_cel.Workbook oBook = oBooks.Open(filePath);
-            ex_cel.Worksheet oSheet = (ex_cel.Worksheet)oBook.Worksheets.get_Item(1);
-
-            // 2. Xác định dòng cuối cùng có dữ liệu
-            int lastRow = oSheet.Cells.SpecialCells(ex_cel.XlCellType.xlCellTypeLastCell).Row;
-
-            // 3. Vòng lặp đọc dữ liệu (Bắt đầu từ dòng 4)
-            for (int i = 4; i <= lastRow; i++)
-            {
-                // Cột 1 (A) là STT -> Chúng ta bỏ qua, không lưu vào DB
-                // Cột 2 (B) là Mã nhân viên
-                string Manv = ((ex_cel.Range)oSheet.Cells[i, 2]).Text.ToString();
-                // Cột 3 (C) là Họ tên
-                string Hoten = ((ex_cel.Range)oSheet.Cells[i, 3]).Text.ToString();
-                string Gioitnh = ((ex_cel.Range)oSheet.Cells[i, 4]).Text.ToString();
-                string Ngaysinh = ((ex_cel.Range)oSheet.Cells[i, 5]).Text.ToString();
-                DateTime time = DateTime.ParseExact(Ngaysinh, "dd/MM/yyyy", null);
-                string NgaysinhSQL= time.ToString("yyyy-MM-dd");
-                string Sdt = ((ex_cel.Range)oSheet.Cells[i, 6]).Text.ToString();
-                string Email = ((ex_cel.Range)oSheet.Cells[i, 7]).Text.ToString();
-                string Diachi = ((ex_cel.Range)oSheet.Cells[i, 8]).Text.ToString();
-
-                if (!string.IsNullOrEmpty(Manv))
-                {
-                    // 4. Lệnh SQL INSERT
-                    string sql = "INSERT INTO  Danhsachnhanvien (Manv, Hoten, Gioitinh, Ngaysinh, Sdt, Email, Diachi) " +
-                                 "VALUES ('" + Manv + "', N'" + Hoten + "', N'" + Gioitnh + "', '" + NgaysinhSQL + "', '" + Sdt + "', '" + Email + "', N'" + Diachi + "')";
-
-                    if (Thuvien.con.State == ConnectionState.Closed) Thuvien.con.Open();
-                    SqlCommand cmd = new SqlCommand(sql, Thuvien.con);
-                    cmd.ExecuteNonQuery();
-                    Thuvien.con.Close();
-                }
-            }
-
-            // 5. Giải phóng bộ nhớ
-            oBook.Close(false);
-            oExcel.Quit();
-            System.Runtime.InteropServices.Marshal.ReleaseComObject(oSheet);
-            System.Runtime.InteropServices.Marshal.ReleaseComObject(oBook);
-            System.Runtime.InteropServices.Marshal.ReleaseComObject(oExcel);
         }
 
         private void icnhapfile_Click(object sender, EventArgs e)
         {
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.Filter = "Excel Files|*.xls;*.xlsx";
+            FileExcel_NV frm = new FileExcel_NV();
 
-            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            // Khi Form Excel đóng lại với kết quả OK
+            if (frm.ShowDialog() == DialogResult.OK)
             {
-                try
-                {
-                    ImportExcel(openFileDialog.FileName);
-                    MessageBox.Show("Nhập dữ liệu thành công!", "Thông báo");
+                LoadData(); // Tự động làm mới bảng nhân viên
+            }
+        }
 
-                    // Tải lại bảng để thấy dữ liệu mới
-                    LoadData();
-                }
-                catch (Exception ex)
+        private void ibtnxoa_Click(object sender, EventArgs e)
+        {
+            string Manv = txtmanv.Text.Trim(); // .Trim() để loại bỏ khoảng trắng thừa
+            if (string.IsNullOrEmpty(Manv))
+            {
+                MessageBox.Show("Vui lòng chọn nhân viên cần xóa!");
+                return;
+            }
+
+            DialogResult kq = MessageBox.Show("Bạn có chắc chắn muốn xóa nhân viên này không?", "Xác nhận", MessageBoxButtons.YesNo);
+            if (kq == DialogResult.Yes)
+            {
+                // Sửa câu lệnh chỉ dùng Manv để xóa
+                string sql = "DELETE FROM Danhsachnhanvien WHERE Manv = '" + Manv + "'";
+
+                Thuvien.upd_del(sql);
+                MessageBox.Show("Xóa nhân viên thành công");
+
+                // Gọi lại hàm LoadData để cập nhật DataGridView
+                LoadData();
+            }
+        }
+
+        private void dgnhanvien_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dgnhanvien_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                Themnhanvien tnv = new Themnhanvien();
+                DataGridViewRow row = dgnhanvien.Rows[e.RowIndex];
+
+                // --- NHÓM THÔNG TIN CÁ NHÂN ---
+                tnv.txtmanv.Text = row.Cells["fgmanv"].Value.ToString();
+                tnv.txthoten.Text = row.Cells["gdhoten"].Value.ToString();
+                tnv.cbgioitinh.Text = row.Cells["dggioitinh"].Value.ToString();
+                tnv.datengaysinh.Value = Convert.ToDateTime(row.Cells["dgngaysinh"].Value);
+                tnv.txtsdt.Text = row.Cells["dgsdt"].Value.ToString();
+                tnv.txtemail.Text = row.Cells["dgemail"].Value.ToString();
+                tnv.txtdiachi.Text = row.Cells["dgdiachi"].Value.ToString();
+
+                // --- NHÓM THÔNG TIN CÔNG VIỆC  ---
+                // 1. Ngày bắt đầu làm việc
+                if (row.Cells["dgngaybatdaulamviec"].Value != DBNull.Value)
+                    tnv.datebatdau.Value = Convert.ToDateTime(row.Cells["dgngaybatdaulamviec"].Value);
+
+                // 2. Chức danh
+                tnv.cbchucdanh.Text = row.Cells["dgchucdanh"].Value.ToString();
+
+                // 3. Phòng ban
+                tnv.cbphongban.Text = row.Cells["dgphongban"].Value.ToString();
+
+                // 4. Chi nhánh
+                tnv.cbchinhanh.Text = row.Cells["dgchinhanh"].Value.ToString();
+
+                // 5. Trạng thái
+                tnv.cbtrangthai.Text = row.Cells["dgtrangthai"].Value.ToString();
+
+                // 6. Mức lương
+                tnv.txtluong.Text = row.Cells["dgmucluong"].Value.ToString();
+
+                // 7. Ghi chú
+                tnv.tboxghichu.Text = row.Cells["dgghichu"].Value.ToString();
+
+                // --- CẤU HÌNH FORM ---
+                tnv.txtmanv.Enabled = false; // Khóa mã nhân viên vì là khóa chính (Primary Key)
+
+                // Hiển thị Form và chờ phản hồi
+                if (tnv.ShowDialog() == DialogResult.OK)
                 {
-                    MessageBox.Show("Lỗi khi nhập file: " + ex.Message);
+                    LoadData(); // Tự động làm mới bảng sau khi người dùng nhấn Lưu
                 }
             }
         }

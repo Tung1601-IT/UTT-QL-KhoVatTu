@@ -375,14 +375,98 @@
   <data name="dgdiachi.Width" type="System.Int32, mscorlib">
     <value>125</value>
   </data>
+  <metadata name="dgngaybatdaulamviec.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="dgngaybatdaulamviec.HeaderText" xml:space="preserve">
+    <value>Ngày bắt đầu làm việc</value>
+  </data>
+  <data name="dgngaybatdaulamviec.MinimumWidth" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="dgngaybatdaulamviec.Width" type="System.Int32, mscorlib">
+    <value>125</value>
+  </data>
+  <metadata name="dgchucdanh.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="dgchucdanh.HeaderText" xml:space="preserve">
+    <value>Chức danh</value>
+  </data>
+  <data name="dgchucdanh.MinimumWidth" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="dgchucdanh.Width" type="System.Int32, mscorlib">
+    <value>125</value>
+  </data>
+  <metadata name="dgphongban.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="dgphongban.HeaderText" xml:space="preserve">
+    <value>Phòng ban</value>
+  </data>
+  <data name="dgphongban.MinimumWidth" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="dgphongban.Width" type="System.Int32, mscorlib">
+    <value>125</value>
+  </data>
+  <metadata name="dgchinhanh.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="dgchinhanh.HeaderText" xml:space="preserve">
+    <value>Chi nhánh</value>
+  </data>
+  <data name="dgchinhanh.MinimumWidth" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="dgchinhanh.Width" type="System.Int32, mscorlib">
+    <value>125</value>
+  </data>
+  <metadata name="dgtrangthai.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="dgtrangthai.HeaderText" xml:space="preserve">
+    <value>Trạng thái</value>
+  </data>
+  <data name="dgtrangthai.MinimumWidth" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="dgtrangthai.Width" type="System.Int32, mscorlib">
+    <value>125</value>
+  </data>
+  <metadata name="dgmucluong.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="dgmucluong.HeaderText" xml:space="preserve">
+    <value>Mức lương</value>
+  </data>
+  <data name="dgmucluong.MinimumWidth" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="dgmucluong.Width" type="System.Int32, mscorlib">
+    <value>125</value>
+  </data>
+  <metadata name="dgghichu.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="dgghichu.HeaderText" xml:space="preserve">
+    <value>Ghi chú</value>
+  </data>
+  <data name="dgghichu.MinimumWidth" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="dgghichu.Width" type="System.Int32, mscorlib">
+    <value>125</value>
+  </data>
   <data name="dgnhanvien.Location" type="System.Drawing.Point, System.Drawing">
-    <value>29, 246</value>
+    <value>29, 304</value>
   </data>
   <data name="dgnhanvien.RowHeadersWidth" type="System.Int32, mscorlib">
     <value>51</value>
   </data>
   <data name="dgnhanvien.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1009, 284</value>
+    <value>1009, 358</value>
   </data>
   <data name="dgnhanvien.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
@@ -401,6 +485,102 @@
   </data>
   <data name="gbtimkiemnhanvien.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
+  </data>
+  <data name="&gt;&gt;ibtnxoa.Name" xml:space="preserve">
+    <value>ibtnxoa</value>
+  </data>
+  <data name="&gt;&gt;ibtnxoa.Type" xml:space="preserve">
+    <value>FontAwesome.Sharp.IconButton, FontAwesome.Sharp, Version=6.6.0.0, Culture=neutral, PublicKeyToken=d16d1e4e568ec10f</value>
+  </data>
+  <data name="&gt;&gt;ibtnxoa.Parent" xml:space="preserve">
+    <value>gbtimkiemnhanvien</value>
+  </data>
+  <data name="&gt;&gt;ibtnxoa.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;ibtntimkiemnhanvien.Name" xml:space="preserve">
+    <value>ibtntimkiemnhanvien</value>
+  </data>
+  <data name="&gt;&gt;ibtntimkiemnhanvien.Type" xml:space="preserve">
+    <value>FontAwesome.Sharp.IconButton, FontAwesome.Sharp, Version=6.6.0.0, Culture=neutral, PublicKeyToken=d16d1e4e568ec10f</value>
+  </data>
+  <data name="&gt;&gt;ibtntimkiemnhanvien.Parent" xml:space="preserve">
+    <value>gbtimkiemnhanvien</value>
+  </data>
+  <data name="&gt;&gt;ibtntimkiemnhanvien.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;txtsdt.Name" xml:space="preserve">
+    <value>txtsdt</value>
+  </data>
+  <data name="&gt;&gt;txtsdt.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtsdt.Parent" xml:space="preserve">
+    <value>gbtimkiemnhanvien</value>
+  </data>
+  <data name="&gt;&gt;txtsdt.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;txtmanv.Name" xml:space="preserve">
+    <value>txtmanv</value>
+  </data>
+  <data name="&gt;&gt;txtmanv.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtmanv.Parent" xml:space="preserve">
+    <value>gbtimkiemnhanvien</value>
+  </data>
+  <data name="&gt;&gt;txtmanv.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;lbsdt.Name" xml:space="preserve">
+    <value>lbsdt</value>
+  </data>
+  <data name="&gt;&gt;lbsdt.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbsdt.Parent" xml:space="preserve">
+    <value>gbtimkiemnhanvien</value>
+  </data>
+  <data name="&gt;&gt;lbsdt.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;lbmanv.Name" xml:space="preserve">
+    <value>lbmanv</value>
+  </data>
+  <data name="&gt;&gt;lbmanv.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbmanv.Parent" xml:space="preserve">
+    <value>gbtimkiemnhanvien</value>
+  </data>
+  <data name="&gt;&gt;lbmanv.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="gbtimkiemnhanvien.Location" type="System.Drawing.Point, System.Drawing">
+    <value>29, 148</value>
+  </data>
+  <data name="gbtimkiemnhanvien.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1009, 140</value>
+  </data>
+  <data name="gbtimkiemnhanvien.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="gbtimkiemnhanvien.Text" xml:space="preserve">
+    <value>Tìm kiếm nhân viên</value>
+  </data>
+  <data name="&gt;&gt;gbtimkiemnhanvien.Name" xml:space="preserve">
+    <value>gbtimkiemnhanvien</value>
+  </data>
+  <data name="&gt;&gt;gbtimkiemnhanvien.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;gbtimkiemnhanvien.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;gbtimkiemnhanvien.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="ibtntimkiemnhanvien.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -430,10 +610,10 @@
     <value>gbtimkiemnhanvien</value>
   </data>
   <data name="&gt;&gt;ibtntimkiemnhanvien.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="txtsdt.Location" type="System.Drawing.Point, System.Drawing">
-    <value>622, 32</value>
+    <value>611, 66</value>
   </data>
   <data name="txtsdt.Size" type="System.Drawing.Size, System.Drawing">
     <value>175, 26</value>
@@ -451,10 +631,10 @@
     <value>gbtimkiemnhanvien</value>
   </data>
   <data name="&gt;&gt;txtsdt.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="txtmanv.Location" type="System.Drawing.Point, System.Drawing">
-    <value>194, 32</value>
+    <value>183, 72</value>
   </data>
   <data name="txtmanv.Size" type="System.Drawing.Size, System.Drawing">
     <value>202, 26</value>
@@ -472,7 +652,7 @@
     <value>gbtimkiemnhanvien</value>
   </data>
   <data name="&gt;&gt;txtmanv.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="lbsdt.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -481,7 +661,7 @@
     <value>NoControl</value>
   </data>
   <data name="lbsdt.Location" type="System.Drawing.Point, System.Drawing">
-    <value>486, 35</value>
+    <value>475, 72</value>
   </data>
   <data name="lbsdt.Size" type="System.Drawing.Size, System.Drawing">
     <value>106, 20</value>
@@ -502,7 +682,7 @@
     <value>gbtimkiemnhanvien</value>
   </data>
   <data name="&gt;&gt;lbsdt.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="lbmanv.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -511,7 +691,7 @@
     <value>NoControl</value>
   </data>
   <data name="lbmanv.Location" type="System.Drawing.Point, System.Drawing">
-    <value>55, 35</value>
+    <value>33, 75</value>
   </data>
   <data name="lbmanv.Size" type="System.Drawing.Size, System.Drawing">
     <value>108, 20</value>
@@ -532,31 +712,7 @@
     <value>gbtimkiemnhanvien</value>
   </data>
   <data name="&gt;&gt;lbmanv.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="gbtimkiemnhanvien.Location" type="System.Drawing.Point, System.Drawing">
-    <value>29, 148</value>
-  </data>
-  <data name="gbtimkiemnhanvien.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1009, 75</value>
-  </data>
-  <data name="gbtimkiemnhanvien.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
-  </data>
-  <data name="gbtimkiemnhanvien.Text" xml:space="preserve">
-    <value>Tìm kiếm nhân viên</value>
-  </data>
-  <data name="&gt;&gt;gbtimkiemnhanvien.Name" xml:space="preserve">
-    <value>gbtimkiemnhanvien</value>
-  </data>
-  <data name="&gt;&gt;gbtimkiemnhanvien.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;gbtimkiemnhanvien.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;gbtimkiemnhanvien.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>5</value>
   </data>
   <data name="ibtnxuatfile.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
@@ -657,6 +813,33 @@
   <data name="&gt;&gt;ibtnnhanvien.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
+  <data name="ibtnxoa.Location" type="System.Drawing.Point, System.Drawing">
+    <value>831, 75</value>
+  </data>
+  <data name="ibtnxoa.Size" type="System.Drawing.Size, System.Drawing">
+    <value>153, 47</value>
+  </data>
+  <data name="ibtnxoa.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="ibtnxoa.Text" xml:space="preserve">
+    <value>Xóa</value>
+  </data>
+  <data name="ibtnxoa.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
+    <value>ImageBeforeText</value>
+  </data>
+  <data name="&gt;&gt;ibtnxoa.Name" xml:space="preserve">
+    <value>ibtnxoa</value>
+  </data>
+  <data name="&gt;&gt;ibtnxoa.Type" xml:space="preserve">
+    <value>FontAwesome.Sharp.IconButton, FontAwesome.Sharp, Version=6.6.0.0, Culture=neutral, PublicKeyToken=d16d1e4e568ec10f</value>
+  </data>
+  <data name="&gt;&gt;ibtnxoa.Parent" xml:space="preserve">
+    <value>gbtimkiemnhanvien</value>
+  </data>
+  <data name="&gt;&gt;ibtnxoa.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -667,7 +850,7 @@
     <value>True</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>1076, 562</value>
+    <value>1076, 696</value>
   </data>
   <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 10pt</value>
@@ -814,6 +997,48 @@
     <value>dgdiachi</value>
   </data>
   <data name="&gt;&gt;dgdiachi.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dgngaybatdaulamviec.Name" xml:space="preserve">
+    <value>dgngaybatdaulamviec</value>
+  </data>
+  <data name="&gt;&gt;dgngaybatdaulamviec.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dgchucdanh.Name" xml:space="preserve">
+    <value>dgchucdanh</value>
+  </data>
+  <data name="&gt;&gt;dgchucdanh.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dgphongban.Name" xml:space="preserve">
+    <value>dgphongban</value>
+  </data>
+  <data name="&gt;&gt;dgphongban.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dgchinhanh.Name" xml:space="preserve">
+    <value>dgchinhanh</value>
+  </data>
+  <data name="&gt;&gt;dgchinhanh.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dgtrangthai.Name" xml:space="preserve">
+    <value>dgtrangthai</value>
+  </data>
+  <data name="&gt;&gt;dgtrangthai.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dgmucluong.Name" xml:space="preserve">
+    <value>dgmucluong</value>
+  </data>
+  <data name="&gt;&gt;dgmucluong.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dgghichu.Name" xml:space="preserve">
+    <value>dgghichu</value>
+  </data>
+  <data name="&gt;&gt;dgghichu.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">

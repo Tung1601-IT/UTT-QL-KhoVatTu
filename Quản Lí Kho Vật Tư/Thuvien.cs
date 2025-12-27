@@ -16,8 +16,8 @@ namespace Quản_Lí_Kho_Vật_Tư
 {
     internal class Thuvien
     {
-        //public static SqlConnection con = new SqlConnection("Data Source=ComputerTungha;Initial Catalog=QL_KhoVatTu;Integrated Security=True");
-        public static SqlConnection con = new SqlConnection("Data Source=TRUONGDOAN\\TRUONGDOAN;Initial Catalog=QL_KhoVatTu;User ID=sa;Password=Truong2022005!;Encrypt=True;TrustServerCertificate=True");
+        public static SqlConnection con = new SqlConnection("Data Source=ComputerTungha;Initial Catalog=QL_KhoVatTu;Integrated Security=True");
+       // public static SqlConnection con = new SqlConnection("Data Source=TRUONGDOAN\\TRUONGDOAN;Initial Catalog=QL_KhoVatTu;User ID=sa;Password=Truong2022005!;Encrypt=True;TrustServerCertificate=True");
         //public static SqlConnection con = new SqlConnection("Data Source=TRUONGDOAN\\TRUONGDOAN;Initial Catalog=QL_KhoVatTu;User ID=sa;Password=Truong2022005!;Encrypt=True;TrustServerCertificate=True");
 
         public static void load_KH(DataGridView dgv, string sql)
@@ -149,6 +149,66 @@ namespace Quản_Lí_Kho_Vật_Tư
             
         }
         }
+        public static void ThemmoiNhanvien(string Manv, string Hoten, string Gioitinh, string Ngaysinh, string Sdt, string Email, string Diachi, string Ngaybatdaulamviec, string Chucdanh, string Phongban, string Chinhanh, string Trangthai, string Mucluong, string Ghichu)
+        {
+            // 1. Sửa tên bảng thành Nhanvien (viết hoa chữ cái đầu)
+            string sql = @"INSERT INTO Nhanvien (Manv, Hoten, Gioitinh, Ngaysinh, Sdt, Email, Diachi, Ngaybatdaulamviec, Chucdanh, Phongban, Chinhanh, Trangthai, Mucluong, Ghichu) 
+                   VALUES (@Manv, @Hoten, @Gioitinh, @Ngaysinh, @Sdt, @Email, @Diachi, @Ngaybatdaulamviec, @Chucdanh, @Phongban, @Chinhanh, @Trangthai, @Mucluong, @Ghichu)";
+
+            SqlCommand cmd = new SqlCommand(sql, con); // 'con' là biến kết nối của bạn
+
+            // 2. Nạp đầy đủ 14 tham số khớp với danh sách truyền vào
+            cmd.Parameters.AddWithValue("@Manv", Manv);
+            cmd.Parameters.AddWithValue("@Hoten", Hoten);
+            cmd.Parameters.AddWithValue("@Gioitinh", Gioitinh);
+            cmd.Parameters.AddWithValue("@Ngaysinh", Ngaysinh);
+            cmd.Parameters.AddWithValue("@Sdt", Sdt);
+            cmd.Parameters.AddWithValue("@Email", Email);
+            cmd.Parameters.AddWithValue("@Diachi", Diachi);
+            cmd.Parameters.AddWithValue("@Ngaybatdaulamviec", Ngaybatdaulamviec);
+            cmd.Parameters.AddWithValue("@Chucdanh", Chucdanh);
+            cmd.Parameters.AddWithValue("@Phongban", Phongban);
+            cmd.Parameters.AddWithValue("@Chinhanh", Chinhanh);
+            cmd.Parameters.AddWithValue("@Trangthai", Trangthai);
+            cmd.Parameters.AddWithValue("@Mucluong", Mucluong);
+            cmd.Parameters.AddWithValue("@Ghichu", Ghichu);
+
+            // 3. Mở kết nối và thực thi
+            if (con.State == ConnectionState.Closed) con.Open();
+            cmd.ExecuteNonQuery();
+            con.Close();
+        }
+        public static void SuaNhanvien(string Manv, string Hoten, string Gioitinh, string Ngaysinh, string Sdt, string Email, string Diachi, string Ngaybatdaulamviec, string Chucdanh, string Phongban, string Chinhanh, string Trangthai, string Mucluong, string Ghichu)
+        {
+            // Sử dụng câu lệnh UPDATE dựa trên khóa chính Manv
+            string sql = @"UPDATE Danhsachnhanvien 
+                   SET Hoten=@Hoten, Gioitinh=@Gioitinh, Ngaysinh=@Ngaysinh, Sdt=@Sdt, Email=@Email, 
+                       Diachi=@Diachi, Ngaybatdaulamviec=@Ngaylam, Chucdanh=@Chucdanh, 
+                       Phongban=@Phongban, Chinhanh=@Chinhanh, Trangthai=@Trangthai, 
+                       Mucluong=@Mucluong, Ghichu=@Ghichu 
+                   WHERE Manv=@Manv";
+
+            SqlCommand cmd = new SqlCommand(sql, con);
+            cmd.Parameters.AddWithValue("@Manv", Manv);
+            cmd.Parameters.AddWithValue("@Hoten", Hoten);
+            cmd.Parameters.AddWithValue("@Gioitinh", Gioitinh);
+            cmd.Parameters.AddWithValue("@Ngaysinh", Ngaysinh);
+            cmd.Parameters.AddWithValue("@Sdt", Sdt);
+            cmd.Parameters.AddWithValue("@Email", Email);
+            cmd.Parameters.AddWithValue("@Diachi", Diachi);
+            cmd.Parameters.AddWithValue("@Ngaylam", Ngaybatdaulamviec);
+            cmd.Parameters.AddWithValue("@Chucdanh", Chucdanh);
+            cmd.Parameters.AddWithValue("@Phongban", Phongban);
+            cmd.Parameters.AddWithValue("@Chinhanh", Chinhanh);
+            cmd.Parameters.AddWithValue("@Trangthai", Trangthai);
+            cmd.Parameters.AddWithValue("@Mucluong", Mucluong);
+            cmd.Parameters.AddWithValue("@Ghichu", Ghichu);
+
+            if (con.State == ConnectionState.Closed) con.Open();
+            cmd.ExecuteNonQuery();
+            con.Close();
+        }
+
     }
 }
 
