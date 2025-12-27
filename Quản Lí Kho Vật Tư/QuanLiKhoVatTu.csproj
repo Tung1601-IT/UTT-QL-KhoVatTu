@@ -119,6 +119,12 @@
     <Compile Include="Quanlikho.Designer.cs">
       <DependentUpon>Quanlikho.cs</DependentUpon>
     </Compile>
+    <Compile Include="Quanli_thuchi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Quanli_thuchi.Designer.cs">
+      <DependentUpon>Quanli_thuchi.cs</DependentUpon>
+    </Compile>
     <Compile Include="Themnhanvien.cs">
       <SubType>Form</SubType>
     </Compile>
