@@ -64,6 +64,12 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Chitiet_hoadon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Chitiet_hoadon.Designer.cs">
+      <DependentUpon>Chitiet_hoadon.cs</DependentUpon>
+    </Compile>
     <Compile Include="Dangky.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -131,11 +137,11 @@
     <Compile Include="Sanphamdichvu.Designer.cs">
       <DependentUpon>Sanphamdichvu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Quanli_thuchi.cs">
+    <Compile Include="Quanlithuchi.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Quanli_thuchi.Designer.cs">
-      <DependentUpon>Quanli_thuchi.cs</DependentUpon>
+    <Compile Include="Quanlithuchi.Designer.cs">
+      <DependentUpon>Quanlithuchi.cs</DependentUpon>
     </Compile>
     <Compile Include="Themnhanvien.cs">
       <SubType>Form</SubType>
@@ -150,6 +156,9 @@
     <Compile Include="Tongquan.Designer.cs">
       <DependentUpon>Tongquan.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Chitiet_hoadon.resx">
+      <DependentUpon>Chitiet_hoadon.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Dangky.resx">
       <DependentUpon>Dangky.cs</DependentUpon>
     </EmbeddedResource>

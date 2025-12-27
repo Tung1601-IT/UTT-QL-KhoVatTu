@@ -16,8 +16,8 @@ namespace Quản_Lí_Kho_Vật_Tư
 {
     internal class Thuvien
     {
-        public static SqlConnection con = new SqlConnection("Data Source=ComputerTungha;Initial Catalog=QL_KhoVatTu;Integrated Security=True");
-       // public static SqlConnection con = new SqlConnection("Data Source=TRUONGDOAN\\TRUONGDOAN;Initial Catalog=QL_KhoVatTu;User ID=sa;Password=Truong2022005!;Encrypt=True;TrustServerCertificate=True");
+        //public static SqlConnection con = new SqlConnection("Data Source=ComputerTungha;Initial Catalog=QL_KhoVatTu;Integrated Security=True");
+       public static SqlConnection con = new SqlConnection("Data Source=MSI\\xuan;Initial Catalog=QL_KhoVatTu;Integrated Security=True;Encrypt=True;TrustServerCertificate=True");
         //public static SqlConnection con = new SqlConnection("Data Source=TRUONGDOAN\\TRUONGDOAN;Initial Catalog=QL_KhoVatTu;User ID=sa;Password=Truong2022005!;Encrypt=True;TrustServerCertificate=True");
 
         public static void load_KH(DataGridView dgv, string sql)
