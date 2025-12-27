@@ -269,6 +269,91 @@ namespace Quản_Lí_Kho_Vật_Tư
             dgvNhapkho.DataSource = dtNhap;
         }
 
+        int rowDangChon = -1;
+
+        private void dgvNhapkho_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0) return;
+
+            rowDangChon = e.RowIndex;
+            DataGridViewRow row = dgvNhapkho.Rows[e.RowIndex];
+
+            nMavt.Text = row.Cells["Mavt"].Value.ToString();
+            nTenvt.Text = row.Cells["Tenvt"].Value.ToString();
+            nLoaivt.Text = row.Cells["Loaivt"].Value.ToString();
+            nDonvt.Text = row.Cells["Donvitinh"].Value.ToString();
+            nSoluong.Text = row.Cells["Soluong"].Value.ToString();
+            nGianhap.Text = row.Cells["Gianhap"].Value.ToString();
+            nThanhtien.Text = row.Cells["Thanhtien"].Value.ToString();
+            nNhacc.Text = row.Cells["Nhacc"].Value.ToString();
+        }
+
+        private void btn_nSua_Click(object sender, EventArgs e)
+        {
+            if (rowDangChon < 0)
+            {
+                MessageBox.Show("Chọn vật tư cần sửa");
+                return;
+            }
+
+            DataRow r = dtNhap.Rows[rowDangChon];
+
+            int sl = int.Parse(nSoluong.Text);
+            decimal gia = decimal.Parse(nGianhap.Text);
+            decimal thanhtien = sl * gia;
+
+            r["Soluong"] = sl;
+            r["Gianhap"] = gia;
+            r["Thanhtien"] = thanhtien;
+
+            nThanhtien.Text = thanhtien.ToString("N0");
+
+            TinhTongTienNhap();
+        }
+
+        private void btn_nXoa_Click(object sender, EventArgs e)
+        {
+            if (rowDangChon < 0)
+            {
+                MessageBox.Show("Chọn dòng cần xóa");
+                return;
+            }
+
+            if (MessageBox.Show("Xóa vật tư này?", "Xác nhận",
+                MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                dtNhap.Rows.RemoveAt(rowDangChon);
+                rowDangChon = -1;
+
+                ResetNhap();
+                TinhTongTienNhap();
+            }
+        }
+
+        void ResetNhap()
+        {
+            nMavt.Clear();
+            nLoaivt.Clear();
+            nDonvt.Clear();
+            nSoluong.Clear();
+            nGianhap.Clear();
+            nThanhtien.Text = "0";
+            nTenvt.SelectedIndex = -1;
+            nNhacc.SelectedIndex = -1;
+        }
+
+        void TinhTongTienNhap()
+        {
+            decimal tong = dtNhap.AsEnumerable()
+                                 .Sum(r => r.Field<decimal>("Thanhtien"));
+            nTongtien.Text = tong.ToString("N0");
+        }
+
+
+
+
+
+
         private void btnNhapthem_Click(object sender, EventArgs e)
         {
             string mavt = nMavt.Text;
@@ -308,6 +393,7 @@ namespace Quản_Lí_Kho_Vật_Tư
 
             dtNhap.Rows.Add(row);
             TinhTongTien();
+            ResetNhap();
         }
 
         private void TinhTongTien()
@@ -367,7 +453,7 @@ namespace Quản_Lí_Kho_Vật_Tư
                     cmdCT.Parameters.AddWithValue("@sl", r["Soluong"]);
                     cmdCT.Parameters.AddWithValue("@gia", r["Gianhap"]);
                     cmdCT.Parameters.AddWithValue("@tt", r["Thanhtien"]);
-                    cmdCT.Parameters.AddWithValue("@doitac", r["Khachhang"]);
+                    cmdCT.Parameters.AddWithValue("@doitac", r["Nhacc"]);
 
                     cmdCT.ExecuteNonQuery();
 
@@ -602,6 +688,94 @@ namespace Quản_Lí_Kho_Vật_Tư
             dgvXuatkho.DataSource = dtXuat;
         }
 
+        int rowxDangChon = -1;
+
+        private void dgvXuatkho_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0) return;
+
+            rowxDangChon = e.RowIndex;
+            DataGridViewRow row = dgvXuatkho.Rows[e.RowIndex];
+
+            xMavt.Text = row.Cells["Mavt"].Value.ToString();
+            xTenvt.Text = row.Cells["Tenvt"].Value.ToString();
+            xLoaivt.Text = row.Cells["Loaivt"].Value.ToString();
+            xDonvt.Text = row.Cells["Donvitinh"].Value.ToString();
+            xSoluong.Text = row.Cells["Soluong"].Value.ToString();
+            xGiaban.Text = row.Cells["Giaban"].Value.ToString();
+            xThanhtien.Text = row.Cells["Thanhtien"].Value.ToString();
+            xKhachhang.Text = row.Cells["Khachhang"].Value.ToString();
+        }
+
+
+        private void btn_xSua_Click(object sender, EventArgs e)
+        {
+            if (rowxDangChon < 0)
+            {
+                MessageBox.Show("Chọn vật tư cần sửa");
+                return;
+            }
+
+            DataRow r = dtXuat.Rows[rowxDangChon];
+
+            int sl = int.Parse(xSoluong.Text);
+            decimal gia = decimal.Parse(xGiaban.Text);
+            decimal thanhtien = sl * gia;
+
+            r["Soluong"] = sl;
+            r["Giaban"] = gia;
+            r["Thanhtien"] = thanhtien;
+
+            xThanhtien.Text = thanhtien.ToString("N0");
+
+            xTinhTongTienNhap();
+        }
+
+
+        private void btn_xXoa_Click(object sender, EventArgs e)
+        {
+            if (rowxDangChon < 0)
+            {
+                MessageBox.Show("Chọn dòng cần xóa");
+                return;
+            }
+
+            if (MessageBox.Show("Xóa vật tư này?", "Xác nhận",
+                MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                dtXuat.Rows.RemoveAt(rowxDangChon);
+                rowxDangChon = -1;
+
+                xResetNhap();
+                xTinhTongTienNhap();
+            }
+        }
+
+        void xResetNhap()
+        {
+            xMavt.Clear();
+            xLoaivt.Clear();
+            xDonvt.Clear();
+            xSoluong.Clear();
+            xGiaban.Clear();
+            xThanhtien.Text = "0";
+            xTenvt.SelectedIndex = -1;
+            xNhacc.SelectedIndex = -1;
+            xKhachhang.SelectedIndex = -1;
+        }
+
+
+        void xTinhTongTienNhap()
+        {
+            decimal tong = dtXuat.AsEnumerable()
+                                 .Sum(r => r.Field<decimal>("Thanhtien"));
+            xTongtien.Text = tong.ToString("N0");
+        }
+
+
+
+
+
 
         private void Load_xTenVatTu()
         {
@@ -755,6 +929,7 @@ namespace Quản_Lí_Kho_Vật_Tư
 
             dtXuat.Rows.Add(row);
             xTinhTongTien();
+            xResetNhap();
         }
 
         private void xTinhTongTien()

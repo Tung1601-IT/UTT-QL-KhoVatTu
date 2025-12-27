@@ -41,6 +41,15 @@
             this.nHÂNVIÊNToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgvQL_Kho = new System.Windows.Forms.DataGridView();
+            this.Mavattu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Tenvattu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Loaivattu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nhacungcap = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Donvitinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Soluong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Gianhap = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Giaban = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ghichu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.tkNhacungcap = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -76,6 +85,8 @@
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.xNhacc = new System.Windows.Forms.ComboBox();
             this.btnLuuxuat = new System.Windows.Forms.Button();
             this.xNhapthem = new System.Windows.Forms.Button();
             this.xTongtien = new System.Windows.Forms.TextBox();
@@ -97,17 +108,10 @@
             this.label24 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
-            this.Mavattu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Tenvattu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Loaivattu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nhacungcap = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Donvitinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Soluong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Gianhap = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Giaban = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Ghichu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.xNhacc = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.btn_nSua = new System.Windows.Forms.Button();
+            this.btn_nXoa = new System.Windows.Forms.Button();
+            this.btn_xSua = new System.Windows.Forms.Button();
+            this.btn_xXoa = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvQL_Kho)).BeginInit();
@@ -231,6 +235,78 @@
             this.dgvQL_Kho.Size = new System.Drawing.Size(854, 669);
             this.dgvQL_Kho.TabIndex = 2;
             // 
+            // Mavattu
+            // 
+            this.Mavattu.DataPropertyName = "Mavattu";
+            this.Mavattu.HeaderText = "Mã vật tư";
+            this.Mavattu.MinimumWidth = 6;
+            this.Mavattu.Name = "Mavattu";
+            this.Mavattu.Width = 125;
+            // 
+            // Tenvattu
+            // 
+            this.Tenvattu.DataPropertyName = "Tenvattu";
+            this.Tenvattu.HeaderText = "Tên vật tư";
+            this.Tenvattu.MinimumWidth = 6;
+            this.Tenvattu.Name = "Tenvattu";
+            this.Tenvattu.Width = 125;
+            // 
+            // Loaivattu
+            // 
+            this.Loaivattu.DataPropertyName = "Loaivattu";
+            this.Loaivattu.HeaderText = "Loại vật tư";
+            this.Loaivattu.MinimumWidth = 6;
+            this.Loaivattu.Name = "Loaivattu";
+            this.Loaivattu.Width = 125;
+            // 
+            // Nhacungcap
+            // 
+            this.Nhacungcap.DataPropertyName = "Tendoitac";
+            this.Nhacungcap.HeaderText = "Nhà cung cấp";
+            this.Nhacungcap.MinimumWidth = 6;
+            this.Nhacungcap.Name = "Nhacungcap";
+            this.Nhacungcap.Width = 125;
+            // 
+            // Donvitinh
+            // 
+            this.Donvitinh.DataPropertyName = "Donvitinh";
+            this.Donvitinh.HeaderText = "Đơn vị tính";
+            this.Donvitinh.MinimumWidth = 6;
+            this.Donvitinh.Name = "Donvitinh";
+            this.Donvitinh.Width = 125;
+            // 
+            // Soluong
+            // 
+            this.Soluong.DataPropertyName = "Soluong";
+            this.Soluong.HeaderText = "Số lượng";
+            this.Soluong.MinimumWidth = 6;
+            this.Soluong.Name = "Soluong";
+            this.Soluong.Width = 125;
+            // 
+            // Gianhap
+            // 
+            this.Gianhap.DataPropertyName = "Gianhap";
+            this.Gianhap.HeaderText = "Giá nhập";
+            this.Gianhap.MinimumWidth = 6;
+            this.Gianhap.Name = "Gianhap";
+            this.Gianhap.Width = 125;
+            // 
+            // Giaban
+            // 
+            this.Giaban.DataPropertyName = "Giaban";
+            this.Giaban.HeaderText = "Giá bán";
+            this.Giaban.MinimumWidth = 6;
+            this.Giaban.Name = "Giaban";
+            this.Giaban.Width = 125;
+            // 
+            // Ghichu
+            // 
+            this.Ghichu.DataPropertyName = "Ghichu";
+            this.Ghichu.HeaderText = "Ghi chú";
+            this.Ghichu.MinimumWidth = 6;
+            this.Ghichu.Name = "Ghichu";
+            this.Ghichu.Width = 125;
+            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.tkNhacungcap);
@@ -346,6 +422,8 @@
             // 
             // groupBox5
             // 
+            this.groupBox5.Controls.Add(this.btn_nXoa);
+            this.groupBox5.Controls.Add(this.btn_nSua);
             this.groupBox5.Controls.Add(this.nTongtien);
             this.groupBox5.Controls.Add(this.label21);
             this.groupBox5.Controls.Add(this.nMavt);
@@ -457,6 +535,7 @@
             this.dgvNhapkho.RowTemplate.Height = 24;
             this.dgvNhapkho.Size = new System.Drawing.Size(654, 150);
             this.dgvNhapkho.TabIndex = 43;
+            this.dgvNhapkho.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNhapkho_CellClick);
             // 
             // btnNhapthem
             // 
@@ -555,6 +634,8 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.btn_xXoa);
+            this.groupBox4.Controls.Add(this.btn_xSua);
             this.groupBox4.Controls.Add(this.label4);
             this.groupBox4.Controls.Add(this.xNhacc);
             this.groupBox4.Controls.Add(this.btnLuuxuat);
@@ -584,6 +665,24 @@
             this.groupBox4.TabIndex = 8;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Xuất vật tư";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(42, 163);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(90, 16);
+            this.label4.TabIndex = 53;
+            this.label4.Text = "Nhà cung cấp";
+            // 
+            // xNhacc
+            // 
+            this.xNhacc.FormattingEnabled = true;
+            this.xNhacc.Location = new System.Drawing.Point(133, 158);
+            this.xNhacc.Name = "xNhacc";
+            this.xNhacc.Size = new System.Drawing.Size(121, 24);
+            this.xNhacc.TabIndex = 53;
+            this.xNhacc.SelectedIndexChanged += new System.EventHandler(this.xNhacc_SelectedIndexChanged);
             // 
             // btnLuuxuat
             // 
@@ -621,6 +720,7 @@
             this.dgvXuatkho.RowTemplate.Height = 24;
             this.dgvXuatkho.Size = new System.Drawing.Size(654, 150);
             this.dgvXuatkho.TabIndex = 53;
+            this.dgvXuatkho.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvXuatkho_CellClick);
             // 
             // xThanhtien
             // 
@@ -763,95 +863,45 @@
             this.label22.TabIndex = 53;
             this.label22.Text = "Mã vật tư";
             // 
-            // Mavattu
+            // btn_nSua
             // 
-            this.Mavattu.DataPropertyName = "Mavattu";
-            this.Mavattu.HeaderText = "Mã vật tư";
-            this.Mavattu.MinimumWidth = 6;
-            this.Mavattu.Name = "Mavattu";
-            this.Mavattu.Width = 125;
+            this.btn_nSua.Location = new System.Drawing.Point(584, 115);
+            this.btn_nSua.Name = "btn_nSua";
+            this.btn_nSua.Size = new System.Drawing.Size(75, 23);
+            this.btn_nSua.TabIndex = 53;
+            this.btn_nSua.Text = "Sửa";
+            this.btn_nSua.UseVisualStyleBackColor = true;
+            this.btn_nSua.Click += new System.EventHandler(this.btn_nSua_Click);
             // 
-            // Tenvattu
+            // btn_nXoa
             // 
-            this.Tenvattu.DataPropertyName = "Tenvattu";
-            this.Tenvattu.HeaderText = "Tên vật tư";
-            this.Tenvattu.MinimumWidth = 6;
-            this.Tenvattu.Name = "Tenvattu";
-            this.Tenvattu.Width = 125;
+            this.btn_nXoa.Location = new System.Drawing.Point(584, 150);
+            this.btn_nXoa.Name = "btn_nXoa";
+            this.btn_nXoa.Size = new System.Drawing.Size(75, 23);
+            this.btn_nXoa.TabIndex = 54;
+            this.btn_nXoa.Text = "Xóa";
+            this.btn_nXoa.UseVisualStyleBackColor = true;
+            this.btn_nXoa.Click += new System.EventHandler(this.btn_nXoa_Click);
             // 
-            // Loaivattu
+            // btn_xSua
             // 
-            this.Loaivattu.DataPropertyName = "Loaivattu";
-            this.Loaivattu.HeaderText = "Loại vật tư";
-            this.Loaivattu.MinimumWidth = 6;
-            this.Loaivattu.Name = "Loaivattu";
-            this.Loaivattu.Width = 125;
+            this.btn_xSua.Location = new System.Drawing.Point(585, 123);
+            this.btn_xSua.Name = "btn_xSua";
+            this.btn_xSua.Size = new System.Drawing.Size(75, 23);
+            this.btn_xSua.TabIndex = 55;
+            this.btn_xSua.Text = "Sửa";
+            this.btn_xSua.UseVisualStyleBackColor = true;
+            this.btn_xSua.Click += new System.EventHandler(this.btn_xSua_Click);
             // 
-            // Nhacungcap
+            // btn_xXoa
             // 
-            this.Nhacungcap.DataPropertyName = "Tendoitac";
-            this.Nhacungcap.HeaderText = "Nhà cung cấp";
-            this.Nhacungcap.MinimumWidth = 6;
-            this.Nhacungcap.Name = "Nhacungcap";
-            this.Nhacungcap.Width = 125;
-            // 
-            // Donvitinh
-            // 
-            this.Donvitinh.DataPropertyName = "Donvitinh";
-            this.Donvitinh.HeaderText = "Đơn vị tính";
-            this.Donvitinh.MinimumWidth = 6;
-            this.Donvitinh.Name = "Donvitinh";
-            this.Donvitinh.Width = 125;
-            // 
-            // Soluong
-            // 
-            this.Soluong.DataPropertyName = "Soluong";
-            this.Soluong.HeaderText = "Số lượng";
-            this.Soluong.MinimumWidth = 6;
-            this.Soluong.Name = "Soluong";
-            this.Soluong.Width = 125;
-            // 
-            // Gianhap
-            // 
-            this.Gianhap.DataPropertyName = "Gianhap";
-            this.Gianhap.HeaderText = "Giá nhập";
-            this.Gianhap.MinimumWidth = 6;
-            this.Gianhap.Name = "Gianhap";
-            this.Gianhap.Width = 125;
-            // 
-            // Giaban
-            // 
-            this.Giaban.DataPropertyName = "Giaban";
-            this.Giaban.HeaderText = "Giá bán";
-            this.Giaban.MinimumWidth = 6;
-            this.Giaban.Name = "Giaban";
-            this.Giaban.Width = 125;
-            // 
-            // Ghichu
-            // 
-            this.Ghichu.DataPropertyName = "Ghichu";
-            this.Ghichu.HeaderText = "Ghi chú";
-            this.Ghichu.MinimumWidth = 6;
-            this.Ghichu.Name = "Ghichu";
-            this.Ghichu.Width = 125;
-            // 
-            // xNhacc
-            // 
-            this.xNhacc.FormattingEnabled = true;
-            this.xNhacc.Location = new System.Drawing.Point(133, 158);
-            this.xNhacc.Name = "xNhacc";
-            this.xNhacc.Size = new System.Drawing.Size(121, 24);
-            this.xNhacc.TabIndex = 53;
-            this.xNhacc.SelectedIndexChanged += new System.EventHandler(this.xNhacc_SelectedIndexChanged);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(42, 163);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(90, 16);
-            this.label4.TabIndex = 53;
-            this.label4.Text = "Nhà cung cấp";
+            this.btn_xXoa.Location = new System.Drawing.Point(585, 159);
+            this.btn_xXoa.Name = "btn_xXoa";
+            this.btn_xXoa.Size = new System.Drawing.Size(75, 23);
+            this.btn_xXoa.TabIndex = 55;
+            this.btn_xXoa.Text = "Xóa";
+            this.btn_xXoa.UseVisualStyleBackColor = true;
+            this.btn_xXoa.Click += new System.EventHandler(this.btn_xXoa_Click);
             // 
             // Quanlikho
             // 
@@ -964,5 +1014,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Ghichu;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox xNhacc;
+        private System.Windows.Forms.Button btn_nXoa;
+        private System.Windows.Forms.Button btn_nSua;
+        private System.Windows.Forms.Button btn_xXoa;
+        private System.Windows.Forms.Button btn_xSua;
     }
 }
