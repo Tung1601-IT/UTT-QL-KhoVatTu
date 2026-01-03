@@ -32,12 +32,7 @@ namespace Quản_Lí_Kho_Vật_Tư
             f.Show();
         }
 
-        private void bÁNHÀNGToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Tongquan f = new Tongquan();
-            f.Show();
-
-        }
+        
 
         private void nhàCungToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -73,7 +68,24 @@ namespace Quản_Lí_Kho_Vật_Tư
 
         
 
-        private void qUẢNLÍKHOToolStripMenuItem_Click(object sender, EventArgs e)
+        
+
+        private void sẢNPHẢMDỊCHVỤToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();   // Ẩn Trang chủ
+
+            Sanphamdichvu f = new Sanphamdichvu();
+
+            // Khi Form mới đóng → đóng Trang chủ
+            f.FormClosed += (s, args) =>
+            {
+                this.Close();
+            };
+
+            f.Show();
+        }
+
+        private void tồnKhoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Hide();   // Ẩn Trang chủ
 
@@ -88,11 +100,26 @@ namespace Quản_Lí_Kho_Vật_Tư
             f.Show();
         }
 
-        private void sẢNPHẢMDỊCHVỤToolStripMenuItem_Click(object sender, EventArgs e)
+        private void nhậpKhoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Hide();   // Ẩn Trang chủ
 
-            Sanphamdichvu f = new Sanphamdichvu();
+            Nhapkho f = new Nhapkho();
+
+            // Khi Form mới đóng → đóng Trang chủ
+            f.FormClosed += (s, args) =>
+            {
+                this.Close();
+            };
+
+            f.Show();
+        }
+
+        private void xuấtKhoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();   // Ẩn Trang chủ
+
+            Xuatkho f = new Xuatkho();
 
             // Khi Form mới đóng → đóng Trang chủ
             f.FormClosed += (s, args) =>

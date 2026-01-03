@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.iMSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bÁNHÀNGToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -39,6 +39,9 @@
             this.nhàCungToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sẢNPHẢMDỊCHVỤToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.qUẢNLÍKHOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tồnKhoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.nhậpKhoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.xuấtKhoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.qUẢNLÍTHUCHIToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bÁOCÁOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nHÂNVIÊNToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -106,7 +109,6 @@
             this.bÁNHÀNGToolStripMenuItem.Name = "bÁNHÀNGToolStripMenuItem";
             this.bÁNHÀNGToolStripMenuItem.Size = new System.Drawing.Size(109, 50);
             this.bÁNHÀNGToolStripMenuItem.Text = "TỔNG QUAN";
-            this.bÁNHÀNGToolStripMenuItem.Click += new System.EventHandler(this.bÁNHÀNGToolStripMenuItem_Click);
             // 
             // đỐITÁCToolStripMenuItem
             // 
@@ -140,10 +142,34 @@
             // 
             // qUẢNLÍKHOToolStripMenuItem
             // 
+            this.qUẢNLÍKHOToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tồnKhoToolStripMenuItem,
+            this.nhậpKhoToolStripMenuItem,
+            this.xuấtKhoToolStripMenuItem});
             this.qUẢNLÍKHOToolStripMenuItem.Name = "qUẢNLÍKHOToolStripMenuItem";
             this.qUẢNLÍKHOToolStripMenuItem.Size = new System.Drawing.Size(115, 50);
             this.qUẢNLÍKHOToolStripMenuItem.Text = "QUẢN LÍ KHO";
-            this.qUẢNLÍKHOToolStripMenuItem.Click += new System.EventHandler(this.qUẢNLÍKHOToolStripMenuItem_Click);
+            // 
+            // tồnKhoToolStripMenuItem
+            // 
+            this.tồnKhoToolStripMenuItem.Name = "tồnKhoToolStripMenuItem";
+            this.tồnKhoToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.tồnKhoToolStripMenuItem.Text = "TỒN KHO";
+            this.tồnKhoToolStripMenuItem.Click += new System.EventHandler(this.tồnKhoToolStripMenuItem_Click);
+            // 
+            // nhậpKhoToolStripMenuItem
+            // 
+            this.nhậpKhoToolStripMenuItem.Name = "nhậpKhoToolStripMenuItem";
+            this.nhậpKhoToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.nhậpKhoToolStripMenuItem.Text = "NHẬP KHO";
+            this.nhậpKhoToolStripMenuItem.Click += new System.EventHandler(this.nhậpKhoToolStripMenuItem_Click);
+            // 
+            // xuấtKhoToolStripMenuItem
+            // 
+            this.xuấtKhoToolStripMenuItem.Name = "xuấtKhoToolStripMenuItem";
+            this.xuấtKhoToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.xuấtKhoToolStripMenuItem.Text = "XUẤT KHO";
+            this.xuấtKhoToolStripMenuItem.Click += new System.EventHandler(this.xuấtKhoToolStripMenuItem_Click);
             // 
             // qUẢNLÍTHUCHIToolStripMenuItem
             // 
@@ -359,20 +385,20 @@
             // 
             // chart1
             // 
-            chartArea1.AxisX.Title = "Ngày";
-            chartArea1.AxisX2.Maximum = 20D;
-            chartArea1.AxisX2.Minimum = 0D;
-            chartArea1.AxisY.Title = "Doanh thu";
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
+            chartArea2.AxisX.Title = "Ngày";
+            chartArea2.AxisX2.Maximum = 20D;
+            chartArea2.AxisX2.Minimum = 0D;
+            chartArea2.AxisY.Title = "Doanh thu";
+            chartArea2.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chart1.Legends.Add(legend2);
             this.chart1.Location = new System.Drawing.Point(115, 533);
             this.chart1.Name = "chart1";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chart1.Series.Add(series1);
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.chart1.Series.Add(series2);
             this.chart1.Size = new System.Drawing.Size(695, 311);
             this.chart1.TabIndex = 16;
             this.chart1.Text = "chart1";
@@ -449,5 +475,8 @@
         private System.Windows.Forms.ToolStripMenuItem lịchLàmViệcToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem bảngChấmCôngToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem bảngLươngToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tồnKhoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem nhậpKhoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem xuấtKhoToolStripMenuItem;
     }
 }
