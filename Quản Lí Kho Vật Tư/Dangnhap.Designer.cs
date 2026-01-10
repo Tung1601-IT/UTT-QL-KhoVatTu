@@ -36,15 +36,18 @@
             this.ckHienthimk = new System.Windows.Forms.CheckBox();
             this.linkDangky = new System.Windows.Forms.LinkLabel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.txtTaikhoan = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.txtMatkhau = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.txtTaikhoan = new System.Windows.Forms.TextBox();
+            this.lbTaikhoan = new System.Windows.Forms.Label();
+            this.lbMatkhau = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -96,6 +99,7 @@
             this.btnDangnhap.TabIndex = 5;
             this.btnDangnhap.Text = "Đăng Nhập";
             this.btnDangnhap.UseVisualStyleBackColor = false;
+            this.btnDangnhap.Click += new System.EventHandler(this.btnDangnhap_Click);
             // 
             // pictureBox1
             // 
@@ -111,12 +115,13 @@
             // 
             this.ckHienthimk.AutoSize = true;
             this.ckHienthimk.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ckHienthimk.Location = new System.Drawing.Point(50, 291);
+            this.ckHienthimk.Location = new System.Drawing.Point(50, 302);
             this.ckHienthimk.Name = "ckHienthimk";
             this.ckHienthimk.Size = new System.Drawing.Size(131, 21);
             this.ckHienthimk.TabIndex = 7;
             this.ckHienthimk.Text = "Hiển thị mật khẩu";
             this.ckHienthimk.UseVisualStyleBackColor = true;
+            this.ckHienthimk.CheckedChanged += new System.EventHandler(this.ckHienthimk_CheckedChanged);
             // 
             // linkDangky
             // 
@@ -132,6 +137,9 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.groupBox1.Controls.Add(this.lbMatkhau);
+            this.groupBox1.Controls.Add(this.lbTaikhoan);
+            this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.panel1);
             this.groupBox1.Controls.Add(this.panel2);
             this.groupBox1.Controls.Add(this.label4);
@@ -147,33 +155,13 @@
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
             // 
-            // panel2
+            // label5
             // 
-            this.panel2.BackColor = System.Drawing.Color.Gray;
-            this.panel2.Controls.Add(this.txtMatkhau);
-            this.panel2.Location = new System.Drawing.Point(52, 235);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(352, 39);
-            this.panel2.TabIndex = 11;
-            // 
-            // txtMatkhau
-            // 
-            this.txtMatkhau.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtMatkhau.Location = new System.Drawing.Point(0, -3);
-            this.txtMatkhau.Multiline = true;
-            this.txtMatkhau.Name = "txtMatkhau";
-            this.txtMatkhau.Size = new System.Drawing.Size(352, 41);
-            this.txtMatkhau.TabIndex = 3;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label4.Location = new System.Drawing.Point(127, 401);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(148, 16);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "Bạn chưa có tài khoản ?";
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(52, 178);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(0, 16);
+            this.label5.TabIndex = 14;
             // 
             // panel1
             // 
@@ -193,6 +181,49 @@
             this.txtTaikhoan.Size = new System.Drawing.Size(352, 43);
             this.txtTaikhoan.TabIndex = 3;
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Gray;
+            this.panel2.Controls.Add(this.txtMatkhau);
+            this.panel2.Location = new System.Drawing.Point(52, 235);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(352, 39);
+            this.panel2.TabIndex = 11;
+            // 
+            // txtMatkhau
+            // 
+            this.txtMatkhau.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtMatkhau.Location = new System.Drawing.Point(0, -3);
+            this.txtMatkhau.Multiline = true;
+            this.txtMatkhau.Name = "txtMatkhau";
+            this.txtMatkhau.Size = new System.Drawing.Size(352, 41);
+            this.txtMatkhau.TabIndex = 3;
+            this.txtMatkhau.UseSystemPasswordChar = true;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label4.Location = new System.Drawing.Point(127, 401);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(148, 16);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "Bạn chưa có tài khoản ?";
+            // 
+            // lbTaikhoan
+            // 
+            this.lbTaikhoan.Location = new System.Drawing.Point(47, 173);
+            this.lbTaikhoan.Name = "lbTaikhoan";
+            this.lbTaikhoan.Size = new System.Drawing.Size(216, 23);
+            this.lbTaikhoan.TabIndex = 29;
+            // 
+            // lbMatkhau
+            // 
+            this.lbMatkhau.Location = new System.Drawing.Point(49, 276);
+            this.lbMatkhau.Name = "lbMatkhau";
+            this.lbMatkhau.Size = new System.Drawing.Size(216, 23);
+            this.lbMatkhau.TabIndex = 30;
+            // 
             // Dangnhap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -205,10 +236,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -228,5 +259,8 @@
         private System.Windows.Forms.TextBox txtMatkhau;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox txtTaikhoan;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lbMatkhau;
+        private System.Windows.Forms.Label lbTaikhoan;
     }
 }
