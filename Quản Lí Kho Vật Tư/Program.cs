@@ -16,7 +16,7 @@ namespace Quản_Lí_Kho_Vật_Tư
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Tongquan());
+            Application.Run(new Dangnhap());
         }
     }
 }

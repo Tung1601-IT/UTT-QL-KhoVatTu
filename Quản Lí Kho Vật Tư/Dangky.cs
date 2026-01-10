@@ -14,7 +14,7 @@ namespace Quản_Lí_Kho_Vật_Tư
 {
     public partial class Dangky : Form
     {
-        SqlConnection con = new SqlConnection("Data Source=ANHTU\\ANHTU;Initial Catalog=QL_KhoVatTu;User ID=sa;Password=Truong2022005!;Encrypt=True;TrustServerCertificate=True");
+        //SqlConnection con = new SqlConnection("Data Source=ANHTU\\ANHTU;Initial Catalog=QL_KhoVatTu;User ID=sa;Password=Truong2022005!;Encrypt=True;TrustServerCertificate=True");
         public Dangky()
         {
             InitializeComponent();
@@ -29,10 +29,10 @@ namespace Quản_Lí_Kho_Vật_Tư
         }
         public bool checktrungtk(string taikhoan)
         {
-            if (con.State == ConnectionState.Closed)
-                con.Open();
+            if (Thuvien.con.State == ConnectionState.Closed)
+                Thuvien.con.Open();
             string sql = "select count(*) from Taikhoan where Taikhoan=@tk";
-            SqlCommand cmd = new SqlCommand(sql, con);
+            SqlCommand cmd = new SqlCommand(sql, Thuvien.con);
             cmd.Parameters.AddWithValue("@tk", taikhoan);
             int kq = (int)cmd.ExecuteScalar();
             if (kq > 0)
@@ -45,8 +45,8 @@ namespace Quản_Lí_Kho_Vật_Tư
 
         private void btnDangky_Click(object sender, EventArgs e)
         {
-            if (con.State == ConnectionState.Closed)
-                con.Open();
+            if (Thuvien.con.State == ConnectionState.Closed)
+                Thuvien.con.Open();
             if(checktrungtk(txtTaikhoan.Text.Trim()))
             {
                 MessageBox.Show("Taì khoản đã tồn tại!");
@@ -58,7 +58,7 @@ namespace Quản_Lí_Kho_Vật_Tư
                 return;
             }    
             string sql = "insert into Taikhoan values (@ht,@tk,@mk,@ns,@gt,@dt,@email,@dc)";
-            SqlCommand cmd = new SqlCommand(sql, con);
+            SqlCommand cmd = new SqlCommand(sql, Thuvien.con);
             cmd.Parameters.Add("@ht", SqlDbType.NVarChar, 50).Value = txtHoten.Text.Trim();
             cmd.Parameters.Add("@tk", SqlDbType.VarChar, 50).Value = txtTaikhoan.Text.Trim();
             cmd.Parameters.Add("@mk", SqlDbType.VarChar, 50).Value = txtMatkhau.Text.Trim();

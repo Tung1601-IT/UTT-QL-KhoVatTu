@@ -155,6 +155,12 @@
     <Compile Include="Quanlithuchi.Designer.cs">
       <DependentUpon>Quanlithuchi.cs</DependentUpon>
     </Compile>
+    <Compile Include="ThemKhachhang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThemKhachhang.Designer.cs">
+      <DependentUpon>ThemKhachhang.cs</DependentUpon>
+    </Compile>
     <Compile Include="Themnhanvien.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -228,6 +234,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Sanphamdichvu.resx">
       <DependentUpon>Sanphamdichvu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThemKhachhang.resx">
+      <DependentUpon>ThemKhachhang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Themnhanvien.resx">
       <DependentUpon>Themnhanvien.cs</DependentUpon>
