@@ -94,9 +94,6 @@ namespace Quản_Lí_Kho_Vật_Tư
                 return;
             }
 
-            //Kiem tra trung ma
-            //B2:Kết nối DB
-
             if (Thuvien.con.State == ConnectionState.Closed)
                 Thuvien.con.Open();
             //B3: Tạo đối tượng command để thực thi câu lệnh sql

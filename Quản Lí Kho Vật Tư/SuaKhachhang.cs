@@ -28,8 +28,8 @@ namespace Quản_Lí_Kho_Vật_Tư
             cboGioitinh.Text = gt;
             txtSDT.Text = sdt;
             txtEmail.Text = email;
+            cboTrangthai.Text = tt;
             txtDiachi.Text = diachi;
-            cboGioitinh.Text = tt;
             txtCCCD.Text = cccd;
             txtMaKH.ReadOnly = true;
         }
@@ -41,8 +41,8 @@ namespace Quản_Lí_Kho_Vật_Tư
             GioiTinh = cboGioitinh.Text;
             SDT = txtSDT.Text;
             Email = txtEmail.Text;
-            DiaChi = txtDiachi.Text;
             TrangThai = cboTrangthai.Text;
+            DiaChi = txtDiachi.Text;
             CCCD = txtCCCD.Text;
 
             this.DialogResult = DialogResult.OK;
