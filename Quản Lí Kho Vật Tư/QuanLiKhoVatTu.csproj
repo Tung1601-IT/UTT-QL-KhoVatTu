@@ -64,6 +64,12 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Baocao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Baocao.Designer.cs">
+      <DependentUpon>Baocao.cs</DependentUpon>
+    </Compile>
     <Compile Include="Chitiet_hoadon.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -174,6 +180,9 @@
     <Compile Include="Tongquan.Designer.cs">
       <DependentUpon>Tongquan.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Baocao.resx">
+      <DependentUpon>Baocao.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Chitiet_hoadon.resx">
       <DependentUpon>Chitiet_hoadon.cs</DependentUpon>
     </EmbeddedResource>
