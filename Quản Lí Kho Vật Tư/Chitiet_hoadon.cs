@@ -55,6 +55,8 @@ namespace Quản_Lí_Kho_Vật_Tư
             {
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.Add("@MaHD", SqlDbType.VarChar, 50).Value = _maHD;
+                if (Thuvien.con.State != ConnectionState.Open)
+                    Thuvien.con.Open();
 
                 using (SqlDataAdapter da = new SqlDataAdapter(cmd))
                 {

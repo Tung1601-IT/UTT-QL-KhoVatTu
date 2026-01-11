@@ -64,21 +64,24 @@ namespace Quản_Lí_Kho_Vật_Tư
 
                 this.Hide();   
 
-                Tongquan f = new Tongquan();
+                    Tongquan f = new Tongquan();
 
-                // Khi Form mới đóng → đóng Trang chủ
-                f.FormClosed += (s, args) =>
+                    // Khi Form mới đóng → đóng Trang chủ
+                    f.FormClosed += (s, args) =>
+                    {
+                        this.Close();
+                    };
+
+                    f.Show();
+                }
+                else
                 {
-                    this.Close();
-                };
-
-                f.Show();
+                    MessageBox.Show("Tài khoản hoặc mật khẩu không đúng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            else
-            {
-                MessageBox.Show("Tài khoản hoặc mật khẩu không đúng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            Thuvien.con.Close();
         }
+        
 
         private void ckHienthimk_CheckedChanged(object sender, EventArgs e)
         {
