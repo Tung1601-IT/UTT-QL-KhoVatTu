@@ -220,7 +220,7 @@
     <value>10, 2, 0, 2</value>
   </data>
   <data name="menuStrip1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1743, 54</value>
+    <value>1764, 54</value>
   </data>
   <data name="menuStrip1.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -295,7 +295,7 @@
     <value>NoControl</value>
   </data>
   <data name="ibtnxuatfile.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1473, 3</value>
+    <value>1494, 3</value>
   </data>
   <data name="ibtnxuatfile.Size" type="System.Drawing.Size, System.Drawing">
     <value>177, 70</value>
@@ -328,7 +328,7 @@
     <value>NoControl</value>
   </data>
   <data name="icnhapfile.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1211, 3</value>
+    <value>1232, 3</value>
   </data>
   <data name="icnhapfile.Size" type="System.Drawing.Size, System.Drawing">
     <value>172, 70</value>
@@ -361,7 +361,7 @@
     <value>NoControl</value>
   </data>
   <data name="ibtnnhanvien.Location" type="System.Drawing.Point, System.Drawing">
-    <value>934, 3</value>
+    <value>955, 3</value>
   </data>
   <data name="ibtnnhanvien.Size" type="System.Drawing.Size, System.Drawing">
     <value>175, 71</value>
@@ -394,7 +394,7 @@
     <value>3, 3</value>
   </data>
   <data name="panel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1737, 79</value>
+    <value>1758, 79</value>
   </data>
   <data name="panel2.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
@@ -592,7 +592,7 @@
     <value>51</value>
   </data>
   <data name="dgnhanvien.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1737, 380</value>
+    <value>1758, 380</value>
   </data>
   <data name="dgnhanvien.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
@@ -685,7 +685,7 @@
     <value>0, 10, 0, 0</value>
   </data>
   <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>727, 65</value>
+    <value>738, 65</value>
   </data>
   <data name="panel1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -769,13 +769,13 @@
     <value>Top</value>
   </data>
   <data name="panel3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>736, 3</value>
+    <value>747, 3</value>
   </data>
   <data name="panel3.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 10, 0, 0</value>
   </data>
   <data name="panel3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>727, 65</value>
+    <value>738, 65</value>
   </data>
   <data name="panel3.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -865,7 +865,7 @@
     <value>2</value>
   </data>
   <data name="tableLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>245, 166</value>
+    <value>244, 166</value>
   </data>
   <data name="tableLayoutPanel1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -889,10 +889,10 @@
     <value>Fill</value>
   </data>
   <data name="panel4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1469, 3</value>
+    <value>1491, 3</value>
   </data>
   <data name="panel4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>245, 166</value>
+    <value>244, 166</value>
   </data>
   <data name="panel4.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -919,7 +919,7 @@
     <value>1</value>
   </data>
   <data name="tablepaneltimkiem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1717, 172</value>
+    <value>1738, 172</value>
   </data>
   <data name="tablepaneltimkiem.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -946,7 +946,7 @@
     <value>10, 39</value>
   </data>
   <data name="panelsearch.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1717, 150</value>
+    <value>1738, 150</value>
   </data>
   <data name="panelsearch.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -973,7 +973,7 @@
     <value>10, 20, 10, 10</value>
   </data>
   <data name="gbtimkiemnhanvien.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1737, 199</value>
+    <value>1758, 199</value>
   </data>
   <data name="gbtimkiemnhanvien.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
@@ -1003,7 +1003,7 @@
     <value>3</value>
   </data>
   <data name="tablepaneltong.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1743, 700</value>
+    <value>1764, 700</value>
   </data>
   <data name="tablepaneltong.TabIndex" type="System.Int32, mscorlib">
     <value>14</value>
@@ -1045,7 +1045,7 @@
     <value>True</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>1764, 696</value>
+    <value>1785, 696</value>
   </data>
   <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 10pt</value>
