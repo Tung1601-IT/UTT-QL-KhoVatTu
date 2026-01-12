@@ -23,153 +23,23 @@ namespace Quản_Lí_Kho_Vật_Tư
             InitializeComponent();
             
         }
-        private void ClearForm()
-        {
-            txtMadoitac.Clear();
-            txtTendoitac.Clear();
-            txtSDT.Clear();
-            txtEmail.Clear();
-            txtDiachi.Clear();
-            txtGhichu.Clear();
-
-            if (cboNhomdoitac.Items.Count > 0)
-                cboNhomdoitac.SelectedIndex = 0;
-
-            lbMadoitac.Text = "";
-            lbTendoitac.Text = "";
-            lbSDT.Text = "";
-            lbEmail.Text = "";
-            lbDiachi.Text = "";
-            lbNhomdoitac.Text = "";
-
-            txtMadoitac.Focus();
-        }
+        public DataGridView DgvNCC => dgvNCC;
         private void btnThem_Click(object sender, EventArgs e)
         {
-            // B1: Lấy dữ liệu trên các đk đưa vào biến
-            string mdt = txtMadoitac.Text.Trim();
-            string ht = txtTendoitac.Text.Trim();
-            string nhom;
-            string dt = txtSDT.Text.Trim();
-            string mail = txtEmail.Text.Trim();
-            string dc = txtDiachi.Text.Trim();
-            string ghichu=txtGhichu.Text.Trim();
-            if (cboNhomdoitac.SelectedItem == null)
-                nhom = "";
-            else
-                nhom = cboNhomdoitac.SelectedItem.ToString();
-            if (Thuvien.checkTrong(mdt))
-            {
-                txtMadoitac.Focus();
-                lbMadoitac.Text = "Mã đối tác không được để trống";
-                lbMadoitac.ForeColor = Color.Red;
-                return;
-            }
-            if (Thuvien.checkTrong(ht))
-            {
-                txtTendoitac.Focus();
-                lbTendoitac.Text = "Tên đối tác không được để trống";
-                lbTendoitac.ForeColor = Color.Red;
-                return;
-            }
-            if (Thuvien.checkTrong(nhom))
-            {
-                cboNhomdoitac.Focus();
-                lbNhomdoitac.Text = "Nhóm đối tác không được để trống";
-                lbNhomdoitac.ForeColor = Color.Red;
-                return;
-            }
-            if (Thuvien.checkTrong(dt))
-            {
-                txtSDT.Focus();
-                lbSDT.Text = "Số điện thoại không được để trống";
-                lbSDT.ForeColor = Color.Red;
-                return;
-            }
-            if (Thuvien.checkTrong(mail))
-            {
-                txtEmail.Focus();
-                lbEmail.Text = "Email không được để trống";
-                lbEmail.ForeColor = Color.Red;
-                return;
-            }
-            if (Thuvien.checkTrong(dc))
-            {
-                txtDiachi.Focus();
-                lbDiachi.Text = "Địa chỉ không được để trống";
-                lbDiachi.ForeColor = Color.Red;
-                return;
-            }
-            if (!Thuvien.checkDienThoai(dt))
-            {
-                txtSDT.Focus();
-                MessageBox.Show("Số điện thoại không đúng...");
-                return;
-            }
-            if (!Thuvien.checkEmail(mail))
-            {
-                txtEmail.Focus();
-                MessageBox.Show("Email không đúng...");
-                return;
-            }
-
-            //B2:Kết nối DB
-
-            if (Thuvien.con.State == ConnectionState.Closed)
-                Thuvien.con.Open();
-            //B3: Tạo đối tượng command để thực thi câu lệnh sql
-            string sql = "Insert Doitac_NCC values(@mdt,@ht,@nhom,@dt,@mail,@dc,@ghichu)";
-            SqlCommand cmd = new SqlCommand(sql, Thuvien.con);
-            cmd.Parameters.Add("@mdt", SqlDbType.NVarChar, 50).Value = mdt;
-            cmd.Parameters.Add("@ht", SqlDbType.NVarChar, 50).Value = ht;
-            cmd.Parameters.Add("@nhom", SqlDbType.NVarChar, 50).Value = nhom;
-            cmd.Parameters.Add("@dt", SqlDbType.VarChar, 10).Value = dt;
-            cmd.Parameters.Add("@mail", SqlDbType.NVarChar, 50).Value = mail;
-            cmd.Parameters.Add("@dc", SqlDbType.NVarChar, 50).Value = dc;
-            cmd.Parameters.Add("@ghichu", SqlDbType.NVarChar, 100).Value = ghichu;
-            cmd.ExecuteNonQuery();
-            cmd.Dispose();
-            Thuvien.con.Close();
-            MessageBox.Show("Thêm mới thành công");
-            Thuvien.load_KH(dgvNCC, "Select* from Doitac_NCC");
-            ClearForm();
+            ThemDoitac f = new ThemDoitac();
+            f.ShowDialog();
         }
 
         private void Doitac_NCC_Load(object sender, EventArgs e)
         {
             Thuvien.load_KH(dgvNCC, "Select* from Doitac_NCC");
         }
-
-        private void dgvNCC_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            int i = e.RowIndex;
-            txtMadoitac.Text = dgvNCC.Rows[i].Cells[0].Value.ToString();
-            txtTendoitac.Text=dgvNCC.Rows[i].Cells[1].Value.ToString();
-            cboNhomdoitac.Text= dgvNCC.Rows[i].Cells[2].Value.ToString();
-            txtSDT.Text= dgvNCC.Rows[i].Cells[3].Value.ToString();
-            txtEmail.Text= dgvNCC.Rows[i].Cells[4].Value.ToString();
-            txtDiachi.Text= dgvNCC.Rows[i].Cells[5].Value.ToString();
-            txtGhichu.Text= dgvNCC.Rows[i].Cells[6].Value.ToString();
-            txtMadoitac.Enabled=false;
-            cboNhomdoitac.Enabled=false;
-        }
-
-        private void btnSua_Click(object sender, EventArgs e)
-        {
-            string mdt = txtMadoitac.Text.Trim();
-            string ht = txtTendoitac.Text.Trim();
-            string nhom = cboNhomdoitac.SelectedItem.ToString();
-            string dt = txtSDT.Text.Trim();
-            string mail = txtEmail.Text.Trim();
-            string dc = txtDiachi.Text.Trim();
-            string ghichu = txtGhichu.Text.Trim();
-            Thuvien.upd_del("Update Doitac_NCC set Tendoitac=N'"+ht+ "',Nhomdoitac=N'"+nhom+"',SDT='"+dt+"',Email='"+mail+"',Diachi=N'"+dc+"',Ghichu=N'"+ghichu+"' where Madoitac='"+mdt+"'");
-            Thuvien.load_KH(dgvNCC, "Select* from Doitac_NCC");
-        }
-
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            string mdt= txtMadoitac.Text.Trim();
+            if (dgvNCC.CurrentRow == null) return;
+            int i = dgvNCC.CurrentRow.Index;
+            if (i < 0) return;
+            string mdt = dgvNCC.Rows[i].Cells["Madoitac"].Value?.ToString();
             DialogResult kq = MessageBox.Show("Ban chac chan muon xoa?", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (kq == DialogResult.No)
                 return;
@@ -191,7 +61,6 @@ namespace Quản_Lí_Kho_Vật_Tư
         }
         public void ExportExcel(DataTable tb, string sheetname)
 {
-    //Tạo các đối tượng Excel
 
     ex_cel.Application oExcel = new ex_cel.Application();
     ex_cel.Workbooks oBooks;
@@ -301,10 +170,10 @@ int rowEnd = rowStart + tb.Rows.Count - 1;
 }
         private void btnXuat_Click(object sender, EventArgs e)
         {
-            string mdt = txtMadoitac.Text.Trim();
-            string ht = txtTendoitac.Text.Trim();
-            string sdt = txtSDT.Text.Trim();
-            string nhom = cboNhomdoitac.Text.Trim();
+            string mdt = txtMadoitac_tk.Text.Trim();
+            string ht = txtTendoitac_tk.Text.Trim();
+            string sdt = txtSDT_tk.Text.Trim();
+            string nhom = cboNhomdoitac_tk.Text.Trim();
             if (Thuvien.con.State == ConnectionState.Closed)
                 Thuvien.con.Open();
 
@@ -335,52 +204,153 @@ int rowEnd = rowStart + tb.Rows.Count - 1;
             }
         }
 
-        private void txtMadoitac_TextChanged(object sender, EventArgs e)
+        private void dgvNCC_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            string mdt = txtMadoitac.Text.Trim();
-            if (Thuvien.checkTrung("Doitac_NCC", "Madoitac", mdt))
+            int i = e.RowIndex;
+            string mdt= dgvNCC.Rows[i].Cells[0].Value.ToString();
+            string ht = dgvNCC.Rows[i].Cells[1].Value.ToString();
+            string nhom = dgvNCC.Rows[i].Cells[2].Value.ToString();
+            string sdt = dgvNCC.Rows[i].Cells[3].Value.ToString();
+           string email = dgvNCC.Rows[i].Cells[4].Value.ToString();
+            string diachi = dgvNCC.Rows[i].Cells[5].Value.ToString();
+            string ghichu = dgvNCC.Rows[i].Cells[6].Value.ToString();
+            using (SuaDoitac dlg = new SuaDoitac(mdt, ht, nhom, sdt, email, diachi, ghichu))
             {
-                lbMadoitac.Text = "Mã đối tác đã tồn tại.";
-                lbMadoitac.ForeColor = Color.Red;
+                if (dlg.ShowDialog() == DialogResult.OK)
+                {
+                    mdt = dlg.Madoitac;
+                    ht = dlg.Tendoitac;
+                    nhom = dlg.Nhomdoitac;
+                    sdt = dlg.SDT;
+                    email = dlg.Email;
+                    diachi = dlg.Diachi;
+                    ghichu = dlg.Ghichu;
+                    Thuvien.upd_del("Update Doitac_NCC set Tendoitac=N'" + ht + "',Nhomdoitac=N'" + nhom + "',SDT='" + sdt + "',Email='" + email + "',Diachi=N'" + diachi+ "',Ghichu=N'" + ghichu + "' where Madoitac='" + mdt + "'");
+                    Thuvien.load_KH(dgvNCC, "Select* from Doitac_NCC");
+
+                }
             }
-            else
+
+        }
+        private void kháchHàngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide(); 
+            Doitac_Khachhang f = new Doitac_Khachhang();
+
+            // Khi Form mới đóng → đóng Trang chủ
+            f.FormClosed += (s, args) =>
             {
-                lbMadoitac.Text = "";
-            }
+                this.Close();
+            };
+
+            f.Show();
         }
 
-        private void txtSDT_TextChanged(object sender, EventArgs e)
+        private void sẢNPHẢMDỊCHVỤToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            string dt=txtSDT.Text.Trim();
-            if (Thuvien.checkTrung("Doitac_NCC", "SDT", dt))
+            this.Hide(); 
+
+            Sanphamdichvu f = new Sanphamdichvu();
+
+            // Khi Form mới đóng → đóng Trang chủ
+            f.FormClosed += (s, args) =>
             {
-                lbSDT.Text = "Số điện thoại đã tồn tại.";
-                lbSDT.ForeColor = Color.Red;
-            }
-            else
-            {
-                lbSDT.Text = "";
-            }
+                this.Close();
+            };
+
+            f.Show();
         }
 
-        private void txtEmail_TextChanged(object sender, EventArgs e)
+        private void tỒNKHOToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            string mail = txtEmail.Text.Trim();
-            if (Thuvien.checkTrung("Doitac_NCC", "Email", mail))
+            this.Hide();   // Ẩn Trang chủ
+
+            Quanlikho f = new Quanlikho();
+
+            // Khi Form mới đóng → đóng Trang chủ
+            f.FormClosed += (s, args) =>
             {
-                lbEmail.Text = "Email đã tồn tại.";
-                lbEmail.ForeColor = Color.Red;
-            }
-            else
-            {
-                lbEmail.Text = "";
-            }
+                this.Close();
+            };
+
+            f.Show();
         }
 
-        private void Doitac_NCC_Shown(object sender, EventArgs e)
+        private void nHẬPKHOToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Maximized;
+            this.Hide();   // Ẩn Trang chủ
+
+            Nhapkho f = new Nhapkho();
+
+            // Khi Form mới đóng → đóng Trang chủ
+            f.FormClosed += (s, args) =>
+            {
+                this.Close();
+            };
+
+            f.Show();
         }
+
+        private void xUẤTKHOToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();   // Ẩn Trang chủ
+
+            Xuatkho f = new Xuatkho();
+
+            // Khi Form mới đóng → đóng Trang chủ
+            f.FormClosed += (s, args) =>
+            {
+                this.Close();
+            };
+
+            f.Show();
+        }
+
+        private void qUẢNLÍTHUCHIToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();   // Ẩn Trang chủ
+
+            Quanlithuchi f = new Quanlithuchi();
+
+            // Khi Form mới đóng → đóng Trang chủ
+            f.FormClosed += (s, args) =>
+            {
+                this.Close();
+            };
+
+            f.Show();
+        }
+
+        private void dANHSÁCHNHÂNVIÊNToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();   // Ẩn Trang chủ
+
+            Danhsachnhanvien f = new Danhsachnhanvien();
+
+            // Khi Form mới đóng → đóng Trang chủ
+            f.FormClosed += (s, args) =>
+            {
+                this.Close();
+            };
+
+            f.Show();
+        }
+
+        private void lỊCHLÀMVIỆCToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();   // Ẩn Trang chủ
+
+            Lichlamviec f = new Lichlamviec();
+
+            // Khi Form mới đóng → đóng Trang chủ
+            f.FormClosed += (s, args) =>
+            {
+                this.Close();
+            };
+
+            f.Show();
+        }
+
     }
     }
 

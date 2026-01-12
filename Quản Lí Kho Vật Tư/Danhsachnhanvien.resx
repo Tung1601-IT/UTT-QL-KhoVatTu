@@ -206,8 +206,8 @@
   <data name="bảngLươngToolStripMenuItem.Text" xml:space="preserve">
     <value>Bảng lương</value>
   </data>
-  <data name="nHÂNVIÊNToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>102, 50</value>
+  <data name="lbdsnv.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
   </data>
   <data name="nHÂNVIÊNToolStripMenuItem.Text" xml:space="preserve">
     <value>NHÂN VIÊN</value>
@@ -1023,15 +1023,6 @@
   <data name="tablepaneltong.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
     <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="panel2" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="dgnhanvien" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="gbtimkiemnhanvien" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,100" /&gt;&lt;Rows Styles="Absolute,85,Percent,37.27,Percent,62.73" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
-  <metadata name="qL_KhoVatTuDataSet1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>481, 17</value>
-  </metadata>
-  <metadata name="doitac_NCCTableAdapter1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>687, 17</value>
-  </metadata>
-  <metadata name="qL_KhoVatTuDataSet2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>921, 17</value>
-  </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -1238,24 +1229,6 @@
   </data>
   <data name="&gt;&gt;dgghichu.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;qL_KhoVatTuDataSet1.Name" xml:space="preserve">
-    <value>qL_KhoVatTuDataSet1</value>
-  </data>
-  <data name="&gt;&gt;qL_KhoVatTuDataSet1.Type" xml:space="preserve">
-    <value>Quản_Lí_Kho_Vật_Tư.QL_KhoVatTuDataSet, QL_KhoVatTuDataSet.Designer.cs.dll, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;doitac_NCCTableAdapter1.Name" xml:space="preserve">
-    <value>doitac_NCCTableAdapter1</value>
-  </data>
-  <data name="&gt;&gt;doitac_NCCTableAdapter1.Type" xml:space="preserve">
-    <value>Quản_Lí_Kho_Vật_Tư.QL_KhoVatTuDataSetTableAdapters.Doitac_NCCTableAdapter, QL_KhoVatTuDataSet.Designer.cs.dll, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;qL_KhoVatTuDataSet2.Name" xml:space="preserve">
-    <value>qL_KhoVatTuDataSet2</value>
-  </data>
-  <data name="&gt;&gt;qL_KhoVatTuDataSet2.Type" xml:space="preserve">
-    <value>Quản_Lí_Kho_Vật_Tư.QL_KhoVatTuDataSet, QL_KhoVatTuDataSet.Designer.cs.dll, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>Danhsachnhanvien</value>

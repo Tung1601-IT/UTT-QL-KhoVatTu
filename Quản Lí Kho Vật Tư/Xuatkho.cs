@@ -23,13 +23,13 @@ namespace Quản_Lí_Kho_Vật_Tư
         {
             string ngay = DateTime.Now.ToString("yyyyMMdd");
 
-            string sql = $"SELECT COUNT(*) FROM HoaDon WHERE MaHD LIKE '{loai}{ngay}%'";
+            string sql = $"SELECT COUNT(*) FROM Phieuxuat WHERE MaHD LIKE '{loai}{ngay}%'";
             SqlCommand cmd = new SqlCommand(sql, Thuvien.con, tran);
 
             int stt = (int)cmd.ExecuteScalar() + 1;
             return $"{loai}{ngay}_{stt:D3}";
         }
-
+        
         DataTable dtXuat;
 
         private void Init_xNhapTable()
@@ -138,19 +138,33 @@ namespace Quản_Lí_Kho_Vật_Tư
 
         private void Load_xTenVatTu()
         {
-            if (Thuvien.con.State == ConnectionState.Closed)
+            try
+            {
+                if (Thuvien.con.State == ConnectionState.Open)
+                    Thuvien.con.Close();
+
                 Thuvien.con.Open();
 
-            string sql = "SELECT DISTINCT Tenvattu FROM QL_Kho";
-            SqlDataAdapter da = new SqlDataAdapter(sql, Thuvien.con);
-            DataTable tb = new DataTable();
-            da.Fill(tb);
+                string sql = "SELECT DISTINCT Tenvattu FROM QL_Kho";
+                using (SqlDataAdapter da = new SqlDataAdapter(sql, Thuvien.con))
+                {
+                    DataTable tb = new DataTable();
+                    da.Fill(tb);
 
-            xTenvt.DataSource = tb;
-            xTenvt.DisplayMember = "Tenvattu";
-            xTenvt.SelectedIndex = -1;
-
-            Thuvien.con.Close();
+                    xTenvt.DataSource = tb;
+                    xTenvt.DisplayMember = "Tenvattu";
+                    xTenvt.SelectedIndex = -1;
+                }
+                
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Lỗi: " + ex.Message);
+            }
+            finally
+            {
+                Thuvien.con.Close();
+            }
         }
 
         private void xTenvt_SelectedIndexChanged(object sender, EventArgs e)
@@ -342,6 +356,8 @@ namespace Quản_Lí_Kho_Vật_Tư
                 return;
             }
 
+            
+
             if (Thuvien.con.State == ConnectionState.Closed)
                 Thuvien.con.Open();
 
@@ -349,29 +365,38 @@ namespace Quản_Lí_Kho_Vật_Tư
 
             try
             {
-                string maHD = TaoMaHoaDon("HDX", tran);
+                string maHD = TaoMaHoaDon("PX", tran);
                 decimal tongTien = dtXuat.AsEnumerable()
                                          .Sum(r => r.Field<decimal>("Thanhtien"));
 
-                // 1️⃣ Hóa đơn
-                string sqlHD = @"
-            INSERT INTO Hoadon (MaHD, NgayTao, LoaiHD, TongTien)
-            VALUES (@mahd, GETDATE(), N'XUAT', @tong)";
+                // =========================
+                // 1️⃣ PHIẾU XUẤT
+                // =========================
+                string sqlPX = @"
+                INSERT INTO Phieuxuat
+                (MaHD, Ngaytao, TongTien, NVtaophieu)
+                VALUES
+                (@mahd, @ngay, @tong, @nv)";
 
-                SqlCommand cmdHD = new SqlCommand(sqlHD, Thuvien.con, tran);
-                cmdHD.Parameters.AddWithValue("@mahd", maHD);
-                cmdHD.Parameters.AddWithValue("@tong", tongTien);
-                cmdHD.ExecuteNonQuery();
+                SqlCommand cmdPX = new SqlCommand(sqlPX, Thuvien.con, tran);
+                cmdPX.Parameters.AddWithValue("@mahd", maHD);
+                cmdPX.Parameters.AddWithValue("@ngay", xNgaytao.Value);
+                cmdPX.Parameters.AddWithValue("@tong", tongTien);
+                cmdPX.Parameters.AddWithValue("@nv", xNhanvien.Text);
+                
 
-                // 2️⃣ Chi tiết + trừ kho
+                cmdPX.ExecuteNonQuery();
+
+                // =========================
+                // 2️⃣ CHI TIẾT + TRỪ KHO
+                // =========================
                 foreach (DataRow r in dtXuat.Rows)
                 {
                     string sqlCT = @"
-                INSERT INTO Hoadon_CT 
-                (MaHD, MaVT, Soluong, Giaban, Thanhtien, Doitac)
-                VALUES 
-                (@mahd, @mavt, @sl, @gia, @tt, @doitac)
-                ";
+            INSERT INTO Phieuxuat_CT
+            (MaHD, MaVT, SoLuong, Giaban, ThanhTien, Doitac)
+            VALUES
+            (@mahd, @mavt, @sl, @gia, @tt, @dt)";
 
                     SqlCommand cmdCT = new SqlCommand(sqlCT, Thuvien.con, tran);
                     cmdCT.Parameters.AddWithValue("@mahd", maHD);
@@ -379,14 +404,15 @@ namespace Quản_Lí_Kho_Vật_Tư
                     cmdCT.Parameters.AddWithValue("@sl", r["Soluong"]);
                     cmdCT.Parameters.AddWithValue("@gia", r["Giaban"]);
                     cmdCT.Parameters.AddWithValue("@tt", r["Thanhtien"]);
-                    cmdCT.Parameters.AddWithValue("@doitac", r["Khachhang"]);
-
+                    cmdCT.Parameters.AddWithValue("@dt", r["Khachhang"]);
+                    
                     cmdCT.ExecuteNonQuery();
 
+                    // Trừ tồn kho
                     string sqlKho = @"
-                UPDATE QL_Kho
-                SET Soluong = Soluong - @sl
-                WHERE Mavattu = @mavt";
+            UPDATE QL_Kho
+            SET Soluong = Soluong - @sl
+            WHERE Mavattu = @mavt";
 
                     SqlCommand cmdKho = new SqlCommand(sqlKho, Thuvien.con, tran);
                     cmdKho.Parameters.AddWithValue("@sl", r["Soluong"]);
@@ -395,16 +421,15 @@ namespace Quản_Lí_Kho_Vật_Tư
                 }
 
                 tran.Commit();
-                MessageBox.Show($"Xuất kho thành công\nMã hóa đơn: {maHD}");
+                MessageBox.Show($"Xuất kho thành công!\nMã phiếu: {maHD}");
 
                 dtXuat.Clear();
                 xTongtien.Text = "0";
-                
             }
             catch (Exception ex)
             {
                 tran.Rollback();
-                MessageBox.Show("Lỗi xuất kho\n" + ex.Message);
+                MessageBox.Show("Lỗi xuất kho:\n" + ex.Message);
             }
             finally
             {
@@ -420,6 +445,13 @@ namespace Quản_Lí_Kho_Vật_Tư
             Load_xTenVatTu();
             LockInput();
             Load_KhachHang();
+
+            xNgaytao.Value = DateTime.Now;
+            xNgaytao.Enabled = false;
+
+            xNhanvien.Text = Dangnhap.TenNhanVien; // hoặc TenDangNhap
+            xNhanvien.ReadOnly = true;
+
             xSoluong.TextChanged += txt_xSoluong_TextChanged;
             isLoading = false;
         }
@@ -456,6 +488,143 @@ namespace Quản_Lí_Kho_Vật_Tư
             Thuvien.con.Close();
         }
 
+
+
+        // Gọi form
+        private void bÁNHÀNGToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();   // Ẩn Trang chủ
+
+           Tongquan f = new Tongquan();
+
+            // Khi Form mới đóng → đóng Trang chủ
+            f.FormClosed += (s, args) =>
+            {
+                this.Close();
+            };
+
+            f.Show();
+        }
+
+        private void kháchHàngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();   // Ẩn Trang chủ
+
+            Doitac_Khachhang f = new Doitac_Khachhang();
+
+            // Khi Form mới đóng → đóng Trang chủ
+            f.FormClosed += (s, args) =>
+            {
+                this.Close();
+            };
+
+            f.Show();
+        }
+
+        private void nhàCungToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();   // Ẩn Trang chủ
+
+            Doitac_NCC f = new Doitac_NCC();
+
+            // Khi Form mới đóng → đóng Trang chủ
+            f.FormClosed += (s, args) =>
+            {
+                this.Close();
+            };
+
+            f.Show();
+        }
+
+        private void sẢNPHẢMDỊCHVỤToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();   // Ẩn Trang chủ
+
+            Sanphamdichvu f = new Sanphamdichvu();
+
+            // Khi Form mới đóng → đóng Trang chủ
+            f.FormClosed += (s, args) =>
+            {
+                this.Close();
+            };
+
+            f.Show();
+        }
+
+        private void tồnKhoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();   // Ẩn Trang chủ
+
+            Quanlikho f = new Quanlikho();
+
+            // Khi Form mới đóng → đóng Trang chủ
+            f.FormClosed += (s, args) =>
+            {
+                this.Close();
+            };
+
+            f.Show();
+        }
+
+        private void nhậpKhoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();   // Ẩn Trang chủ
+
+            Nhapkho f = new Nhapkho();
+
+            // Khi Form mới đóng → đóng Trang chủ
+            f.FormClosed += (s, args) =>
+            {
+                this.Close();
+            };
+
+            f.Show();
+        }
+
+        private void qUẢNLÍTHUCHIToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();   // Ẩn Trang chủ
+
+            Quanlithuchi f = new Quanlithuchi();
+
+            // Khi Form mới đóng → đóng Trang chủ
+            f.FormClosed += (s, args) =>
+            {
+                this.Close();
+            };
+
+            f.Show();
+        }
+
+        private void danhSáchNhânViênToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();   // Ẩn Trang chủ
+
+            Danhsachnhanvien f = new Danhsachnhanvien();
+
+            // Khi Form mới đóng → đóng Trang chủ
+            f.FormClosed += (s, args) =>
+            {
+                this.Close();
+            };
+
+            f.Show();
+        }
+
+        private void lịchLàmViệcToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();   // Ẩn Trang chủ
+
+            Lichlamviec f = new Lichlamviec();
+
+            // Khi Form mới đóng → đóng Trang chủ
+            f.FormClosed += (s, args) =>
+            {
+                this.Close();
+            };
+
+            f.Show();
+        }
     }
 }
 

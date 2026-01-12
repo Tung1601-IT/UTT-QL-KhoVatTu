@@ -24,6 +24,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -34,6 +35,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup />
+  <PropertyGroup />
   <ItemGroup>
     <Reference Include="FontAwesome.Sharp, Version=6.6.0.0, Culture=neutral, PublicKeyToken=d16d1e4e568ec10f, processorArchitecture=MSIL">
       <HintPath>..\packages\FontAwesome.Sharp.6.6.0\lib\net48\FontAwesome.Sharp.dll</HintPath>
@@ -124,6 +128,12 @@
     <Compile Include="FileExcel_NV.Designer.cs">
       <DependentUpon>FileExcel_NV.cs</DependentUpon>
     </Compile>
+    <Compile Include="HoadonNhapkho.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HoadonNhapkho.Designer.cs">
+      <DependentUpon>HoadonNhapkho.cs</DependentUpon>
+    </Compile>
     <Compile Include="Lichlamviec.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -143,6 +153,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>QL_KhoVatTuDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="ql_vattuDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ql_vattuDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Quanlikho.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -161,11 +176,23 @@
     <Compile Include="Quanlithuchi.Designer.cs">
       <DependentUpon>Quanlithuchi.cs</DependentUpon>
     </Compile>
+    <Compile Include="SuaDoitac.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SuaDoitac.Designer.cs">
+      <DependentUpon>SuaDoitac.cs</DependentUpon>
+    </Compile>
     <Compile Include="SuaKhachhang.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="SuaKhachhang.Designer.cs">
       <DependentUpon>SuaKhachhang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ThemDoitac.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThemDoitac.Designer.cs">
+      <DependentUpon>ThemDoitac.cs</DependentUpon>
     </Compile>
     <Compile Include="ThemKhachhang.cs">
       <SubType>Form</SubType>
@@ -225,6 +252,9 @@
     <EmbeddedResource Include="FileExcel_NV.resx">
       <DependentUpon>FileExcel_NV.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="HoadonNhapkho.resx">
+      <DependentUpon>HoadonNhapkho.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Lichlamviec.resx">
       <DependentUpon>Lichlamviec.cs</DependentUpon>
     </EmbeddedResource>
@@ -250,8 +280,14 @@
     <EmbeddedResource Include="Sanphamdichvu.resx">
       <DependentUpon>Sanphamdichvu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="SuaDoitac.resx">
+      <DependentUpon>SuaDoitac.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SuaKhachhang.resx">
       <DependentUpon>SuaKhachhang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThemDoitac.resx">
+      <DependentUpon>ThemDoitac.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ThemKhachhang.resx">
       <DependentUpon>ThemKhachhang.cs</DependentUpon>
@@ -290,6 +326,17 @@
     </None>
     <None Include="QL_KhoVatTuDataSet.xss">
       <DependentUpon>QL_KhoVatTuDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ql_vattuDataSet.xsc">
+      <DependentUpon>ql_vattuDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ql_vattuDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ql_vattuDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ql_vattuDataSet.xss">
+      <DependentUpon>ql_vattuDataSet.xsd</DependentUpon>
     </None>
     <None Include="Resources\FileNhap.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

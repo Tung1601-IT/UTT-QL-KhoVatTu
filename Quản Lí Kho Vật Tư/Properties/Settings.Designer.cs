@@ -33,5 +33,16 @@ namespace Quản_Lí_Kho_Vật_Tư.Properties {
                 return ((string)(this["QL_KhoVatTuConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=MSI\\xuan;Initial Catalog=ql_vattu;Integrated Security=True;Encrypt=Tr" +
+            "ue;TrustServerCertificate=True")]
+        public string ql_vattuConnectionString {
+            get {
+                return ((string)(this["ql_vattuConnectionString"]));
+            }
+        }
     }
 }

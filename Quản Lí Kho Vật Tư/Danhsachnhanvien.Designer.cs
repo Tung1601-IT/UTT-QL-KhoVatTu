@@ -77,14 +77,10 @@
             this.txtmanv = new System.Windows.Forms.TextBox();
             this.panelphai = new System.Windows.Forms.Panel();
             this.lbsdt = new System.Windows.Forms.Label();
-            this.txtsdt = new System.Windows.Forms.TextBox();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.ibtnxoa = new FontAwesome.Sharp.IconButton();
-            this.ibtntimkiemnhanvien = new FontAwesome.Sharp.IconButton();
-            this.qL_KhoVatTuDataSet1 = new Quản_Lí_Kho_Vật_Tư.QL_KhoVatTuDataSet();
-            this.doitac_NCCTableAdapter1 = new Quản_Lí_Kho_Vật_Tư.QL_KhoVatTuDataSetTableAdapters.Doitac_NCCTableAdapter();
-            this.qL_KhoVatTuDataSet2 = new Quản_Lí_Kho_Vật_Tư.QL_KhoVatTuDataSet();
+            this.lbmanv = new System.Windows.Forms.Label();
+            this.ibtnxuatfile = new FontAwesome.Sharp.IconButton();
+            this.icnhapfile = new FontAwesome.Sharp.IconButton();
+            this.ibtnnhanvien = new FontAwesome.Sharp.IconButton();
             this.menuStrip1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tablepaneltong.SuspendLayout();
@@ -125,6 +121,7 @@
             // 
             this.bÁNHÀNGToolStripMenuItem.Name = "bÁNHÀNGToolStripMenuItem";
             resources.ApplyResources(this.bÁNHÀNGToolStripMenuItem, "bÁNHÀNGToolStripMenuItem");
+            this.bÁNHÀNGToolStripMenuItem.Click += new System.EventHandler(this.bÁNHÀNGToolStripMenuItem_Click);
             // 
             // đỐITÁCToolStripMenuItem
             // 
@@ -138,19 +135,26 @@
             // 
             this.kháchHàngToolStripMenuItem.Name = "kháchHàngToolStripMenuItem";
             resources.ApplyResources(this.kháchHàngToolStripMenuItem, "kháchHàngToolStripMenuItem");
+            this.kháchHàngToolStripMenuItem.Click += new System.EventHandler(this.kháchHàngToolStripMenuItem_Click);
             // 
             // nhàCungToolStripMenuItem
             // 
             this.nhàCungToolStripMenuItem.Name = "nhàCungToolStripMenuItem";
             resources.ApplyResources(this.nhàCungToolStripMenuItem, "nhàCungToolStripMenuItem");
+            this.nhàCungToolStripMenuItem.Click += new System.EventHandler(this.nhàCungToolStripMenuItem_Click);
             // 
             // sẢNPHẢMDỊCHVỤToolStripMenuItem
             // 
             this.sẢNPHẢMDỊCHVỤToolStripMenuItem.Name = "sẢNPHẢMDỊCHVỤToolStripMenuItem";
             resources.ApplyResources(this.sẢNPHẢMDỊCHVỤToolStripMenuItem, "sẢNPHẢMDỊCHVỤToolStripMenuItem");
+            this.sẢNPHẢMDỊCHVỤToolStripMenuItem.Click += new System.EventHandler(this.sẢNPHẢMDỊCHVỤToolStripMenuItem_Click);
             // 
             // qUẢNLÍKHOToolStripMenuItem
             // 
+            this.qUẢNLÍKHOToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tỒNKHOToolStripMenuItem,
+            this.nHẬPKHOToolStripMenuItem,
+            this.xUẤTKHOToolStripMenuItem});
             this.qUẢNLÍKHOToolStripMenuItem.Name = "qUẢNLÍKHOToolStripMenuItem";
             resources.ApplyResources(this.qUẢNLÍKHOToolStripMenuItem, "qUẢNLÍKHOToolStripMenuItem");
             // 
@@ -158,6 +162,7 @@
             // 
             this.qUẢNLÍTHUCHIToolStripMenuItem.Name = "qUẢNLÍTHUCHIToolStripMenuItem";
             resources.ApplyResources(this.qUẢNLÍTHUCHIToolStripMenuItem, "qUẢNLÍTHUCHIToolStripMenuItem");
+            this.qUẢNLÍTHUCHIToolStripMenuItem.Click += new System.EventHandler(this.qUẢNLÍTHUCHIToolStripMenuItem_Click);
             // 
             // bÁOCÁOToolStripMenuItem
             // 
@@ -183,6 +188,7 @@
             // 
             this.lịchLàmViệcToolStripMenuItem.Name = "lịchLàmViệcToolStripMenuItem";
             resources.ApplyResources(this.lịchLàmViệcToolStripMenuItem, "lịchLàmViệcToolStripMenuItem");
+            this.lịchLàmViệcToolStripMenuItem.Click += new System.EventHandler(this.lịchLàmViệcToolStripMenuItem_Click);
             // 
             // bảngChấmCôngToolStripMenuItem
             // 
@@ -306,9 +312,9 @@
             // dgngaysinh
             // 
             this.dgngaysinh.DataPropertyName = "Ngaysinh";
-            dataGridViewCellStyle1.Format = "d";
-            dataGridViewCellStyle1.NullValue = null;
-            this.dgngaysinh.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Format = "d";
+            dataGridViewCellStyle3.NullValue = null;
+            this.dgngaysinh.DefaultCellStyle = dataGridViewCellStyle3;
             resources.ApplyResources(this.dgngaysinh, "dgngaysinh");
             this.dgngaysinh.Name = "dgngaysinh";
             // 
@@ -484,6 +490,43 @@
             this.qL_KhoVatTuDataSet2.DataSetName = "QL_KhoVatTuDataSet";
             this.qL_KhoVatTuDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
+            resources.ApplyResources(this.ibtnxuatfile, "ibtnxuatfile");
+            this.ibtnxuatfile.BackColor = System.Drawing.Color.LimeGreen;
+            this.ibtnxuatfile.ForeColor = System.Drawing.SystemColors.Control;
+            this.ibtnxuatfile.IconChar = FontAwesome.Sharp.IconChar.FileExport;
+            this.ibtnxuatfile.IconColor = System.Drawing.Color.White;
+            this.ibtnxuatfile.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ibtnxuatfile.IconSize = 37;
+            this.ibtnxuatfile.Name = "ibtnxuatfile";
+            this.ibtnxuatfile.UseVisualStyleBackColor = false;
+            this.ibtnxuatfile.Click += new System.EventHandler(this.ibtnxuatfile_Click);
+            // 
+            // icnhapfile
+            // 
+            resources.ApplyResources(this.icnhapfile, "icnhapfile");
+            this.icnhapfile.BackColor = System.Drawing.Color.LimeGreen;
+            this.icnhapfile.ForeColor = System.Drawing.SystemColors.Control;
+            this.icnhapfile.IconChar = FontAwesome.Sharp.IconChar.FileImport;
+            this.icnhapfile.IconColor = System.Drawing.Color.White;
+            this.icnhapfile.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.icnhapfile.IconSize = 37;
+            this.icnhapfile.Name = "icnhapfile";
+            this.icnhapfile.UseVisualStyleBackColor = false;
+            this.icnhapfile.Click += new System.EventHandler(this.icnhapfile_Click);
+            // 
+            // ibtnnhanvien
+            // 
+            resources.ApplyResources(this.ibtnnhanvien, "ibtnnhanvien");
+            this.ibtnnhanvien.BackColor = System.Drawing.Color.LimeGreen;
+            this.ibtnnhanvien.ForeColor = System.Drawing.SystemColors.Control;
+            this.ibtnnhanvien.IconChar = FontAwesome.Sharp.IconChar.Plus;
+            this.ibtnnhanvien.IconColor = System.Drawing.Color.White;
+            this.ibtnnhanvien.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ibtnnhanvien.IconSize = 40;
+            this.ibtnnhanvien.Name = "ibtnnhanvien";
+            this.ibtnnhanvien.UseVisualStyleBackColor = false;
+            this.ibtnnhanvien.Click += new System.EventHandler(this.ibtnnhanvien_Click);
+            // 
             // Danhsachnhanvien
             // 
             resources.ApplyResources(this, "$this");
@@ -571,5 +614,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dgtrangthai;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgmucluong;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgghichu;
+        private FontAwesome.Sharp.IconButton ibtnxoa;
     }
 }
