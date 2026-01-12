@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Danhsachnhanvien));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.iMSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bÁNHÀNGToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -49,6 +49,11 @@
             this.lbdsnv = new System.Windows.Forms.Label();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.ibtnxuatfile = new FontAwesome.Sharp.IconButton();
+            this.icnhapfile = new FontAwesome.Sharp.IconButton();
+            this.ibtnnhanvien = new FontAwesome.Sharp.IconButton();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.tablepaneltong = new System.Windows.Forms.TableLayoutPanel();
             this.dgnhanvien = new System.Windows.Forms.DataGridView();
             this.fgmanv = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gdhoten = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -65,21 +70,30 @@
             this.dgmucluong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgghichu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbtimkiemnhanvien = new System.Windows.Forms.GroupBox();
-            this.ibtnxoa = new FontAwesome.Sharp.IconButton();
-            this.ibtntimkiemnhanvien = new FontAwesome.Sharp.IconButton();
-            this.txtsdt = new System.Windows.Forms.TextBox();
+            this.panelsearch = new System.Windows.Forms.Panel();
+            this.tablepaneltimkiem = new System.Windows.Forms.TableLayoutPanel();
+            this.paneltrai = new System.Windows.Forms.Panel();
+            this.lbmanv = new System.Windows.Forms.Label();
             this.txtmanv = new System.Windows.Forms.TextBox();
+            this.panelphai = new System.Windows.Forms.Panel();
             this.lbsdt = new System.Windows.Forms.Label();
             this.lbmanv = new System.Windows.Forms.Label();
             this.ibtnxuatfile = new FontAwesome.Sharp.IconButton();
             this.icnhapfile = new FontAwesome.Sharp.IconButton();
             this.ibtnnhanvien = new FontAwesome.Sharp.IconButton();
-            this.tỒNKHOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.nHẬPKHOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.xUẤTKHOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.tablepaneltong.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgnhanvien)).BeginInit();
             this.gbtimkiemnhanvien.SuspendLayout();
+            this.panelsearch.SuspendLayout();
+            this.tablepaneltimkiem.SuspendLayout();
+            this.paneltrai.SuspendLayout();
+            this.panelphai.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.qL_KhoVatTuDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qL_KhoVatTuDataSet2)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -191,14 +205,70 @@
             resources.ApplyResources(this.lbdsnv, "lbdsnv");
             this.lbdsnv.ForeColor = System.Drawing.SystemColors.Highlight;
             this.lbdsnv.Name = "lbdsnv";
+            this.lbdsnv.Click += new System.EventHandler(this.lbdsnv_Click);
             // 
             // notifyIcon1
             // 
             resources.ApplyResources(this.notifyIcon1, "notifyIcon1");
             // 
+            // ibtnxuatfile
+            // 
+            resources.ApplyResources(this.ibtnxuatfile, "ibtnxuatfile");
+            this.ibtnxuatfile.BackColor = System.Drawing.Color.LimeGreen;
+            this.ibtnxuatfile.ForeColor = System.Drawing.SystemColors.Control;
+            this.ibtnxuatfile.IconChar = FontAwesome.Sharp.IconChar.FileExport;
+            this.ibtnxuatfile.IconColor = System.Drawing.Color.White;
+            this.ibtnxuatfile.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ibtnxuatfile.IconSize = 37;
+            this.ibtnxuatfile.Name = "ibtnxuatfile";
+            this.ibtnxuatfile.UseVisualStyleBackColor = false;
+            this.ibtnxuatfile.Click += new System.EventHandler(this.ibtnxuatfile_Click);
+            // 
+            // icnhapfile
+            // 
+            resources.ApplyResources(this.icnhapfile, "icnhapfile");
+            this.icnhapfile.BackColor = System.Drawing.Color.LimeGreen;
+            this.icnhapfile.ForeColor = System.Drawing.SystemColors.Control;
+            this.icnhapfile.IconChar = FontAwesome.Sharp.IconChar.FileImport;
+            this.icnhapfile.IconColor = System.Drawing.Color.White;
+            this.icnhapfile.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.icnhapfile.IconSize = 37;
+            this.icnhapfile.Name = "icnhapfile";
+            this.icnhapfile.UseVisualStyleBackColor = false;
+            this.icnhapfile.Click += new System.EventHandler(this.icnhapfile_Click);
+            // 
+            // ibtnnhanvien
+            // 
+            resources.ApplyResources(this.ibtnnhanvien, "ibtnnhanvien");
+            this.ibtnnhanvien.BackColor = System.Drawing.Color.LimeGreen;
+            this.ibtnnhanvien.ForeColor = System.Drawing.SystemColors.Control;
+            this.ibtnnhanvien.IconChar = FontAwesome.Sharp.IconChar.Plus;
+            this.ibtnnhanvien.IconColor = System.Drawing.Color.White;
+            this.ibtnnhanvien.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ibtnnhanvien.IconSize = 40;
+            this.ibtnnhanvien.Name = "ibtnnhanvien";
+            this.ibtnnhanvien.UseVisualStyleBackColor = false;
+            this.ibtnnhanvien.Click += new System.EventHandler(this.ibtnnhanvien_Click);
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.lbdsnv);
+            this.panel2.Controls.Add(this.ibtnnhanvien);
+            this.panel2.Controls.Add(this.icnhapfile);
+            this.panel2.Controls.Add(this.ibtnxuatfile);
+            resources.ApplyResources(this.panel2, "panel2");
+            this.panel2.Name = "panel2";
+            // 
+            // tablepaneltong
+            // 
+            resources.ApplyResources(this.tablepaneltong, "tablepaneltong");
+            this.tablepaneltong.Controls.Add(this.panel2, 0, 0);
+            this.tablepaneltong.Controls.Add(this.dgnhanvien, 0, 2);
+            this.tablepaneltong.Controls.Add(this.gbtimkiemnhanvien, 0, 1);
+            this.tablepaneltong.Name = "tablepaneltong";
+            // 
             // dgnhanvien
             // 
-            resources.ApplyResources(this.dgnhanvien, "dgnhanvien");
             this.dgnhanvien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgnhanvien.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.fgmanv,
@@ -215,6 +285,7 @@
             this.dgtrangthai,
             this.dgmucluong,
             this.dgghichu});
+            resources.ApplyResources(this.dgnhanvien, "dgnhanvien");
             this.dgnhanvien.Name = "dgnhanvien";
             this.dgnhanvien.RowTemplate.Height = 24;
             this.dgnhanvien.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgnhanvien_CellContentClick);
@@ -241,9 +312,9 @@
             // dgngaysinh
             // 
             this.dgngaysinh.DataPropertyName = "Ngaysinh";
-            dataGridViewCellStyle9.Format = "d";
-            dataGridViewCellStyle9.NullValue = null;
-            this.dgngaysinh.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Format = "d";
+            dataGridViewCellStyle3.NullValue = null;
+            this.dgngaysinh.DefaultCellStyle = dataGridViewCellStyle3;
             resources.ApplyResources(this.dgngaysinh, "dgngaysinh");
             this.dgngaysinh.Name = "dgngaysinh";
             // 
@@ -309,15 +380,74 @@
             // 
             // gbtimkiemnhanvien
             // 
+            this.gbtimkiemnhanvien.Controls.Add(this.panelsearch);
             resources.ApplyResources(this.gbtimkiemnhanvien, "gbtimkiemnhanvien");
-            this.gbtimkiemnhanvien.Controls.Add(this.ibtnxoa);
-            this.gbtimkiemnhanvien.Controls.Add(this.ibtntimkiemnhanvien);
-            this.gbtimkiemnhanvien.Controls.Add(this.txtsdt);
-            this.gbtimkiemnhanvien.Controls.Add(this.txtmanv);
-            this.gbtimkiemnhanvien.Controls.Add(this.lbsdt);
-            this.gbtimkiemnhanvien.Controls.Add(this.lbmanv);
             this.gbtimkiemnhanvien.Name = "gbtimkiemnhanvien";
             this.gbtimkiemnhanvien.TabStop = false;
+            this.gbtimkiemnhanvien.Enter += new System.EventHandler(this.gbtimkiemnhanvien_Enter);
+            // 
+            // panelsearch
+            // 
+            this.panelsearch.Controls.Add(this.tablepaneltimkiem);
+            resources.ApplyResources(this.panelsearch, "panelsearch");
+            this.panelsearch.Name = "panelsearch";
+            // 
+            // tablepaneltimkiem
+            // 
+            resources.ApplyResources(this.tablepaneltimkiem, "tablepaneltimkiem");
+            this.tablepaneltimkiem.Controls.Add(this.paneltrai, 0, 0);
+            this.tablepaneltimkiem.Controls.Add(this.panelphai, 1, 0);
+            this.tablepaneltimkiem.Controls.Add(this.panel4, 2, 0);
+            this.tablepaneltimkiem.Name = "tablepaneltimkiem";
+            // 
+            // paneltrai
+            // 
+            this.paneltrai.Controls.Add(this.lbmanv);
+            this.paneltrai.Controls.Add(this.txtmanv);
+            resources.ApplyResources(this.paneltrai, "paneltrai");
+            this.paneltrai.Name = "paneltrai";
+            // 
+            // lbmanv
+            // 
+            resources.ApplyResources(this.lbmanv, "lbmanv");
+            this.lbmanv.Name = "lbmanv";
+            this.lbmanv.Click += new System.EventHandler(this.lbmanv_Click);
+            // 
+            // txtmanv
+            // 
+            resources.ApplyResources(this.txtmanv, "txtmanv");
+            this.txtmanv.Name = "txtmanv";
+            this.txtmanv.TextChanged += new System.EventHandler(this.txtmanv_TextChanged);
+            // 
+            // panelphai
+            // 
+            this.panelphai.Controls.Add(this.lbsdt);
+            this.panelphai.Controls.Add(this.txtsdt);
+            resources.ApplyResources(this.panelphai, "panelphai");
+            this.panelphai.Name = "panelphai";
+            // 
+            // lbsdt
+            // 
+            resources.ApplyResources(this.lbsdt, "lbsdt");
+            this.lbsdt.Name = "lbsdt";
+            // 
+            // txtsdt
+            // 
+            resources.ApplyResources(this.txtsdt, "txtsdt");
+            this.txtsdt.Name = "txtsdt";
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.tableLayoutPanel1);
+            resources.ApplyResources(this.panel4, "panel4");
+            this.panel4.Name = "panel4";
+            // 
+            // tableLayoutPanel1
+            // 
+            resources.ApplyResources(this.tableLayoutPanel1, "tableLayoutPanel1");
+            this.tableLayoutPanel1.Controls.Add(this.ibtnxoa, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.ibtntimkiemnhanvien, 0, 0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             // 
             // ibtnxoa
             // 
@@ -346,27 +476,19 @@
             this.ibtntimkiemnhanvien.UseVisualStyleBackColor = false;
             this.ibtntimkiemnhanvien.Click += new System.EventHandler(this.ibtntimkiemnhanvien_Click);
             // 
-            // txtsdt
+            // qL_KhoVatTuDataSet1
             // 
-            resources.ApplyResources(this.txtsdt, "txtsdt");
-            this.txtsdt.Name = "txtsdt";
+            this.qL_KhoVatTuDataSet1.DataSetName = "QL_KhoVatTuDataSet";
+            this.qL_KhoVatTuDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // txtmanv
+            // doitac_NCCTableAdapter1
             // 
-            resources.ApplyResources(this.txtmanv, "txtmanv");
-            this.txtmanv.Name = "txtmanv";
+            this.doitac_NCCTableAdapter1.ClearBeforeFill = true;
             // 
-            // lbsdt
+            // qL_KhoVatTuDataSet2
             // 
-            resources.ApplyResources(this.lbsdt, "lbsdt");
-            this.lbsdt.Name = "lbsdt";
-            // 
-            // lbmanv
-            // 
-            resources.ApplyResources(this.lbmanv, "lbmanv");
-            this.lbmanv.Name = "lbmanv";
-            // 
-            // ibtnxuatfile
+            this.qL_KhoVatTuDataSet2.DataSetName = "QL_KhoVatTuDataSet";
+            this.qL_KhoVatTuDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             resources.ApplyResources(this.ibtnxuatfile, "ibtnxuatfile");
             this.ibtnxuatfile.BackColor = System.Drawing.Color.LimeGreen;
@@ -405,42 +527,32 @@
             this.ibtnnhanvien.UseVisualStyleBackColor = false;
             this.ibtnnhanvien.Click += new System.EventHandler(this.ibtnnhanvien_Click);
             // 
-            // tỒNKHOToolStripMenuItem
-            // 
-            this.tỒNKHOToolStripMenuItem.Name = "tỒNKHOToolStripMenuItem";
-            resources.ApplyResources(this.tỒNKHOToolStripMenuItem, "tỒNKHOToolStripMenuItem");
-            this.tỒNKHOToolStripMenuItem.Click += new System.EventHandler(this.tỒNKHOToolStripMenuItem_Click);
-            // 
-            // nHẬPKHOToolStripMenuItem
-            // 
-            this.nHẬPKHOToolStripMenuItem.Name = "nHẬPKHOToolStripMenuItem";
-            resources.ApplyResources(this.nHẬPKHOToolStripMenuItem, "nHẬPKHOToolStripMenuItem");
-            this.nHẬPKHOToolStripMenuItem.Click += new System.EventHandler(this.nHẬPKHOToolStripMenuItem_Click);
-            // 
-            // xUẤTKHOToolStripMenuItem
-            // 
-            this.xUẤTKHOToolStripMenuItem.Name = "xUẤTKHOToolStripMenuItem";
-            resources.ApplyResources(this.xUẤTKHOToolStripMenuItem, "xUẤTKHOToolStripMenuItem");
-            this.xUẤTKHOToolStripMenuItem.Click += new System.EventHandler(this.xUẤTKHOToolStripMenuItem_Click);
-            // 
             // Danhsachnhanvien
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.gbtimkiemnhanvien);
-            this.Controls.Add(this.dgnhanvien);
-            this.Controls.Add(this.ibtnxuatfile);
-            this.Controls.Add(this.icnhapfile);
-            this.Controls.Add(this.ibtnnhanvien);
-            this.Controls.Add(this.lbdsnv);
+            this.Controls.Add(this.tablepaneltong);
             this.Controls.Add(this.menuStrip1);
             this.Name = "Danhsachnhanvien";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Danhsachnhanvien_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            this.tablepaneltong.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgnhanvien)).EndInit();
             this.gbtimkiemnhanvien.ResumeLayout(false);
-            this.gbtimkiemnhanvien.PerformLayout();
+            this.panelsearch.ResumeLayout(false);
+            this.tablepaneltimkiem.ResumeLayout(false);
+            this.paneltrai.ResumeLayout(false);
+            this.paneltrai.PerformLayout();
+            this.panelphai.ResumeLayout(false);
+            this.panelphai.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.tableLayoutPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.qL_KhoVatTuDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qL_KhoVatTuDataSet2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -469,13 +581,25 @@
         private FontAwesome.Sharp.IconButton ibtnnhanvien;
         private FontAwesome.Sharp.IconButton icnhapfile;
         private FontAwesome.Sharp.IconButton ibtnxuatfile;
-        private System.Windows.Forms.DataGridView dgnhanvien;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.TableLayoutPanel tablepaneltong;
         private System.Windows.Forms.GroupBox gbtimkiemnhanvien;
-        private System.Windows.Forms.Label lbsdt;
-        private System.Windows.Forms.Label lbmanv;
+        private FontAwesome.Sharp.IconButton ibtnxoa;
         private FontAwesome.Sharp.IconButton ibtntimkiemnhanvien;
         private System.Windows.Forms.TextBox txtsdt;
         private System.Windows.Forms.TextBox txtmanv;
+        private System.Windows.Forms.Label lbsdt;
+        private System.Windows.Forms.Label lbmanv;
+        private System.Windows.Forms.DataGridView dgnhanvien;
+        private QL_KhoVatTuDataSet qL_KhoVatTuDataSet1;
+        private QL_KhoVatTuDataSetTableAdapters.Doitac_NCCTableAdapter doitac_NCCTableAdapter1;
+        private QL_KhoVatTuDataSet qL_KhoVatTuDataSet2;
+        private System.Windows.Forms.Panel panelsearch;
+        private System.Windows.Forms.TableLayoutPanel tablepaneltimkiem;
+        private System.Windows.Forms.Panel paneltrai;
+        private System.Windows.Forms.Panel panelphai;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.DataGridViewTextBoxColumn fgmanv;
         private System.Windows.Forms.DataGridViewTextBoxColumn gdhoten;
         private System.Windows.Forms.DataGridViewTextBoxColumn dggioitinh;
@@ -491,8 +615,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dgmucluong;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgghichu;
         private FontAwesome.Sharp.IconButton ibtnxoa;
-        private System.Windows.Forms.ToolStripMenuItem tỒNKHOToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem nHẬPKHOToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem xUẤTKHOToolStripMenuItem;
     }
 }

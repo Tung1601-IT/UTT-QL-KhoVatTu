@@ -504,8 +504,8 @@
             this.Controls.Add(this.panelfill);
             this.Controls.Add(this.panelbottom);
             this.Name = "Themnhanvien";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Themnhanvien";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Themnhanvien_Load);
             this.gbthemnv.ResumeLayout(false);
             this.gbthemnv.PerformLayout();
