@@ -21,10 +21,10 @@ namespace Quản_Lí_Kho_Vật_Tư
         {
             string mkh = txtMaKH.Text.Trim();
             string ht = txtTenKH.Text.Trim();
-            string gt = cboGioitinh.SelectedItem.ToString().Trim();
+            string gt;
             string dt = txtSDT.Text.Trim();
             string mail = txtEmail.Text.Trim();
-            string tt = cboTrangthai.SelectedItem.ToString().Trim();
+            string tt;
             string dc = txtDiachi.Text.Trim();
             string cccd = txtCCCD.Text.Trim();
             if (cboGioitinh.SelectedItem == null)

@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ql_vattuDataSet1" targetNamespace="http://tempuri.org/ql_vattuDataSet1.xsd" xmlns:mstns="http://tempuri.org/ql_vattuDataSet1.xsd" xmlns="http://tempuri.org/ql_vattuDataSet1.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ql_vattuConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ql_vattuConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Quản_Lí_Kho_Vật_Tư.Properties.Settings.GlobalReference.Default.ql_vattuConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Phieunhap_CTTableAdapter" GeneratorDataComponentClassName="Phieunhap_CTTableAdapter" Name="Phieunhap_CT" UserDataComponentName="Phieunhap_CTTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ql_vattuConnectionString (Settings)" DbObjectName="ql_vattu.dbo.Phieunhap_CT" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT MaVT, SoLuong, GiaNhap, ThanhTien, Doitac FROM dbo.Phieunhap_CT</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="MaVT" DataSetColumn="MaVT" />
+              <Mapping SourceColumn="SoLuong" DataSetColumn="SoLuong" />
+              <Mapping SourceColumn="GiaNhap" DataSetColumn="GiaNhap" />
+              <Mapping SourceColumn="ThanhTien" DataSetColumn="ThanhTien" />
+              <Mapping SourceColumn="Doitac" DataSetColumn="Doitac" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="ql_vattuDataSet1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_UserDSName="ql_vattuDataSet1" msprop:Generator_DataSetName="ql_vattuDataSet1">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Phieunhap_CT" msprop:Generator_RowEvHandlerName="Phieunhap_CTRowChangeEventHandler" msprop:Generator_RowDeletedName="Phieunhap_CTRowDeleted" msprop:Generator_RowDeletingName="Phieunhap_CTRowDeleting" msprop:Generator_RowEvArgName="Phieunhap_CTRowChangeEvent" msprop:Generator_TablePropName="Phieunhap_CT" msprop:Generator_RowChangedName="Phieunhap_CTRowChanged" msprop:Generator_RowChangingName="Phieunhap_CTRowChanging" msprop:Generator_TableClassName="Phieunhap_CTDataTable" msprop:Generator_RowClassName="Phieunhap_CTRow" msprop:Generator_TableVarName="tablePhieunhap_CT" msprop:Generator_UserTableName="Phieunhap_CT">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="MaVT" msprop:Generator_ColumnPropNameInRow="MaVT" msprop:Generator_ColumnPropNameInTable="MaVTColumn" msprop:Generator_ColumnVarNameInTable="columnMaVT" msprop:Generator_UserColumnName="MaVT">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SoLuong" msprop:Generator_ColumnPropNameInRow="SoLuong" msprop:Generator_ColumnPropNameInTable="SoLuongColumn" msprop:Generator_ColumnVarNameInTable="columnSoLuong" msprop:Generator_UserColumnName="SoLuong" type="xs:int" minOccurs="0" />
+              <xs:element name="GiaNhap" msprop:Generator_ColumnPropNameInRow="GiaNhap" msprop:Generator_ColumnPropNameInTable="GiaNhapColumn" msprop:Generator_ColumnVarNameInTable="columnGiaNhap" msprop:Generator_UserColumnName="GiaNhap" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ThanhTien" msprop:Generator_ColumnPropNameInRow="ThanhTien" msprop:Generator_ColumnPropNameInTable="ThanhTienColumn" msprop:Generator_ColumnVarNameInTable="columnThanhTien" msprop:Generator_UserColumnName="ThanhTien" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Doitac" msprop:Generator_ColumnPropNameInRow="Doitac" msprop:Generator_ColumnPropNameInTable="DoitacColumn" msprop:Generator_ColumnVarNameInTable="columnDoitac" msprop:Generator_UserColumnName="Doitac" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

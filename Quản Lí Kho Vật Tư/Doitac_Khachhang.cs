@@ -20,31 +20,10 @@ namespace Quản_Lí_Kho_Vật_Tư
             InitializeComponent();
         }
         public DataGridView DgvKH => dgvKH;
-        private void btnThem_Click(object sender, EventArgs e)
-        {
-            ThemKhachhang f = new ThemKhachhang();
-            f.ShowDialog();
-        }
-
         private void Doitac_Khachhang_Load(object sender, EventArgs e)
         {
             Thuvien.load_KH(dgvKH, "Select* from Khachhang");
         }
-        private void btnXoa_Click(object sender, EventArgs e)
-        {
-            if (dgvKH.CurrentRow == null) return;
-            int i= dgvKH.CurrentRow.Index;
-            if (i< 0) return;
-            string mkh = dgvKH.Rows[i].Cells["MaKH"].Value?.ToString();
-
-            DialogResult kq = MessageBox.Show("Ban chac chan muon xoa?", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (kq == DialogResult.No)
-                return;
-            Thuvien.upd_del("Delete from Khachhang where Makhachhang='" + mkh + "'");
-            MessageBox.Show("Xoa thanh cong");
-            Thuvien.load_KH(dgvKH, "Select* from Khachhang");
-        }
-
         private void btnTimkiem_Click(object sender, EventArgs e)
         {
             string mkh = txtMaKH_tk.Text.Trim();
@@ -57,16 +36,6 @@ namespace Quản_Lí_Kho_Vật_Tư
                 "Trangthai like N'%" + tt + "%'");
         }
 
-        private void btnXuatExcel_Click_1(object sender, EventArgs e)
-        {
-            using (FileExcecl_KH f = new FileExcecl_KH())
-            {
-                if (f.ShowDialog(this) == DialogResult.OK)
-                {
-                    Thuvien.load_KH(dgvKH, "Select * from Khachhang");
-                }
-            }
-        }
         public void ExportExcel(DataTable tb, string sheetname)
         {
             //Tạo các đối tượng Excel
@@ -353,6 +322,38 @@ namespace Quản_Lí_Kho_Vật_Tư
                     Thuvien.upd_del("Update Khachhang set Tenkhachhang=N'" + ht + "',Gioitinh=N'" + gt + "',SDT='" + sdt + "',Email='" + email + "',Trangthai=N'" + tt + "',Diachinhanhang=N'" + diachi + "',CCCD=N'" + cccd + "' where Makhachhang='" + mkh + "'");
                     Thuvien.load_KH(dgvKH, "Select* from Khachhang");
 
+                }
+            }
+        }
+
+        private void btnThem_Click_1(object sender, EventArgs e)
+        {
+            ThemKhachhang f = new ThemKhachhang();
+            f.ShowDialog();
+        }
+
+        private void btnXoa_Click_1(object sender, EventArgs e)
+        {
+            if (dgvKH.CurrentRow == null) return;
+            int i = dgvKH.CurrentRow.Index;
+            if (i < 0) return;
+            string mkh = dgvKH.Rows[i].Cells["MaKH"].Value?.ToString();
+
+            DialogResult kq = MessageBox.Show("Ban chac chan muon xoa?", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (kq == DialogResult.No)
+                return;
+            Thuvien.upd_del("Delete from Khachhang where Makhachhang='" + mkh + "'");
+            MessageBox.Show("Xoa thanh cong");
+            Thuvien.load_KH(dgvKH, "Select* from Khachhang");
+        }
+
+        private void btnNhap_Click(object sender, EventArgs e)
+        {
+            using (FileExcecl_KH f = new FileExcecl_KH())
+            {
+                if (f.ShowDialog(this) == DialogResult.OK)
+                {
+                    Thuvien.load_KH(dgvKH, "Select * from Khachhang");
                 }
             }
         }

@@ -231,6 +231,7 @@
             this.btnXoa.TabIndex = 8;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click_1);
             // 
             // btnThem
             // 
@@ -243,6 +244,7 @@
             this.btnThem.TabIndex = 7;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = true;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click_1);
             // 
             // dgvKH
             // 
@@ -469,12 +471,13 @@
             this.btnNhap.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnNhap.IconColor = System.Drawing.Color.Black;
             this.btnNhap.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnNhap.Location = new System.Drawing.Point(806, 88);
+            this.btnNhap.Location = new System.Drawing.Point(805, 39);
             this.btnNhap.Name = "btnNhap";
             this.btnNhap.Size = new System.Drawing.Size(94, 43);
             this.btnNhap.TabIndex = 9;
             this.btnNhap.Text = "Nhập excel";
             this.btnNhap.UseVisualStyleBackColor = true;
+            this.btnNhap.Click += new System.EventHandler(this.btnNhap_Click);
             // 
             // Doitac_Khachhang
             // 

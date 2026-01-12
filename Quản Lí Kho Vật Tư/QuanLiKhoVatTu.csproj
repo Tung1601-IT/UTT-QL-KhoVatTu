@@ -158,6 +158,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ql_vattuDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="ql_vattuDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ql_vattuDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ql_vattuDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ql_vattuDataSet2.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Quanlikho.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -337,6 +347,28 @@
     </None>
     <None Include="ql_vattuDataSet.xss">
       <DependentUpon>ql_vattuDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ql_vattuDataSet1.xsc">
+      <DependentUpon>ql_vattuDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="ql_vattuDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ql_vattuDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ql_vattuDataSet1.xss">
+      <DependentUpon>ql_vattuDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="ql_vattuDataSet2.xsc">
+      <DependentUpon>ql_vattuDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="ql_vattuDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ql_vattuDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ql_vattuDataSet2.xss">
+      <DependentUpon>ql_vattuDataSet2.xsd</DependentUpon>
     </None>
     <None Include="Resources\FileNhap.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
