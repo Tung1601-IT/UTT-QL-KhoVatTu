@@ -15,6 +15,9 @@ namespace Quản_Lí_Kho_Vật_Tư
 {
     public partial class Dangnhap : Form
     {
+
+        public static string TenNhanVien = "";
+        
         public Dangnhap()
         {
             InitializeComponent();
@@ -51,11 +54,15 @@ namespace Quản_Lí_Kho_Vật_Tư
                 Thuvien.con.Open();
             string sql = "Select * from Taikhoan where Taikhoan='" + tk + "' and Matkhau='" + mk + "'";
             SqlCommand cmd = new SqlCommand(sql, Thuvien.con);
-            using (SqlDataReader kq = cmd.ExecuteReader())
+            SqlDataReader kq = cmd.ExecuteReader();
+            if (kq.Read())
             {
-                if (kq.Read())
-                {
-                    this.Hide();
+
+                TenNhanVien = kq["Hoten"].ToString(); // tên cột trong DB
+                
+
+
+                this.Hide();   
 
                     Tongquan f = new Tongquan();
 

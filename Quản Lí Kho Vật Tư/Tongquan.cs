@@ -134,5 +134,7 @@ namespace Quản_Lí_Kho_Vật_Tư
 
             this.Show();
         }
+
+        
     }
 }

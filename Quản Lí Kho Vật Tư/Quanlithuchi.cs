@@ -86,5 +86,144 @@ namespace Quản_Lí_Kho_Vật_Tư
             Chitiet_hoadon f = new Chitiet_hoadon(maHD);
             f.ShowDialog();
         }
+
+
+
+        // GỌi form
+        private void bÁNHÀNGToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();   // Ẩn Trang chủ
+
+            Tongquan f = new Tongquan();
+
+            // Khi Form mới đóng → đóng Trang chủ
+            f.FormClosed += (s, args) =>
+            {
+                this.Close();
+            };
+
+            f.Show();
+        }
+
+        private void kháchHàngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();   // Ẩn Trang chủ
+
+            Doitac_Khachhang f = new Doitac_Khachhang();
+
+            // Khi Form mới đóng → đóng Trang chủ
+            f.FormClosed += (s, args) =>
+            {
+                this.Close();
+            };
+
+            f.Show();
+        }
+
+        private void nhàCungToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            this.Hide();   // Ẩn Trang chủ
+
+            Doitac_NCC f = new Doitac_NCC();
+
+            // Khi Form mới đóng → đóng Trang chủ
+            f.FormClosed += (s, args) =>
+            {
+                this.Close();
+            };
+
+            f.Show();
+        }
+
+        private void sẢNPHẢMDỊCHVỤToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();   // Ẩn Trang chủ
+
+            Sanphamdichvu f = new Sanphamdichvu();
+
+            // Khi Form mới đóng → đóng Trang chủ
+            f.FormClosed += (s, args) =>
+            {
+                this.Close();
+            };
+
+            f.Show();
+        }
+
+        private void tỒNKHOToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();   // Ẩn Trang chủ
+
+            Quanlikho f = new Quanlikho();
+
+            // Khi Form mới đóng → đóng Trang chủ
+            f.FormClosed += (s, args) =>
+            {
+                this.Close();
+            };
+
+            f.Show();
+        }
+
+        private void nHẬPKHOToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();   // Ẩn Trang chủ
+
+            Nhapkho f = new Nhapkho();
+
+            // Khi Form mới đóng → đóng Trang chủ
+            f.FormClosed += (s, args) =>
+            {
+                this.Close();
+            };
+
+            f.Show();
+        }
+
+        private void xUẤTKHOToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();   // Ẩn Trang chủ
+
+            Xuatkho f = new Xuatkho();
+
+            // Khi Form mới đóng → đóng Trang chủ
+            f.FormClosed += (s, args) =>
+            {
+                this.Close();
+            };
+
+            f.Show();
+        }
+
+        private void danhSáchNhânViênToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();   // Ẩn Trang chủ
+
+            Danhsachnhanvien f = new Danhsachnhanvien();
+
+            // Khi Form mới đóng → đóng Trang chủ
+            f.FormClosed += (s, args) =>
+            {
+                this.Close();
+            };
+
+            f.Show();
+        }
+
+        private void lịchLàmViệcToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();   // Ẩn Trang chủ
+
+            Lichlamviec f = new Lichlamviec();
+
+            // Khi Form mới đóng → đóng Trang chủ
+            f.FormClosed += (s, args) =>
+            {
+                this.Close();
+            };
+
+            f.Show();
+        }
     }
 }

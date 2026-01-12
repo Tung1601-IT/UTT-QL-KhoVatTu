@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Danhsachnhanvien));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.iMSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bÁNHÀNGToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -74,6 +74,9 @@
             this.ibtnxuatfile = new FontAwesome.Sharp.IconButton();
             this.icnhapfile = new FontAwesome.Sharp.IconButton();
             this.ibtnnhanvien = new FontAwesome.Sharp.IconButton();
+            this.tỒNKHOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.nHẬPKHOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.xUẤTKHOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgnhanvien)).BeginInit();
             this.gbtimkiemnhanvien.SuspendLayout();
@@ -104,6 +107,7 @@
             // 
             this.bÁNHÀNGToolStripMenuItem.Name = "bÁNHÀNGToolStripMenuItem";
             resources.ApplyResources(this.bÁNHÀNGToolStripMenuItem, "bÁNHÀNGToolStripMenuItem");
+            this.bÁNHÀNGToolStripMenuItem.Click += new System.EventHandler(this.bÁNHÀNGToolStripMenuItem_Click);
             // 
             // đỐITÁCToolStripMenuItem
             // 
@@ -117,19 +121,26 @@
             // 
             this.kháchHàngToolStripMenuItem.Name = "kháchHàngToolStripMenuItem";
             resources.ApplyResources(this.kháchHàngToolStripMenuItem, "kháchHàngToolStripMenuItem");
+            this.kháchHàngToolStripMenuItem.Click += new System.EventHandler(this.kháchHàngToolStripMenuItem_Click);
             // 
             // nhàCungToolStripMenuItem
             // 
             this.nhàCungToolStripMenuItem.Name = "nhàCungToolStripMenuItem";
             resources.ApplyResources(this.nhàCungToolStripMenuItem, "nhàCungToolStripMenuItem");
+            this.nhàCungToolStripMenuItem.Click += new System.EventHandler(this.nhàCungToolStripMenuItem_Click);
             // 
             // sẢNPHẢMDỊCHVỤToolStripMenuItem
             // 
             this.sẢNPHẢMDỊCHVỤToolStripMenuItem.Name = "sẢNPHẢMDỊCHVỤToolStripMenuItem";
             resources.ApplyResources(this.sẢNPHẢMDỊCHVỤToolStripMenuItem, "sẢNPHẢMDỊCHVỤToolStripMenuItem");
+            this.sẢNPHẢMDỊCHVỤToolStripMenuItem.Click += new System.EventHandler(this.sẢNPHẢMDỊCHVỤToolStripMenuItem_Click);
             // 
             // qUẢNLÍKHOToolStripMenuItem
             // 
+            this.qUẢNLÍKHOToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tỒNKHOToolStripMenuItem,
+            this.nHẬPKHOToolStripMenuItem,
+            this.xUẤTKHOToolStripMenuItem});
             this.qUẢNLÍKHOToolStripMenuItem.Name = "qUẢNLÍKHOToolStripMenuItem";
             resources.ApplyResources(this.qUẢNLÍKHOToolStripMenuItem, "qUẢNLÍKHOToolStripMenuItem");
             // 
@@ -137,6 +148,7 @@
             // 
             this.qUẢNLÍTHUCHIToolStripMenuItem.Name = "qUẢNLÍTHUCHIToolStripMenuItem";
             resources.ApplyResources(this.qUẢNLÍTHUCHIToolStripMenuItem, "qUẢNLÍTHUCHIToolStripMenuItem");
+            this.qUẢNLÍTHUCHIToolStripMenuItem.Click += new System.EventHandler(this.qUẢNLÍTHUCHIToolStripMenuItem_Click);
             // 
             // bÁOCÁOToolStripMenuItem
             // 
@@ -162,6 +174,7 @@
             // 
             this.lịchLàmViệcToolStripMenuItem.Name = "lịchLàmViệcToolStripMenuItem";
             resources.ApplyResources(this.lịchLàmViệcToolStripMenuItem, "lịchLàmViệcToolStripMenuItem");
+            this.lịchLàmViệcToolStripMenuItem.Click += new System.EventHandler(this.lịchLàmViệcToolStripMenuItem_Click);
             // 
             // bảngChấmCôngToolStripMenuItem
             // 
@@ -228,9 +241,9 @@
             // dgngaysinh
             // 
             this.dgngaysinh.DataPropertyName = "Ngaysinh";
-            dataGridViewCellStyle3.Format = "d";
-            dataGridViewCellStyle3.NullValue = null;
-            this.dgngaysinh.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.Format = "d";
+            dataGridViewCellStyle9.NullValue = null;
+            this.dgngaysinh.DefaultCellStyle = dataGridViewCellStyle9;
             resources.ApplyResources(this.dgngaysinh, "dgngaysinh");
             this.dgngaysinh.Name = "dgngaysinh";
             // 
@@ -392,6 +405,24 @@
             this.ibtnnhanvien.UseVisualStyleBackColor = false;
             this.ibtnnhanvien.Click += new System.EventHandler(this.ibtnnhanvien_Click);
             // 
+            // tỒNKHOToolStripMenuItem
+            // 
+            this.tỒNKHOToolStripMenuItem.Name = "tỒNKHOToolStripMenuItem";
+            resources.ApplyResources(this.tỒNKHOToolStripMenuItem, "tỒNKHOToolStripMenuItem");
+            this.tỒNKHOToolStripMenuItem.Click += new System.EventHandler(this.tỒNKHOToolStripMenuItem_Click);
+            // 
+            // nHẬPKHOToolStripMenuItem
+            // 
+            this.nHẬPKHOToolStripMenuItem.Name = "nHẬPKHOToolStripMenuItem";
+            resources.ApplyResources(this.nHẬPKHOToolStripMenuItem, "nHẬPKHOToolStripMenuItem");
+            this.nHẬPKHOToolStripMenuItem.Click += new System.EventHandler(this.nHẬPKHOToolStripMenuItem_Click);
+            // 
+            // xUẤTKHOToolStripMenuItem
+            // 
+            this.xUẤTKHOToolStripMenuItem.Name = "xUẤTKHOToolStripMenuItem";
+            resources.ApplyResources(this.xUẤTKHOToolStripMenuItem, "xUẤTKHOToolStripMenuItem");
+            this.xUẤTKHOToolStripMenuItem.Click += new System.EventHandler(this.xUẤTKHOToolStripMenuItem_Click);
+            // 
             // Danhsachnhanvien
             // 
             resources.ApplyResources(this, "$this");
@@ -460,5 +491,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dgmucluong;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgghichu;
         private FontAwesome.Sharp.IconButton ibtnxoa;
+        private System.Windows.Forms.ToolStripMenuItem tỒNKHOToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem nHẬPKHOToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem xUẤTKHOToolStripMenuItem;
     }
 }
